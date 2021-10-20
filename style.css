@@ -10,6 +10,8 @@ body {
 h1 {
   font-size: 4rem;
   padding: 1rem;
+  color: #2D00FF;
+  text-shadow: 1rem 1rem 3rem #FEE100;    
 }
 
 h2 {
