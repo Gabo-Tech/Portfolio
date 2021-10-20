@@ -1,6 +1,6 @@
 body {
   font-family: 'SansForgetica', Arial, sans-serif;
-  background-color: black;
+  background-color: #444444;
   color: white;
   margin: auto;
   align-items: center;
@@ -46,7 +46,7 @@ footer {
 
 .bl {
   font-family: 'SansForgetica', Arial, sans-serif;
-  background-color: black;
+  background-color: #444444;
   color: white;
   font-weight: 900;
 }
@@ -60,7 +60,7 @@ footer {
 
 .two {
   font-family: 'SansForgetica', Arial, sans-serif;
-  background-color: black;
+  background-color: #444444;
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
