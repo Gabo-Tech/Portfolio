@@ -11,7 +11,8 @@ h1 {
   font-size: 4rem;
   padding: 1rem;
   color: #2D00FF;
-  text-shadow: 1px 1px #FEE100,-1px -1px #FEE100, -1px 1px #FEE100,  1px -1px #FEE100, -1px 0 #FEE100, 1px 0 #FEE100, 0 -1px #FEE100, 0 1px #FEE100;  
+  background: #FEE100;
+  border-radius: 25px;
 }
 
 h2 {
