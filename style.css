@@ -11,7 +11,7 @@ h1 {
   font-size: 4rem;
   padding: 1rem;
   color: #2D00FF;
-  text-shadow: 1px 1px #FEE100, -1px -1px #FEE100;    
+  text-shadow: 1px 1px #FEE100,-1px -1px #FEE100, -1px 1px #FEE100,  1px -1px #FEE100, -1px 0 #FEE100, 1px 0 #FEE100, 0 -1px #FEE100, 0 1px #FEE100;  
 }
 
 h2 {
@@ -71,7 +71,7 @@ footer {
 
 .title {
   color: #2D00FF;
-  text-shadow: 2px 2px #FEE100, -2px -2px #FEE100;
+  text-shadow: 1px 1px #FEE100,-1px -1px #FEE100, -1px 1px #FEE100,  1px -1px #FEE100, -1px 0 #FEE100, 1px 0 #FEE100, 0 -1px #FEE100, 0 1px #FEE100;
   text-decoration-line: underline;
   text-decoration-style: double;
   padding-top: 0;
