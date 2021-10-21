@@ -9,10 +9,12 @@ body {
 
 h1 {
   font-size: 4rem;
-  padding: 10rem;
+  padding: 1rem;
   color: #2D00FF;
   background: #FEE100;
   border-radius: 25px;
+  height:20px;
+  width:20px;
 }
 
 h2 {
