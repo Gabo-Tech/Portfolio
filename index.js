@@ -1,25 +1,24 @@
 $(document).ready(function() {
-
   $(".appBrewery").on("click", function() {
-    $(".appBrewery1").slideToggle();
+    $(".appBrewery1").slideToggle(slow);
   });
   $(".barcelonaCode").on("click", function() {
-    $(".barcelonaCode1").slideToggle();
+    $(".barcelonaCode1").slideToggle(slow);
   });
   $(".JAPH").on("click", function() {
-    $(".JAPH1").slideToggle();
+    $(".JAPH1").slideToggle(slow);
   });
   $(".JPH").on("click", function() {
-    $(".JPH1").slideToggle();
+    $(".JPH1").slideToggle(slow);
   });
   $(".fundamentals").on("click", function() {
-    $(".fundamentals1").slideToggle();
+    $(".fundamentals1").slideToggle(slow);
   });
   $(".python").on("click", function() {
-    $(".python1").slideToggle();
+    $(".python1").slideToggle(slow);
   });
   $(".java").on("click", function() {
-    $(".java1").slideToggle();
+    $(".java1").slideToggle(slow);
   });
   $(".button").on("click", function() {
     $("object").slideToggle(slow);
