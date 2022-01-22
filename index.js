@@ -1,31 +1,31 @@
 $(document).ready(function() {
 
   $(".appBrewery").on("click", function() {
-    $(".appBrewery1").slideToggle(slow);
+    $(".appBrewery1").slideToggle();
   });
   $(".barcelonaCode").on("click", function() {
-    $(".barcelonaCode1").slideToggle(slow);
+    $(".barcelonaCode1").slideToggle();
   });
   $(".JAPH").on("click", function() {
-    $(".JAPH1").slideToggle(slow);
+    $(".JAPH1").slideToggle();
   });
   $(".JPH").on("click", function() {
-    $(".JPH1").slideToggle(slow);
+    $(".JPH1").slideToggle();
   });
   $(".fundamentals").on("click", function() {
-    $(".fundamentals1").slideToggle(slow);
+    $(".fundamentals1").slideToggle();
   });
   $(".python").on("click", function() {
-    $(".python1").slideToggle(slow);
+    $(".python1").slideToggle();
   });
   $(".java").on("click", function() {
-    $(".java1").slideToggle(slow);
+    $(".java1").slideToggle();
   });
 
 
 
   $(".button").on("click", function() {
-    $("object").slideToggle(slow);
+    $("object").slideToggle();
   });
   $('.iframe').responsiveIframes({
     openMessage: "Full screen",
