@@ -50,7 +50,31 @@ section2 h3 {
   margin: auto  3rem;
 }
 
-.appBrewery1, .barcelonaCode1, .JAPH1, .JPH1, .fundamentals1, .python1, .java1 {
+.appBrewery1 {
+  display: none;
+} 
+
+.barcelonaCode1.java1 {
+  display: none;
+}
+
+.JAPH1. {
+  display: none;
+}
+
+.JPH1 {
+  display: none;
+} 
+
+.fundamentals1 {
+  display: none;
+}
+
+.python1 {
+  display: none;
+} 
+
+.java1 {
   display: none;
 }
 
