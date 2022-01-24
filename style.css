@@ -1,37 +1,3 @@
-@media screen and (max-width: 479px) {
-	h1 {
-  font-family: "SansForgetica", "Helvetica Neue", Helvetica, Merriweather;
-  font-size: 2rem;
-  padding: 1rem;
-  margin: 1rem 2rem;
-  color: #2d00ff;
-  background: #fee100;
-  border-radius: 25px;
-}
-	.three {
-  font-family: "SansForgetica", Arial, sans-serif;
-  background-color: #444;
-  color: #fff;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 1em;
-}
-	#c {
- margin: auto;
-  width: 60%;
-  padding: 1px;
-}
-	.button {
-  font-family: Georgia, Merriweather, Helvetica;
-  color: #fff;
-  font-size: 0.5rem;
-  text-align: left;
-  border: none;
-  background: none;
-  text-shadow: 2px 2px 5px #fff;
-}
-}
-
 body {
   font-family: Georgia, "Helvetica Neue", Helvetica, "SansForgetica",
     Merriweather;
@@ -232,7 +198,21 @@ footer {
     width: 100%;
   }
 }
-
+@media screen and (max-width: 479px) {
+		h1 {
+	  font-size: 2rem;
+	}
+		.three {
+	  grid-template-columns: 1fr;
+	  grid-gap: 1em;
+	}
+		#c {
+	  padding: 1px;
+	}
+		.button {
+	  font-size: 0.5rem;
+	}
+}
 #centerm {
   padding: 5% 10%;
 }
