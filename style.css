@@ -555,7 +555,7 @@ footer {
 .cssload-wrap {
  
 	position: absolute;
-	margin:20% auto;
+	margin:25% auto;
 	left: 50%;
 	margin-left: -896px;
 	transform: rotateX(75deg);
