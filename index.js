@@ -38,14 +38,14 @@ $(document).ready(function() {
 (function($){
     $.responsiveIframes = function(el, options){
         var self = this;
-        
+
         // Access to jQuery and DOM versions of element
         self.$el = $(el);
         self.el = el;
-        
+
         // Add a reverse reference to the DOM object
         self.$el.data("responsiveIframes", self);
-        
+
         self.init = function () {
             self.options = $.extend({}, $.responsiveIframes.defaultOptions, options);
 
@@ -84,21 +84,20 @@ $(document).ready(function() {
 
             });
         };
-                
+
         // Run initializer
         self.init();
     };
-    
+
     $.responsiveIframes.defaultOptions = {
         openMessage: "Full screen",
         closeMessage: "Close"
     };
-    
+
     $.fn.responsiveIframes = function(options){
         return this.each(function(){
             (new $.responsiveIframes(this, options));
         });
     };
 
-  })
-})
+  });
