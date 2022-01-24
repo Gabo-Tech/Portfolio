@@ -2,7 +2,7 @@
 /*global $, jQuery, alert*/
 $(window).on('load', function() {
   $('.loader-wrapper').fadeOut('slow');
-})
+});
 
 $(document).ready(function() {
   $('.appBrewery').on('click', function() {
