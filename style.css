@@ -44,10 +44,65 @@ section2 h3 {
   text-align: center;
 }
 
+a {
+  color: #fff !important;
+  text-decoration: none;
+  text-shadow: 2px 2px 5px #fff;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  font-family: "SansForgetica", "Helvetica Neue", Helvetica, Merriweather;
+  text-align: center;
+  padding: 2rem 2rem 0;
+  color: #fff;
+}
+
 #download {
   padding: auto 3rem;
   align-items: center;
   margin: auto 3rem;
+}
+
+#rig {
+  text-align: right;
+}
+
+#lef {
+  text-align: left;
+}
+
+#cen {
+  text-align: center;
+}
+
+#c {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+#example_c {
+  font-family: "SansForgetica", "Helvetica Neue", Helvetica, Merriweather;
+  color: #FFFFFF !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  background: #444444 !important;
+  padding: 20px !important;
+  border: 4px solid #FFFFFF !important;
+  display: inline-block !important;
+  transition: all 0.4s ease 0s !important;
+}
+
+#example_c:hover {
+  color: #2d00ff !important;
+  background: #fee100 !important;
+  border-color: #fee100 !important;
+  border-radius: 20px !important;
+  transition: all 0.4s ease 0s !important;
 }
 
 .appBrewery1 {
@@ -93,43 +148,8 @@ section2 h3 {
   text-decoration: underline;
 }
 
-a {
-  color: #fff !important;
-  text-decoration: none;
-  text-shadow: 2px 2px 5px #fff;
-}
-
 .text-muted {
   color: #fff !important;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-footer {
-  font-family: "SansForgetica", "Helvetica Neue", Helvetica, Merriweather;
-  text-align: center;
-  padding: 2rem 2rem 0;
-  color: #fff;
-}
-
-#rig {
-  text-align: right;
-}
-
-#lef {
-  text-align: left;
-}
-
-#cen {
-  text-align: center;
-}
-
-#c {
-  margin: auto;
-  width: 60%;
-  padding: 10px;
 }
 
 .bl {
@@ -187,6 +207,14 @@ footer {
   padding: 10rem;
 }
 
+.button_cont {
+  font-size: 4rem;
+}
+
+.button_cont1 {
+  font-size: 2.67rem;
+}
+
 @font-face {
   font-family: SansForgetica;
   src: url(./sansforgetica-regular-webfont.woff);
@@ -232,7 +260,6 @@ footer {
   padding: 5% 10%;
 }
 
-/* iframe */
 .iframe {
   border: 3px solid #000;
   overflow: hidden;
@@ -1043,26 +1070,4 @@ footer {
   100% {
     -moz-transform: translateY(400px);
   }
-}
-
-#l{
-  font-size: 2.95rem;
-}
-
-#example_c {
-color: #FFFFFF !important;
-text-transform: uppercase !important;
-text-decoration: none !important;
-background: #444444 !important;
-padding: 20px !important;
-border: 4px solid #FFFFFF !important;
-display: inline-block !important;
-transition: all 0.4s ease 0s !important;
-}
-#example_c:hover {
-color: #2d00ff !important;
-background: #fee100 !important;
-border-color: #fee100 !important;
-border-radius: 20px!important;
-transition: all 0.4s ease 0s!important;
 }
