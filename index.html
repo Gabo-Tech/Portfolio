@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js">
+
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,19 +14,49 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
 </head>
+<header id="navbar">
+	<nav class="navbar-container container">
+		<a href="/" class="home-link">
+			<div class="navbar-logo"></div>
+			Gabriel Clemente
+		</a>
+		<button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<div id="navbar-menu" aria-labelledby="navbar-toggle">
+			<ul class="navbar-links">
+				<li class="navbar-item"><a class="navbar-link" href="#bl">Home</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#skills">Skills</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#resume">Resume</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#projects">Projects</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#certificates">Certificates</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#about">About</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#contact">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+<br />
+<br />
+<br />
+<br />
+<br />
+
 <body id="bl">
-	<header>
+	<header1 id="header1">
 		<div class="button_cont" align="center"><a id="example_c">GABRIEL CLEMENTE</a></div>
 		<div class="button_cont1" align="center"><a id="example_c">FULL-STACK WEB DEVELOPER</a></div>
-	</header>
+	</header1>
 	<main>
 		<section1>
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
-					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-					<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" id="skills"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="1" id="certificates"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="2" id="about"></li>
+					<li data-target="#carouselExampleIndicators" data-slide-to="3" id="contact"></li>
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
@@ -140,8 +171,9 @@
 												d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
 										</svg><br />Telegram</a><br /><br /><br />
 									<a href="tel:+34631624320"><svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="currentColor" class="bi bi-phone-vibrate-fill" viewBox="0 0 16 16">
-  <path d="M4 4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4zm5 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0zM1.807 4.734a.5.5 0 1 0-.884-.468A7.967 7.967 0 0 0 0 8c0 1.347.334 2.618.923 3.734a.5.5 0 1 0 .884-.468A6.967 6.967 0 0 1 1 8c0-1.18.292-2.292.807-3.266zm13.27-.468a.5.5 0 0 0-.884.468C14.708 5.708 15 6.819 15 8c0 1.18-.292 2.292-.807 3.266a.5.5 0 0 0 .884.468A7.967 7.967 0 0 0 16 8a7.967 7.967 0 0 0-.923-3.734zM3.34 6.182a.5.5 0 1 0-.93-.364A5.986 5.986 0 0 0 2 8c0 .769.145 1.505.41 2.182a.5.5 0 1 0 .93-.364A4.986 4.986 0 0 1 3 8c0-.642.12-1.255.34-1.818zm10.25-.364a.5.5 0 0 0-.93.364c.22.563.34 1.176.34 1.818 0 .642-.12 1.255-.34 1.818a.5.5 0 0 0 .93.364C13.856 9.505 14 8.769 14 8c0-.769-.145-1.505-.41-2.182z"/>
-</svg><br />Call me</a>
+											<path
+												d="M4 4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4zm5 7a1 1 0 1 0-2 0 1 1 0 0 0 2 0zM1.807 4.734a.5.5 0 1 0-.884-.468A7.967 7.967 0 0 0 0 8c0 1.347.334 2.618.923 3.734a.5.5 0 1 0 .884-.468A6.967 6.967 0 0 1 1 8c0-1.18.292-2.292.807-3.266zm13.27-.468a.5.5 0 0 0-.884.468C14.708 5.708 15 6.819 15 8c0 1.18-.292 2.292-.807 3.266a.5.5 0 0 0 .884.468A7.967 7.967 0 0 0 16 8a7.967 7.967 0 0 0-.923-3.734zM3.34 6.182a.5.5 0 1 0-.93-.364A5.986 5.986 0 0 0 2 8c0 .769.145 1.505.41 2.182a.5.5 0 1 0 .93-.364A4.986 4.986 0 0 1 3 8c0-.642.12-1.255.34-1.818zm10.25-.364a.5.5 0 0 0-.93.364c.22.563.34 1.176.34 1.818 0 .642-.12 1.255-.34 1.818a.5.5 0 0 0 .93.364C13.856 9.505 14 8.769 14 8c0-.769-.145-1.505-.41-2.182z" />
+										</svg><br />Call me</a>
 
 								</h3><br /><br /><br /><br /><br />
 								</sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU>
@@ -159,7 +191,7 @@
 				</a>
 			</div>
 		</section1>
-		<section2>
+		<section2 id="projects">
 			<h2>SOME OF MY PROJECTS</h2><br />
 			<h3>WEBSITES</h3><br />
 			<div class="wrapper">
@@ -287,7 +319,7 @@
 					</a>
 					<br />
 					<br />
-				<br />
+					<br />
 					<br />
 					<br />
 				</div>
@@ -301,11 +333,6 @@
 							<button id='work' type="button" name="Hover">Visit</button>
 						</div>
 					</a>
-					<br />
-					<br />
-					<br />
-					<br />
-					<br />
 				</div>
 			</div>
 			<br />
@@ -336,7 +363,19 @@
 				</div>
 			</div>
 		</section2>
-		<section3>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<section3 id="resume">
+			<h3>RESUME</h3>
+			</h3><br />
+			<object data="certificate_gabriel_clemente.pdf" type="application/pdf" width="60%" height="1121px">
+				<embed src="certificate_gabriel_clemente.pdf" type="application/pdf">
+				</embed>
+			</object>
 			<a href="Gabriel Clemente Resume.pdf" download>
 				<button class="btn third" id='work' type="button">Download my full resume clicking here</button>
 			</a>
@@ -351,41 +390,47 @@
 		</div>
 	</footer>
 	<div class="loader-wrapper">
-    <div class="cssload-wrap">
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-      <div class="cssload-circle"></div>
-    </div>
-  </div>
+		<br />
+		<br />
+		<br />
+		<div class="button_cont1" align="center"><a id="example_c">There's something cool loading, please, gimme a moment...</a></div>
+		<div class="cssload-wrap">
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+			<div class="cssload-circle"></div>
+		</div>
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<script> document.getElementsByTagName("html")[0].className = "js"; </script>
+	<script>
+		document.getElementsByTagName("html")[0].className = "js";
+	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
