@@ -54,7 +54,9 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
+navbar > a {
+  text-decoration: none;
+}
 footer {
   font-family: "SansForgetica", "Helvetica Neue", Helvetica, Merriweather;
   text-align: center;
