@@ -17,26 +17,40 @@ navbarLinksContainer.addEventListener("click", (e) => e.stopPropagation());
 navbarMenu.addEventListener("click", toggleNavbarVisibility);
 
 $(document).ready(function() {
-  $('.appBrewery').on('click', function() {
-    $('.appBrewery1').slideToggle('slow')
+  $('.appBrewery').hover(function() {
+    $('.appBrewery1').show();
+  }, function(){
+    $('.appBrewery1').hide();
   })
-  $('.barcelonaCode').on('click', function() {
-    $('.barcelonaCode1').slideToggle('slow')
+  $('.barcelonaCode').hover(function() {
+    $('.barcelonaCode1').show();
+  }, function(){
+    $('.barcelonaCode1').hide();
   })
-  $('.JAPH').on('click', function() {
-    $('.JAPH1').slideToggle('slow')
+  $('.JAPH').hover(function() {
+    $('.JAPH1').show();
+  }, function(){
+    $('.JAPH1').hide();
   })
-  $('.JPH').on('click', function() {
-    $('.JPH1').slideToggle('slow')
+  $('.JPH').hover(function() {
+    $('.JPH1').show();
+  }, function(){
+    $('.JPH1').hide();
   })
-  $('.fundamentals').on('click', function() {
-    $('.fundamentals1').slideToggle('slow')
+  $('.fundamentals').hover(function() {
+    $('.fundamentals').show();
+  }, function(){
+    $('.fundamentals').hide();
   })
-  $('.python').on('click', function() {
-    $('.python1').slideToggle('slow')
+  $('.python').hover(function() {
+    $('.python1').show();
+  }, function(){
+    $('.python1').hide();
   })
-  $('.java').on('click', function() {
-    $('.java1').slideToggle('slow')
+  $('.java').hover(function() {
+    $('.java1').show();
+  }, function(){
+    $('.java1').hide();
   })
 
   /*$('.button').on('click', function () {
