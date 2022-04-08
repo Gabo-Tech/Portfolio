@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
   font-family: Georgia, "Helvetica Neue", Helvetica, "SansForgetica",
     Merriweather;
@@ -7,6 +12,7 @@ body {
   align-items: center;
   padding: 0 0 3rem 0;
   -ms-overflow-style: none;
+  text-align: center;
 }
 
 body::-webkit-scrollbar {
@@ -111,7 +117,6 @@ footer {
 .appBrewery1 {
   display: none;
 }
-
 .barcelonaCode1 {
   display: none;
 }
@@ -1272,4 +1277,15 @@ body {
     width: 100%;
     height: 100%;
   }
+}
+#resume{
+  text-align: center;
+}
+footer{
+  padding-bottom: 2rem;
+}
+
+#logotop {
+  max-width: 2rem;
+  max-height: 2rem;
 }
