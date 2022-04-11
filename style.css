@@ -1289,3 +1289,9 @@ footer{
   max-width: 2rem;
   max-height: 2rem;
 }
+
+.codepensvg {
+  width: 4rem;
+  height: 4rem;
+  fill: white;
+}
