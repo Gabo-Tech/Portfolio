@@ -46,4 +46,4 @@ This project is licensed under the Creative Commons Public Domain License - Feel
 
 ## Acknowledgments
 
-* Thaks to Twitter for making Bootstrap open source, and to John Resig for creating JQuery, and about all and foremost to Brendan Eich for developing our beloved and hated headache called JavaScript.
+* Thanks to Twitter for making Bootstrap open source, and to John Resig for creating JQuery, and about all and foremost to Brendan Eich for developing our beloved and hated headache called JavaScript.
