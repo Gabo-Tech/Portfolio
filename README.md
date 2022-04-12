@@ -1,5 +1,9 @@
 # Gabriel Clemente's Personal Website
 
+
+![Web Mockup](Mockup.png)
+
+
 Hi everyone! This is my personal website where you can see some of my work as a web developer. It's been developed using HTML, CSS and a bit of JavaScript. 
 
 About the graphic design it's thought to make it easy to read. The chosen colors basically, #444, #fff, #000, are the ones that harm less the viewers eyes, so you can keep staring for hours to the page. Also the typography used it's the easiest to read and process for humans. 
