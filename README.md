@@ -19,7 +19,7 @@ This website it's been deployed and made available to the public thanks to Githu
 ## Built With
 
 * [JavaScript](https://www.javascript.com/) - The web programming languaje
-* [CSS](https://jquery.com/) - The library to write less while doing more
+* [jQuery](https://jquery.com/) - The library to write less while doing more
 * [HTML](https://html.com/) - Your favourite Markup Languaje
 * [CSS](https://www.css3.info/) - Used to stylize this awesome website
 * [Bootstrap](https://getbootstrap.com/) - The library that makes frontend developers out of backend guys
