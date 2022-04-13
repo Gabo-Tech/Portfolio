@@ -2,7 +2,9 @@ html {
   scroll-behavior: smooth;
 }
 
-
+#letraG{
+  font-family: "SansForgetica", "Helvetica Neue", Arial, sans-serif;
+}
 body {
   font-family: Georgia, "Helvetica Neue", Helvetica, "SansForgetica",
     Merriweather;
