@@ -35,11 +35,13 @@ This website it's been deployed and made available to the public thanks to Githu
 
 ## Authors
 
-* **Gabriel Clemente, aka Gabo, your favourite web developer.** - *Initial work* - [Gabo](https://github.com/gabriel19971029)
+* **Gabriel Clemente, aka Gabo, your favourite web developer.** - *Initial work* - [Gabo](https://github.com/Gabo-Tech)
 
 ## License
 
 This project is licensed under the Creative Commons Public Domain License - Feel free to copy the code, I did it too.
+
+
 <br>
 <p align="center">
   <img 
