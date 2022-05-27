@@ -1,4 +1,4 @@
-<h1 align="center"><strong># Gabriel Clemente's Personal Website</strong></h1>
+<h1 align="center"><strong>Gabriel Clemente's Personal Website</strong></h1>
 
 
 ![Web Mockup](Mockup.png)
