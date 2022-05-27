@@ -2,6 +2,7 @@
 
 
 ![Web Mockup](Mockup.png)
+<br>
 
 
 Hi everyone! This is my personal website where you can see some of my work as a web developer. It's been developed using HTML, CSS and a bit of JavaScript. 
@@ -39,7 +40,7 @@ This website it's been deployed and made available to the public thanks to Githu
 ## License
 
 This project is licensed under the Creative Commons Public Domain License - Feel free to copy the code, I did it too.
-
+<br>
 <p align="center">
   <img 
     width="400"
@@ -54,7 +55,7 @@ This project is licensed under the Creative Commons Public Domain License - Feel
     src="https://preview.redd.it/hwurhp7crzf81.png?auto=webp&s=3f230e79f360c9fbc9394e70ea72330391bf8f27"
     alt="This meme represents you"
   ></p>
-
+<br>
 ## Acknowledgments
 
 * Thanks to Twitter for making Bootstrap open source, and to John Resig for creating JQuery, and about all and foremost to Brendan Eich for developing our beloved and hated headache called JavaScript.
