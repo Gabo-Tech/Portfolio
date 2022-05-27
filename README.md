@@ -1,4 +1,4 @@
-# Gabriel Clemente's Personal Website
+<p align="center"># Gabriel Clemente's Personal Website</p>
 
 
 ![Web Mockup](Mockup.png)
@@ -40,7 +40,7 @@ This website it's been deployed and made available to the public thanks to Githu
 
 This project is licensed under the Creative Commons Public Domain License - Feel free to copy the code, I did it too.
 
-<center>![Creative Commons Public Domain License](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Public_Domain_Mark_button.svg/220px-Public_Domain_Mark_button.svg.png)</center>
+<p align="center">![Creative Commons Public Domain License](https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Public_Domain_Mark_button.svg/220px-Public_Domain_Mark_button.svg.png)</p>
 
 ![This meme represents you](https://preview.redd.it/hwurhp7crzf81.png?auto=webp&s=3f230e79f360c9fbc9394e70ea72330391bf8f27)
 
