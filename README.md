@@ -15,7 +15,7 @@ Well, just visit the website at [gabo.rocks](https://gabo.rocks) and enjoy!
 
 ### You want to own this website?
 
-On the other hand if you'd like to host this website on your local machine just clone this repository with ```git clone https://github.com/gabriel19971029/Portfolio.git```. just copy and paste that command on your terminal and start a local server. That's it.
+On the other hand if you'd like to host this website on your local machine just clone this repository with ```git clone https://github.com/Gabo-Tech/Portfolio.git```. just copy and paste that command on your terminal and start a local server. That's it.
 
 ## Deployment
 
