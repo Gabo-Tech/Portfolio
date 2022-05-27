@@ -43,13 +43,13 @@ This project is licensed under the Creative Commons Public Domain License - Feel
 <p align="center">
   <img 
     width="400"
-    height="150"
+    height="130"
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Public_Domain_Mark_button.svg/220px-Public_Domain_Mark_button.svg.png"
     alt="Creative Commons Public Domain License"
   ></p>
   <p align="center">
   <img 
-    width="700"
+    width="800"
     height="1000"
     src="https://preview.redd.it/hwurhp7crzf81.png?auto=webp&s=3f230e79f360c9fbc9394e70ea72330391bf8f27"
     alt="This meme represents you"
