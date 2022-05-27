@@ -162,6 +162,10 @@ footer {
   color: #fff !important;
 }
 
+.carousel-item{
+  height: 100vh-64px;
+}
+
 .carousel-indicators {
   z-index: 0;
 }
