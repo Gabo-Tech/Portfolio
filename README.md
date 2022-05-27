@@ -39,7 +39,7 @@ This website it's been deployed and made available to the public thanks to Githu
 ## License
 
 This project is licensed under the Creative Commons Public Domain License - Feel free to copy the code, I did it too.
-
+<br>
 <p align="center">
   <img 
     width="300"
@@ -47,6 +47,7 @@ This project is licensed under the Creative Commons Public Domain License - Feel
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Public_Domain_Mark_button.svg/220px-Public_Domain_Mark_button.svg.png"
     alt="Creative Commons Public Domain License"
   ></p>
+  <br>
 ![This meme represents you](https://preview.redd.it/hwurhp7crzf81.png?auto=webp&s=3f230e79f360c9fbc9394e70ea72330391bf8f27)
 
 ## Acknowledgments
