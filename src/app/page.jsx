@@ -18,7 +18,7 @@ const Homepage = () => {
   const textContainerRef = useRef(null);
   const controls = useAnimation();
 
-  const { texts } = textsData; // Extract texts from imported JSON data
+  const { texts } = textsData; 
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -72,7 +72,7 @@ const Homepage = () => {
     return () => {
       isMounted = false;
       document.removeEventListener("click", startFloatingAnimation);
-      controls.stop(); // Clean up animation on unmount
+      controls.stop();
     };
   }, [controls]);
 
@@ -111,7 +111,7 @@ const Homepage = () => {
         <div className="h-full flex flex-col lg:flex-row">
           {/* IMAGE CONTAINER */}
           <motion.div
-            className="relative overflow-hidden flex-1 flex items-center justify-end"
+            className="relative overflow-hidden flex-1 flex items-center justify-end min-h-[50vh] lg:min-h-screen"
             style={{ margin: "20px 0", zIndex: 10 }}
             animate={controls}
           >
@@ -145,7 +145,7 @@ const Homepage = () => {
           </motion.div>
           {/* TEXT CONTAINER */}
           <div
-            className="flex-1 flex items-center justify-center lg:justify-stretch px-4 sm:px-8 md:px-12 lg:pr-0 lg:pl-0"
+            className="flex-1 flex items-center justify-center lg:justify-stretch px-4 sm:px-8 md:px-12 lg:pr-0 lg:pl-0 min-h-[70vh] lg:min-h-screen"
             ref={textContainerRef}
           >
             <div className="w-full xl:w-1/2 flex flex-col gap-8 items-center xl:items-start justify-center text-center lg:text-left">

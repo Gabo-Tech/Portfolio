@@ -41,7 +41,7 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="h-[600vh] relative" ref={ref}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-48 items-center justify-center text-8xl text-center">
+        <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-48 items-center justify-center lg:text-8xl text-5xl text-center">
           <motion.div
             className="text-white font-extrabold"
             animate={{
@@ -74,7 +74,7 @@ const PortfolioPage = () => {
         </div>
       </div>
       <div className="w-screen h-screen flex flex-col gap-16 items-center text-white justify-center text-center bg-gradient-to-b from-blue-950 to-black">
-        <h1 className="text-8xl font-extrabold">Do you have a project?</h1>
+        <h1 className="lg:text-8xl text-5xl font-extrabold">Do you have a project?</h1>
         <div className="relative">
           <motion.svg
             animate={{ rotate: 360 }}

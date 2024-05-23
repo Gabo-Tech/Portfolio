@@ -76,6 +76,10 @@ const Navbar = () => {
     },
   };
 
+  const handleLinkClick = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-3 lg:px-5 xl:px-40 text-xl">
       {/* LINKS */}
@@ -160,7 +164,7 @@ const Navbar = () => {
                   <Link
                     href={link.url}
                     rel="noopener noreferrer"
-                    onClick={() => setOpen(false)}
+                    onClick={handleLinkClick}
                     aria-label={`Navigate to ${link.title}`}
                   >
                     {link.title}
