@@ -1,0 +1,322 @@
+[
+  {
+    "name": "React",
+    "hoverColor": "linear-gradient(90deg, #61DAFB 0%, #282C34 50%)",
+    "hoverTextColor": "#fff"
+  },
+  {
+    "name": "Angular",
+    "hoverColor": "#DD0031",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Svelte",
+    "hoverColor": "#FF3E00",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Solid.js",
+    "hoverColor": "#2C4F7C",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Next.js",
+    "hoverColor": "#000000",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Astro",
+    "hoverColor": "#FF7E33",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Tailwind CSS",
+    "hoverColor": "#38B2AC",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Bootstrap",
+    "hoverColor": "linear-gradient(90deg, #563d7c 0%, #7952b3 50%)",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Ant Design",
+    "hoverColor": "#0170FE",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Material UI",
+    "hoverColor": "#0081CB",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Metro",
+    "hoverColor": "#5A4FCF",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "React Native",
+    "hoverColor": "linear-gradient(90deg, #61dafb 0%, #282c34 50%)",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "CSS",
+    "hoverColor": "linear-gradient(90deg, #1572B6 0%, #33A9DC 50%)",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "HTML",
+    "hoverColor": "#E34F26",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Markdown",
+    "hoverColor": "#000000",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Sass",
+    "hoverColor": "linear-gradient(90deg, #CC6699 0%, #CF649A 50%)",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Grommet",
+    "hoverColor": "#865CD6",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Node.js",
+    "hoverColor": "#339933",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Express",
+    "hoverColor": "#000000",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "TypeORM",
+    "hoverColor": "#FF4088",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "PostgreSQL",
+    "hoverColor": "#336791",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Laravel",
+    "hoverColor": "#FF2D20",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "WordPress",
+    "hoverColor": "linear-gradient(90deg, #21759B 0%, #1E8CBE 50%)",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "PHP",
+    "hoverColor": "#777BB4",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Hetzner",
+    "hoverColor": "#DD0031",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Sequelize",
+    "hoverColor": "#52B0E7",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Spring Boot",
+    "hoverColor": "#6DB33F",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "GraphQL",
+    "hoverColor": "#E10098",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Apollo",
+    "hoverColor": "#311C87",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "JWT",
+    "hoverColor": "#000000",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Jest",
+    "hoverColor": "#C21325",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Cypress",
+    "hoverColor": "#17202C",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Playwright",
+    "hoverColor": "#0A0A0A",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Postman",
+    "hoverColor": "#FF6C37",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Firebase",
+    "hoverColor": "#039BE5",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "MongoDB",
+    "hoverColor": "#47A248",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Redux",
+    "hoverColor": "#764ABC",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Axios",
+    "hoverColor": "#5A29E4",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Swagger",
+    "hoverColor": "#85EA2D",
+    "hoverTextColor": "#000000"
+  },
+  {
+    "name": "Motoko",
+    "hoverColor": "#02B5B9",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "CI/CD",
+    "hoverColor": "#4CAF50",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Git",
+    "hoverColor": "#F05032",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Docker",
+    "hoverColor": "#2496ED",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Jira",
+    "hoverColor": "linear-gradient(90deg, #0052CC 0%, #2684FF 50%)",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Bitbucket",
+    "hoverColor": "linear-gradient(90deg, #0052CC 0%, #2684FF 50%)",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "GitHub Actions",
+    "hoverColor": "#2088FF",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "AWS",
+    "hoverColor": "linear-gradient(90deg, #FF9900 0%, #FF9900 50%, #FF9900 100%)",
+    "hoverTextColor": "#000000"
+  },
+  {
+    "name": "Vercel",
+    "hoverColor": "#000000",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "DigitalOcean",
+    "hoverColor": "#008BC4",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Heroku",
+    "hoverColor": "#430098",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Netlify",
+    "hoverColor": "#00C7B7",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Expo",
+    "hoverColor": "#1C1E24",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Tauri",
+    "hoverColor": "#FFC107",
+    "hoverTextColor": "#000000"
+  },
+  {
+    "name": "Recoil",
+    "hoverColor": "#3578E5",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Zustand",
+    "hoverColor": "#E91E63",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Vite",
+    "hoverColor": "#646CFF",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Vitest",
+    "hoverColor": "#646CFF",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Bun",
+    "hoverColor": "#000000",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "MySQL",
+    "hoverColor": "#4479A1",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "MariaDB",
+    "hoverColor": "#003545",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Mocha",
+    "hoverColor": "#8D6748",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "NPM",
+    "hoverColor": "#CB3837",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Yarn",
+    "hoverColor": "#2C8EBB",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Webpack",
+    "hoverColor": "#8DD6F9",
+    "hoverTextColor": "#000000"
+  }
+]

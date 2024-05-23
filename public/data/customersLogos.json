@@ -1,0 +1,58 @@
+[
+  {
+    "href": "https://exa.monster/",
+    "src": "images/exaMonster.svg",
+    "alt": "Exa Monster Logo",
+    "width": 100,
+    "height": 20
+  },
+  {
+    "href": "https://analyticshand.com/",
+    "src": "images/analyticsHand.svg",
+    "alt": "Analytics Hand Logo",
+    "width": 100,
+    "height": 20
+  },
+  {
+    "href": "https://futuria.es/",
+    "src": "images/futuria.svg",
+    "alt": "Futuria Logo",
+    "width": 100,
+    "height": 20
+  },
+  {
+    "href": "https://beyondbmi.ie/",
+    "src": "images/bbmi.svg",
+    "alt": "Beyondbmi Logo",
+    "width": 100,
+    "height": 20
+  },
+  {
+    "href": "https://imalevante.es/",
+    "src": "images/imalevante.svg",
+    "alt": "Ima Levante Logo",
+    "width": 100,
+    "height": 20
+  },
+  {
+    "href": "https://estacavalencia.es/",
+    "src": "images/lds.svg",
+    "alt": "Church of JesusChrist of Latter Day Saints Logo",
+    "width": 100,
+    "height": 20
+  },
+  {
+    "href": "https://tronando.com/",
+    "src": "images/tronando.svg",
+    "alt": "Tronando Logo",
+    "width": 100,
+    "height": 20
+  },
+  {
+    "href": "https://rentsby.com/",
+    "src": "images/RentsBy.svg",
+    "alt": "RentsBy Logo",
+    "width": 100,
+    "height": 20
+  }
+]

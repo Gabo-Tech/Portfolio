@@ -1,0 +1,20 @@
+{
+  "menuLinks": [
+    { "url": "/", "title": "Home" },
+    { "url": "/about", "title": "About" },
+    { "url": "/portfolio", "title": "Portfolio" },
+    { "url": "/contact", "title": "Contact" }
+  ],
+  "socialLinks": [
+    {
+      "href": "https://github.com/Gabo-Tech",
+      "src": "/github.png",
+      "alt": "Github Logo"
+    },
+    {
+      "href": "https://www.linkedin.com/in/bugslayer/",
+      "src": "/linkedin.png",
+      "alt": "LinkedIn Logo"
+    }
+  ]
+}

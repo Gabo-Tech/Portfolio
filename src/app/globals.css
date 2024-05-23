@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  cursor: none !important;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #050908;
+}
+
+.circle {
+  --circle-size: 40px;
+  position: fixed;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border: 10px solid rgba(0, 0, 0, 1);
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2 * -1);
+  left: calc(var(--circle-size) / 2 * -1);
+  pointer-events: none;
+  z-index: 1000;
+  filter: invert(100%);
+  mix-blend-mode: difference;
+}
+
+::selection {
+  background-color: #ffffff;
+  filter: invert(100%);
+  color: #000000;
+}
+
+::-webkit-selection {
+  background-color: #ffffff;
+  color: #000000;
+  filter: invert(100%);
+}
+
+::-moz-selection {
+  background-color: #ffffff;
+  color: #000000;
+  filter: invert(100%);
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.audio-controls button {
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.audio-controls input[type="range"] {
+  width: 150px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .circle {
+    display: none;
+  }
+}

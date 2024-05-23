@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Full TypeScript Stack Engineer",
+    "description": "As a Full-Stack TypeScript Engineer at Beyondbmi, I spearhead the development of an advanced online weight loss clinic platform. Utilizing Angular and Bootstrap for the front-end and Express with TypeORM for the back-end, I ensure consistent and reliable performance across the stack with TypeScript. My role involves implementing HIPAA-compliant encryption protocols to safeguard patient data, developing an Android application with React Native, and deploying AWS Lambda functions and AWS Cognito for secure authentication. My contributions have enhanced user experience, data security, and the platform's scalability.",
+    "date": "Nov 2022 - Present",
+    "company": "Beyondbmi"
+  },
+  {
+    "title": "Software Engineer",
+    "description": "At GABO, I collaborate on a variety of projects, focusing on developing e-commerce sites, corporate websites, and online presences for small businesses. My work emphasizes Search Engine Optimization (SEO) to improve visibility and engagement. Using JavaScript frameworks, WordPress, PHP, and other tools, I deliver tailored, optimized web solutions. My role has honed my versatility in web development and client relationship management, ensuring long-term client satisfaction and successful project outcomes.",
+    "date": "Nov 2022 - Present",
+    "company": "GABO"
+  },
+  {
+    "title": "User Interface Engineer",
+    "description": "During my internship at talenTeal, I led the comprehensive redesign of the company’s landing page to enhance user experience (UX) and user interface (UI). My focus was on creating an intuitive and navigable website, resulting in improved accessibility and user engagement. This project demonstrated my ability to apply front-end development skills effectively to achieve significant improvements in digital interaction and user satisfaction.",
+    "date": "Jul 2022 - Aug 2022",
+    "company": "talenTeal"
+  },
+  {
+    "title": "Technical Support Specialist",
+    "description": "At Lujo Network, I enhanced the company’s security infrastructure by implementing firewalls and establishing robust backup systems. I also managed databases, developed website segments, and conducted security training sessions. My efforts improved the company’s digital security framework and online presence, showcasing my ability to handle both technical support and development tasks effectively.",
+    "date": "Feb 2022 - Mar 2022",
+    "company": "Lujo Network"
+  },
+  {
+    "title": "Freelancer",
+    "description": "I provided web solutions, applying a range of technologies to address client requirements.",
+    "date": "Feb 2021 - Nov 2022"
+  }
+]
