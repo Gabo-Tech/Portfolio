@@ -3,6 +3,8 @@ import "./globals.css";
 import TransitionProvider from "@/components/transitionProvider";
 import CustomCursor from "@/components/customCursor";
 import BackgroundMusic from "@/components/backgroundMusic";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +32,8 @@ export default function RootLayout({ children }) {
         <CustomCursor />
         <TransitionProvider>{children}</TransitionProvider>
         <BackgroundMusic />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
