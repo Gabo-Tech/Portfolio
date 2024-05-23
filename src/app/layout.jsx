@@ -9,9 +9,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Gabriel Clemente Ramos - Full-Stack JavaScript Software Engineer",
+  title: "Gabriel Clemente - Full-Stack JavaScript Software Engineer",
   description:
-    "Gabriel Clemente Ramos - Full-Stack JavaScript Software Engineer specializing in developing innovative, user-friendly, and scalable web applications. Experienced with MERN Stack, Angular, TypeScript, and more. Explore my projects, skills, and experience. Contact me to discuss how I can help bring your digital projects to life.",
+    "Gabriel Clemente - Full-Stack JavaScript Software Engineer specializing in developing innovative, user-friendly, and scalable web applications. Contact me now!",
 };
 
 /**
@@ -25,7 +25,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
       </head>
       <body className={inter.className}>
