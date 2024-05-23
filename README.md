@@ -1,4 +1,4 @@
-```markdown
+````markdown
 # Gabriel Clemente Portfolio
 
 This is the portfolio website of Gabriel Clemente, a Full-Stack JavaScript/TypeScript Software Engineer. The site showcases projects, skills, and experience, and provides a way to contact Gabriel.
@@ -24,21 +24,21 @@ These instructions will help you set up and run the project on your local machin
 ### Installation
 
 1. Clone the repository:
-    ```sh
-    git clone https://github.com/your-username/gabriel-clemente-portfolio.git
-    ```
+   ```sh
+   git clone https://github.com/your-username/gabriel-clemente-portfolio.git
+   ```
 2. Navigate to the project directory:
-    ```sh
-    cd gabriel-clemente-portfolio
-    ```
+   ```sh
+   cd gabriel-clemente-portfolio
+   ```
 3. Install the dependencies:
-    ```sh
-    npm install
-    ```
-    or
-    ```sh
-    yarn install
-    ```
+   ```sh
+   npm install
+   ```
+   or
+   ```sh
+   yarn install
+   ```
 
 ## Running the Application
 
@@ -47,6 +47,7 @@ To run the application in development mode, use the following command:
 ```sh
 npm run dev
 ```
+````
 
 or
 
@@ -88,4 +89,7 @@ The application will be available at `http://localhost:3000`.
 ## License
 
 This project is licensed under the MIT License.
+
+```
+
 ```

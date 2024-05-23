@@ -20,7 +20,10 @@ const TimelineItem = ({
   alternate,
   isInView,
 }) => (
-  <div className="flex flex-col md:flex-row justify-between mb-8" role="listitem">
+  <div
+    className="flex flex-col md:flex-row justify-between mb-8"
+    role="listitem"
+  >
     <motion.div
       initial={{ x: alternate ? "700px" : "-700px" }}
       animate={isInView ? { x: "0" } : {}}

@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import TypingAnimation from "../components/typingAnimation";
 import Link from "next/link";
 import Loader from "../components/loader";
-import textsData from "../../public/data/typingTexts.json"; 
+import textsData from "../../public/data/typingTexts.json";
 
 /**
  * Homepage Component

@@ -48,19 +48,19 @@ const AboutPage = () => {
             />
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             <p className="text-lg">
-              Hello! I'm Gabriel Clemente, a passionate and dedicated Full-Stack
+              Hello! I&#39;m Gabriel Clemente, a passionate and dedicated Full-Stack
               JavaScript Software Engineer with a strong background in both
               front-end and back-end development. My professional journey has
               been defined by a relentless pursuit of excellence in web
               development, coupled with a drive to continually learn and master
               new technologies. I am a firm believer in the power of continuous
-              learning and adaptability. If I don't know something, I make it a
+              learning and adaptability. If I don&#39;t know something, I make it a
               point to learn it. My approach to software engineering is rooted
               in a passion for creating efficient, scalable, and secure web
               applications. I am always excited to take on new challenges and
               leverage my skills to deliver exceptional results. Feel free to
               explore my GitHub profile to see my projects and contributions.
-              You can reach out to me at sendmessage@gabo.email. Let's connect
+              You can reach out to me at sendmessage@gabo.email. Let&#39;s connect
               and create something amazing together!
             </p>
             <blockquote className="italic">
@@ -68,7 +68,7 @@ const AboutPage = () => {
               programmers write code that humans can understand. – Martin Fowler
             </blockquote>
             <blockquote className="italic">
-              If I don't know it I'll learn it – Gabriel Clemente
+              If I don&#39;t know it I&#39;ll learn it – Gabriel Clemente
             </blockquote>
             <div className="self-end">
               <SignatureSvg />

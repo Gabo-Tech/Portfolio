@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -21,14 +20,14 @@ const TypingAnimation = ({ texts }) => {
     }
 
     if (!isDeleting && displayedText === currentText) {
-      setTimeout(() => setIsDeleting(true), 3000); 
+      setTimeout(() => setIsDeleting(true), 3000);
     } else if (isDeleting && displayedText === "") {
       setIsDeleting(false);
       setCurrentTextIndex((prev) => (prev + 1) % texts.length);
     } else {
       setTimeout(() => {
         setDisplayedText(
-          currentText.slice(0, displayedText.length + (isDeleting ? -1 : 1))
+          currentText.slice(0, displayedText.length + (isDeleting ? -1 : 1)),
         );
       }, typeSpeed);
     }

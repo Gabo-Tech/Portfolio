@@ -1,5 +1,5 @@
-'use client';
-import { useEffect, useRef, useState } from 'react';
+"use client";
+import { useEffect, useRef, useState } from "react";
 
 const BackgroundMusic = () => {
   const audioRef = useRef(null);
@@ -11,18 +11,18 @@ const BackgroundMusic = () => {
       if (audioRef.current) {
         audioRef.current.play();
         setIsPlaying(true);
-        document.removeEventListener('click', startPlaying);
+        document.removeEventListener("click", startPlaying);
       }
     };
 
     if (audioRef.current) {
       audioRef.current.play().catch(() => {
-        document.addEventListener('click', startPlaying);
+        document.addEventListener("click", startPlaying);
       });
     }
 
     return () => {
-      document.removeEventListener('click', startPlaying);
+      document.removeEventListener("click", startPlaying);
     };
   }, []);
 
@@ -48,12 +48,15 @@ const BackgroundMusic = () => {
   return (
     <div>
       <audio ref={audioRef} loop>
-        <source src="/Retolofi Chill Blue Lo-Fi (Sadok8).aac" type="audio/aac" />
+        <source
+          src="/Retolofi Chill Blue Lo-Fi (Sadok8).aac"
+          type="audio/aac"
+        />
         Your browser does not support the audio element.
       </audio>
       <div className="audio-controls">
         <button onClick={togglePlay}>
-          {isPlaying ? 'Pause Music' : 'Play Music'}
+          {isPlaying ? "Pause Music" : "Play Music"}
         </button>
         <input
           type="range"

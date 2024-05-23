@@ -14,8 +14,10 @@ const useFitText = (minFontSize = 20, maxFontSize = 120) => {
   useEffect(() => {
     const resizeText = () => {
       const parent = textRef.current.parentElement;
-      const { width: parentWidth, height: parentHeight } = parent.getBoundingClientRect();
-      const { width: textWidth, height: textHeight } = textRef.current.getBoundingClientRect();
+      const { width: parentWidth, height: parentHeight } =
+        parent.getBoundingClientRect();
+      const { width: textWidth, height: textHeight } =
+        textRef.current.getBoundingClientRect();
 
       let newFontSize = fontSize;
       if (textWidth > parentWidth || textHeight > parentHeight) {
