@@ -18,12 +18,12 @@
     "skills": [
       {
         "name": "JavaScript",
-        "hoverColor": "#f59e0b",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
         "hoverTextColor": "#000000"
       },
       {
         "name": "Angular",
-        "hoverColor": "#dd0031",
+        "hoverColor": "linear-gradient(45deg, #dd1b16, #c3002f)",
         "hoverTextColor": "#ffffff"
       },
       {
@@ -48,7 +48,7 @@
       },
       {
         "name": "AWS",
-        "hoverColor": "#ff9900",
+        "hoverColor": "linear-gradient(45deg, #ff9900, #ff5c00)",
         "hoverTextColor": "#000000"
       },
       {
@@ -78,7 +78,7 @@
       },
       {
         "name": "Docker",
-        "hoverColor": "#2496ed",
+        "hoverColor": "linear-gradient(45deg, #2496ed, #0db7ed)",
         "hoverTextColor": "#ffffff"
       },
       {
@@ -95,6 +95,11 @@
         "name": "Git",
         "hoverColor": "#f05032",
         "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Stripe",
+        "hoverColor": "#6772e5",
+        "hoverTextColor": "#ffffff"
       }
     ]
   },
@@ -108,7 +113,7 @@
     "skills": [
       {
         "name": "JavaScript",
-        "hoverColor": "#f59e0b",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
         "hoverTextColor": "#000000"
       },
       {
@@ -153,7 +158,7 @@
       },
       {
         "name": "GitHub",
-        "hoverColor": "#181717",
+        "hoverColor": "linear-gradient(45deg, #181717, #000000)",
         "hoverTextColor": "#ffffff"
       }
     ]
@@ -168,7 +173,7 @@
     "skills": [
       {
         "name": "JavaScript",
-        "hoverColor": "#f59e0b",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
         "hoverTextColor": "#000000"
       },
       {
@@ -203,7 +208,7 @@
       },
       {
         "name": "GitHub",
-        "hoverColor": "#181717",
+        "hoverColor": "linear-gradient(45deg, #181717, #000000)",
         "hoverTextColor": "#ffffff"
       }
     ]
@@ -218,7 +223,7 @@
     "skills": [
       {
         "name": "JavaScript",
-        "hoverColor": "#f59e0b",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
         "hoverTextColor": "#000000"
       },
       {
@@ -279,6 +284,11 @@
       {
         "name": "SaaS",
         "hoverColor": "#22c55e",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Stripe",
+        "hoverColor": "#6772e5",
         "hoverTextColor": "#ffffff"
       }
     ]
@@ -398,7 +408,7 @@
       },
       {
         "name": "JavaScript",
-        "hoverColor": "#f59e0b",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
         "hoverTextColor": "#000000"
       }
     ]
@@ -423,7 +433,7 @@
       },
       {
         "name": "JavaScript",
-        "hoverColor": "#f59e0b",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
         "hoverTextColor": "#000000"
       }
     ]
@@ -508,7 +518,7 @@
     "skills": [
       {
         "name": "JavaScript",
-        "hoverColor": "#f59e0b",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
         "hoverTextColor": "#000000"
       },
       {
@@ -553,7 +563,7 @@
       },
       {
         "name": "JavaScript",
-        "hoverColor": "#f59e0b",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
         "hoverTextColor": "#000000"
       },
       {
@@ -578,7 +588,7 @@
       },
       {
         "name": "JavaScript",
-        "hoverColor": "#f59e0b",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
         "hoverTextColor": "#000000"
       },
       {
