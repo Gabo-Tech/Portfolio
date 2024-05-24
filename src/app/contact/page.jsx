@@ -103,12 +103,12 @@ const ContactPage = () => {
 
   return (
     <motion.div
-      className="relative min-h-screen bg-gradient-to-b from-blue-950 to-red-950"
+      className="relative min-h-screen bg-gradient-to-b from-blue-950 to-red-950 h-auto"
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="flex flex-col min-h-screen text-white font-extrabold lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 items-center">
+      <div className="flex flex-col h-auto min-h-screen text-white font-extrabold lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 items-center">
         {/* TEXT CONTAINER */}
         <div className="flex-grow lg:flex-grow-0 lg:w-1/2 flex flex-col md:flex-row items-center justify-center text-6xl">
           <div>{memoizedText}</div>

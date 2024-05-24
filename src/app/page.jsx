@@ -99,7 +99,7 @@ const Homepage = () => {
     <>
       {loading && <Loader />}
       <motion.div
-        className="min-h-screen w-screen text-white bg-gradient-to-b from-blue-950 to-red-950"
+        className="min-h-screen w-screen text-white bg-gradient-to-b from-blue-950 to-red-950 h-auto"
         initial={{ x: "-300vw" }}
         animate={{ x: "0%" }}
         transition={{ duration: 1 }}
@@ -113,7 +113,7 @@ const Homepage = () => {
             animate={controls}
           >
             {/* Bottom Image (hero.png) */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 h-auto">
               <Image
                 src="/hero.png"
                 alt="Gabriel Sketch Portrait"
@@ -126,7 +126,7 @@ const Homepage = () => {
             </div>
             {/* Top Image (hero1.png) */}
             <div
-              className="absolute inset-0"
+              className="absolute inset-0 h-auto"
               style={{
                 clipPath: `inset(0px 0px ${windowHeight - mouseY - 20}px 0px)`,
               }}
