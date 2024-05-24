@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 
 const TransitionProvider = dynamic(
-  () => import("@/components/transitionProvider/transitionProvider")
+  () => import("@/components/transitionProvider/transitionProvider"),
 );
 const CustomCursor = dynamic(() => import("@/components/customCursor"), {
   ssr: false,
@@ -13,11 +13,11 @@ const BackgroundMusic = dynamic(() => import("@/components/backgroundMusic"), {
 });
 const Analytics = dynamic(
   () => import("@vercel/analytics/react").then((mod) => mod.Analytics),
-  { ssr: false }
+  { ssr: false },
 );
 const SpeedInsights = dynamic(
   () => import("@vercel/speed-insights/next").then((mod) => mod.SpeedInsights),
-  { ssr: false }
+  { ssr: false },
 );
 
 const inter = Inter({ subsets: ["latin"] });

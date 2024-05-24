@@ -29,7 +29,7 @@ const PortfolioItem = ({
       item.id % 2 === 0
         ? "bg-gradient-to-b from-red-950 to-blue-950"
         : "bg-gradient-to-t from-blue-950 to-red-950",
-    [item.id]
+    [item.id],
   );
 
   const initialY = useMemo(() => (item.id % 2 === 0 ? -300 : 300), [item.id]);

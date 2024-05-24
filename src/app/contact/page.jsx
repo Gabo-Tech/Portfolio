@@ -40,7 +40,7 @@ const ContactPage = () => {
     setIsFormValid(
       user_message.trim().length > 0 &&
         user_name.trim().length > 0 &&
-        isValidEmail(user_email)
+        isValidEmail(user_email),
     );
   }, [formData]);
 
@@ -62,7 +62,7 @@ const ContactPage = () => {
           process.env.NEXT_PUBLIC_SERVICE_ID,
           process.env.NEXT_PUBLIC_TEMPLATE_ID,
           form.current,
-          process.env.NEXT_PUBLIC_PUBLIC_KEY
+          process.env.NEXT_PUBLIC_PUBLIC_KEY,
         )
         .then(
           () => {
@@ -76,10 +76,10 @@ const ContactPage = () => {
           },
           () => {
             setError(true);
-          }
+          },
         );
     },
-    [isFormValid]
+    [isFormValid],
   );
 
   const memoizedText = useMemo(
@@ -98,7 +98,7 @@ const ContactPage = () => {
           {letter}
         </motion.span>
       )),
-    [text]
+    [text],
   );
 
   return (

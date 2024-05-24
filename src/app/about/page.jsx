@@ -36,7 +36,7 @@ const AboutPage = () => {
           }}
         </HoverSkill>
       )),
-    []
+    [],
   );
 
   return (

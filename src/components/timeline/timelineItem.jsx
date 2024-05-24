@@ -35,7 +35,7 @@ const TimelineItem = ({
         )}
       </div>
     ),
-    [title, description, date, company]
+    [title, description, date, company],
   );
 
   const initialPosition = useMemo(
@@ -44,21 +44,21 @@ const TimelineItem = ({
       center: "-700px",
       right: alternate ? "-700px" : "700px",
     }),
-    [alternate]
+    [alternate],
   );
 
   const animatePosition = useMemo(
     () => ({
       x: "0",
     }),
-    []
+    [],
   );
 
   const transitionSettings = useMemo(
     () => ({
       delay: alternate ? 0.9 : 0.2,
     }),
-    [alternate]
+    [alternate],
   );
 
   return (

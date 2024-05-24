@@ -16,11 +16,11 @@ const PortfolioPage = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
   const [activeTabs, setActiveTabs] = useState(() =>
-    items.reduce((acc, item) => ({ ...acc, [item.id]: "skills" }), {})
+    items.reduce((acc, item) => ({ ...acc, [item.id]: "skills" }), {}),
   );
 
   const [readMore, setReadMore] = useState(() =>
-    items.reduce((acc, item) => ({ ...acc, [item.id]: false }), {})
+    items.reduce((acc, item) => ({ ...acc, [item.id]: false }), {}),
   );
 
   const handleTabClick = useCallback((id, tab) => {
@@ -46,7 +46,7 @@ const PortfolioPage = () => {
           onReadMoreClick={handleReadMoreClick}
         />
       )),
-    [activeTabs, readMore, handleTabClick, handleReadMoreClick]
+    [activeTabs, readMore, handleTabClick, handleReadMoreClick],
   );
 
   return (

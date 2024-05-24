@@ -48,7 +48,7 @@ const CustomCursor = () => {
       previousMouse.current.y = y;
       const mouseVelocity = Math.min(
         Math.sqrt(deltaMouseX ** 2 + deltaMouseY ** 2) * 4,
-        150
+        150,
       );
       const scaleValue = (mouseVelocity / 150) * 0.5;
       currentScale.current += (scaleValue - currentScale.current) * speed;

@@ -12,7 +12,10 @@ const TypingAnimation = ({ texts }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const currentText = useMemo(() => texts[currentTextIndex], [texts, currentTextIndex]);
+  const currentText = useMemo(
+    () => texts[currentTextIndex],
+    [texts, currentTextIndex],
+  );
 
   useEffect(() => {
     let typeSpeed = isDeleting ? 75 : 150;
@@ -25,7 +28,7 @@ const TypingAnimation = ({ texts }) => {
     } else {
       setTimeout(() => {
         setDisplayedText(
-          currentText.slice(0, displayedText.length + (isDeleting ? -1 : 1))
+          currentText.slice(0, displayedText.length + (isDeleting ? -1 : 1)),
         );
       }, typeSpeed);
     }

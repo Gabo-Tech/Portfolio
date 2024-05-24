@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import TypingAnimation from "../components/typingAnimation";
