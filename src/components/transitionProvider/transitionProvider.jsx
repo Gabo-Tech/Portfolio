@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence } from "framer-motion";
-import Navbar from "./navbar/navbar";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import Navbar from "../navbar/navbar";
 import { usePathname } from "next/navigation";
+import "./transitions.css";
 
 /**
  * TransitionProvider Component
@@ -18,12 +18,11 @@ const TransitionProvider = ({ children }) => {
 
   useEffect(() => {
     if (pathName === "/") {
-      setFirstVisit(false); // Set to false after the first visit to the home page
+      setFirstVisit(false);
     }
   }, [pathName]);
 
-  // Set the display name based on the current pathname
-  let displayName =
+  const displayName =
     pathName === "/"
       ? "Home"
       : pathName.charAt(1).toUpperCase() + pathName.substring(2);
@@ -38,13 +37,13 @@ const TransitionProvider = ({ children }) => {
         {!(pathName === "/" && firstVisit) && (
           <>
             <motion.div
-              className="h-screen w-screen fixed bg-black rounded-r-[100px] z-40"
+              className="transition-overlay-left"
               animate={{ width: "0vw" }}
               exit={{ width: "100vw" }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             />
             <motion.div
-              className="fixed m-auto top-0 bottom-0 left-0 right-0 text-white text-3xl lg:text-8xl cursor-default z-50 w-fit h-fit font-extrabold underline"
+              className="transition-text"
               initial={{ opacity: 1 }}
               animate={{ opacity: 0 }}
               exit={{ opacity: 0 }}
@@ -54,7 +53,7 @@ const TransitionProvider = ({ children }) => {
               {displayName}
             </motion.div>
             <motion.div
-              className="h-screen w-screen fixed bg-black rounded-l-[100px] right-0 z-30"
+              className="transition-overlay-right"
               initial={{ width: "100vw" }}
               animate={{ width: "0vw", transition: { delay: 0.5 } }}
             />

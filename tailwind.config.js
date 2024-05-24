@@ -32,7 +32,7 @@ module.exports = {
     function ({ addUtilities }) {
       const newUtilities = {
         ".text-opacity": {
-          opacity: 0.5, // Default opacity
+          opacity: 0.5,
         },
         ".text-opacity-50": {
           opacity: 0.5,
@@ -40,10 +40,9 @@ module.exports = {
         ".text-opacity-0": {
           opacity: 0,
         },
-        // Add more opacity levels as needed
       };
 
-      addUtilities(newUtilities);
+      addUtilities(newUtilities, ["responsive", "hover"]);
     },
   ],
 };

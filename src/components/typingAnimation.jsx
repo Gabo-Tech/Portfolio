@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 
 /**
  * TypingAnimation Component
@@ -12,12 +12,10 @@ const TypingAnimation = ({ texts }) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
+  const currentText = useMemo(() => texts[currentTextIndex], [texts, currentTextIndex]);
+
   useEffect(() => {
-    const currentText = texts[currentTextIndex];
-    let typeSpeed = 150;
-    if (isDeleting) {
-      typeSpeed /= 2;
-    }
+    let typeSpeed = isDeleting ? 75 : 150;
 
     if (!isDeleting && displayedText === currentText) {
       setTimeout(() => setIsDeleting(true), 3000);
@@ -27,11 +25,11 @@ const TypingAnimation = ({ texts }) => {
     } else {
       setTimeout(() => {
         setDisplayedText(
-          currentText.slice(0, displayedText.length + (isDeleting ? -1 : 1)),
+          currentText.slice(0, displayedText.length + (isDeleting ? -1 : 1))
         );
       }, typeSpeed);
     }
-  }, [displayedText, isDeleting, currentTextIndex, texts]);
+  }, [displayedText, isDeleting, currentText, texts]);
 
   return (
     <h1 className="text-4xl md:text-6xl font-extrabold" aria-live="polite">

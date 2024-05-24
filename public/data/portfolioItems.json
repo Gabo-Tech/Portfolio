@@ -107,7 +107,7 @@
     "id": 2,
     "color": "from-blue-300 to-violet-300",
     "title": "GABO",
-    "desc": "The GABO Landing Page is a modern, visually appealing website built using the Astro framework, leveraging Solid.js for reactive UI components, Tailwind CSS for efficient styling, and Vercel for scalable hosting. This project integrates Better SQLite3 for lightweight database management, Gray Matter and Marked for markdown content handling, and Next.js with React for dynamic, interactive components. Featuring fast load times, smooth user experience, and improved SEO, the site employs Vercel Analytics and Speed Insights for monitoring performance. Key technologies include Astro, Solid.js, Tailwind CSS, Vercel, Better SQLite3, Gray Matter, Marked, Next.js, React, Git, and GitHub.",
+    "desc": "The GABO Landing Page is a modern, visually appealing website built using the Astro framework, leveraging Solid.js for reactive UI components, Tailwind CSS for efficient styling, and Vercel for scalable hosting. This project integrates Better SQLite3 for lightweight database management, Gray Matter and Marked for markdown content handling, and Next.js with React for dynamic, interactive components. Featuring fast load times, smooth user experience, and improved SEO, the site employs Vercel Analytics and Speed Insights for monitoring performance. Key technologies include Astro, Solid.js, Tailwind CSS, Vercel, Next.js, React, Git, and GitHub.",
     "img": "/images/gabollcimg.png",
     "link": "https://gabo.solutions",
     "skills": [

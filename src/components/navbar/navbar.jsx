@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import menuData from "../../../public/data/navbarData.json";
-import { useState } from "react";
+import { useState, useMemo, useCallback } from "react";
 import NavLink from "./navLink";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -14,36 +14,22 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const topVariants = {
-    closed: {
-      rotate: 0,
-    },
-    opened: {
-      rotate: 45,
-    },
+    closed: { rotate: 0 },
+    opened: { rotate: 45 },
   };
 
   const centerVariants = {
-    closed: {
-      opacity: 1,
-    },
-    opened: {
-      opacity: 0,
-    },
+    closed: { opacity: 1 },
+    opened: { opacity: 0 },
   };
 
   const bottomVariants = {
-    closed: {
-      rotate: 0,
-    },
-    opened: {
-      rotate: -45,
-    },
+    closed: { rotate: 0 },
+    opened: { rotate: -45 },
   };
 
   const listVariants = {
-    closed: {
-      x: "100vw",
-    },
+    closed: { x: "100vw" },
     opened: {
       x: 0,
       transition: {
@@ -62,32 +48,45 @@ const Navbar = () => {
   };
 
   const listItemVariants = {
-    closed: {
-      x: -10,
-      opacity: 0,
-    },
-    opened: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: {
-      x: -10,
-      opacity: 0,
-    },
+    closed: { x: -10, opacity: 0 },
+    opened: { x: 0, opacity: 1 },
+    exit: { x: -10, opacity: 0 },
   };
 
-  const handleLinkClick = () => {
+  const handleLinkClick = useCallback(() => {
     setOpen(false);
-  };
+  }, []);
+
+  const memoizedMenuLinks = useMemo(() => {
+    return menuData.menuLinks.map((link) => (
+      <NavLink link={link} key={link.title} />
+    ));
+  }, []);
+
+  const memoizedSocialLinks = useMemo(() => {
+    return menuData.socialLinks.map((link, index) => (
+      <Link
+        href={link.href}
+        key={index}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Link to ${link.alt}`}
+      >
+        <Image
+          src={link.src}
+          alt={link.alt}
+          width={24}
+          height={24}
+          loading="lazy"
+        />
+      </Link>
+    ));
+  }, []);
 
   return (
     <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-3 lg:px-5 xl:px-40 text-xl">
       {/* LINKS */}
-      <div className="hidden md:flex gap-4 w-1/3">
-        {menuData.menuLinks.map((link) => (
-          <NavLink link={link} key={link.title} />
-        ))}
-      </div>
+      <div className="hidden md:flex gap-4 w-1/3">{memoizedMenuLinks}</div>
       {/* LOGO */}
       <div className="md:hidden lg:flex xl:justify-center">
         <Link
@@ -104,17 +103,7 @@ const Navbar = () => {
       {/* SOCIAL */}
       <div className="hidden md:flex gap-4 w-1/3 justify-end">
         <div className="bg-white md:flex gap-4 border-4 rounded-tr-sm rounded-br-sm rounded-full">
-          {menuData.socialLinks.map((link, index) => (
-            <Link
-              href={link.href}
-              key={index}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Link to ${link.alt}`}
-            >
-              <Image src={link.src} alt={link.alt} width={24} height={24} />
-            </Link>
-          ))}
+          {memoizedSocialLinks}
         </div>
       </div>
       {/* RESPONSIVE MENU */}
@@ -130,17 +119,17 @@ const Navbar = () => {
             variants={topVariants}
             animate={open ? "opened" : "closed"}
             className="w-10 h-1 bg-white rounded origin-left"
-          ></motion.div>
+          />
           <motion.div
             variants={centerVariants}
             animate={open ? "opened" : "closed"}
             className="w-10 h-1 bg-white rounded"
-          ></motion.div>
+          />
           <motion.div
             variants={bottomVariants}
             animate={open ? "opened" : "closed"}
             className="w-10 h-1 bg-white rounded origin-left"
-          ></motion.div>
+          />
         </button>
         {/* MENU LIST */}
         <AnimatePresence>
@@ -155,21 +144,21 @@ const Navbar = () => {
               role="menu"
             >
               {menuData.menuLinks.map((link) => (
-                <motion.div
-                  variants={listItemVariants}
-                  className="hover:underline"
-                  key={link.title}
-                  role="menuitem"
+                <Link
+                  href={link.url}
+                  rel="noopener noreferrer"
+                  onClick={handleLinkClick}
+                  aria-label={`Navigate to ${link.title}`}
                 >
-                  <Link
-                    href={link.url}
-                    rel="noopener noreferrer"
-                    onClick={handleLinkClick}
-                    aria-label={`Navigate to ${link.title}`}
+                  <motion.div
+                    variants={listItemVariants}
+                    className="hover:underline"
+                    key={link.title}
+                    role="menuitem"
                   >
                     {link.title}
-                  </Link>
-                </motion.div>
+                  </motion.div>
+                </Link>
               ))}
             </motion.div>
           )}

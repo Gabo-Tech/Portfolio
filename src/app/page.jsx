@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import TypingAnimation from "../components/typingAnimation";
@@ -17,8 +17,7 @@ const Homepage = () => {
   const [loading, setLoading] = useState(true);
   const textContainerRef = useRef(null);
   const controls = useAnimation();
-
-  const { texts } = textsData; 
+  const { texts } = textsData;
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -81,10 +80,8 @@ const Homepage = () => {
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
     } else if (elem.webkitRequestFullscreen) {
-      /* Safari */
       elem.webkitRequestFullscreen();
     } else if (elem.msRequestFullscreen) {
-      /* IE11 */
       elem.msRequestFullscreen();
     }
   };
@@ -123,6 +120,7 @@ const Homepage = () => {
                 fill
                 style={{ objectFit: "contain" }}
                 className="object-contain"
+                priority
                 onLoad={() => setLoading(false)}
               />
             </div>
@@ -139,6 +137,7 @@ const Homepage = () => {
                 fill
                 style={{ objectFit: "contain" }}
                 className="object-contain"
+                priority
                 onLoad={() => setLoading(false)}
               />
             </div>

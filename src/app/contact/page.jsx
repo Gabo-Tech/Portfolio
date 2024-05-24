@@ -1,13 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo, useCallback } from "react";
 import emailjs from "@emailjs/browser";
-import BrandCarousel from "../../components/carousel";
+import dynamic from "next/dynamic";
 import CustomersLogos from "../../../public/data/customersLogos";
 import SuccessSvg from "@/components/svgs/success";
 import ErrorSvg from "@/components/svgs/error";
 import SendSvg from "@/components/svgs/sendbtn";
+
+const BrandCarousel = dynamic(() => import("../../components/carousel"), {
+  ssr: false,
+});
 
 /**
  * ContactPage Component
@@ -36,45 +40,66 @@ const ContactPage = () => {
     setIsFormValid(
       user_message.trim().length > 0 &&
         user_name.trim().length > 0 &&
-        isValidEmail(user_email),
+        isValidEmail(user_email)
     );
   }, [formData]);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  }, []);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    if (!isFormValid) {
-      return;
-    }
-    setError(false);
-    setSuccess(false);
+  const sendEmail = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (!isFormValid) return;
 
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID,
-        form.current,
-        process.env.NEXT_PUBLIC_PUBLIC_KEY,
-      )
-      .then(
-        () => {
-          setSuccess(true);
-          form.current.reset();
-          setFormData({
-            user_message: "",
-            user_email: "",
-            user_name: "",
-          });
-        },
-        () => {
-          setError(true);
-        },
-      );
-  };
+      setError(false);
+      setSuccess(false);
+
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID,
+          form.current,
+          process.env.NEXT_PUBLIC_PUBLIC_KEY
+        )
+        .then(
+          () => {
+            setSuccess(true);
+            form.current.reset();
+            setFormData({
+              user_message: "",
+              user_email: "",
+              user_name: "",
+            });
+          },
+          () => {
+            setError(true);
+          }
+        );
+    },
+    [isFormValid]
+  );
+
+  const memoizedText = useMemo(
+    () =>
+      text.split("").map((letter, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 0 }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            delay: index * 0.1,
+          }}
+        >
+          {letter}
+        </motion.span>
+      )),
+    [text]
+  );
 
   return (
     <motion.div
@@ -86,22 +111,7 @@ const ContactPage = () => {
       <div className="flex flex-col min-h-screen text-white font-extrabold lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 items-center">
         {/* TEXT CONTAINER */}
         <div className="flex-grow lg:flex-grow-0 lg:w-1/2 flex flex-col md:flex-row items-center justify-center text-6xl">
-          <div>
-            {text.split("").map((letter, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 0 }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  delay: index * 0.1,
-                }}
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </div>
+          <div>{memoizedText}</div>
           <div className="p-8" role="img" aria-label="smiling emoji">
             😊
           </div>

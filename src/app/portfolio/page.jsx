@@ -1,6 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo, useCallback } from "react";
 import Link from "next/link";
 import PortfolioItem from "@/components/portfolioItem";
 import items from "../../../public/data/portfolioItems.json";
@@ -15,23 +15,39 @@ const PortfolioPage = () => {
   const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
 
-  const [activeTabs, setActiveTabs] = useState(
-    items.reduce((acc, item) => ({ ...acc, [item.id]: "skills" }), {}),
-  );
-  const [readMore, setReadMore] = useState(
-    items.reduce((acc, item) => ({ ...acc, [item.id]: false }), {}),
+  const [activeTabs, setActiveTabs] = useState(() =>
+    items.reduce((acc, item) => ({ ...acc, [item.id]: "skills" }), {})
   );
 
-  const handleTabClick = (id, tab) => {
+  const [readMore, setReadMore] = useState(() =>
+    items.reduce((acc, item) => ({ ...acc, [item.id]: false }), {})
+  );
+
+  const handleTabClick = useCallback((id, tab) => {
     setActiveTabs((prevTabs) => ({ ...prevTabs, [id]: tab }));
-  };
+  }, []);
 
-  const handleReadMoreClick = (id) => {
+  const handleReadMoreClick = useCallback((id) => {
     setReadMore((prevReadMore) => ({
       ...prevReadMore,
       [id]: !prevReadMore[id],
     }));
-  };
+  }, []);
+
+  const memoizedItems = useMemo(
+    () =>
+      items.map((item) => (
+        <PortfolioItem
+          key={item.id}
+          item={item}
+          isActiveTab={activeTabs[item.id]}
+          isReadMore={readMore[item.id]}
+          onTabClick={handleTabClick}
+          onReadMoreClick={handleReadMoreClick}
+        />
+      )),
+    [activeTabs, readMore, handleTabClick, handleReadMoreClick]
+  );
 
   return (
     <motion.div
@@ -60,21 +76,14 @@ const PortfolioPage = () => {
         <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
           <motion.div style={{ x }} className="flex">
             <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-t from-blue-950 to-red-950" />
-            {items.map((item) => (
-              <PortfolioItem
-                key={item.id}
-                item={item}
-                isActiveTab={activeTabs[item.id]}
-                isReadMore={readMore[item.id]}
-                onTabClick={handleTabClick}
-                onReadMoreClick={handleReadMoreClick}
-              />
-            ))}
+            {memoizedItems}
           </motion.div>
         </div>
       </div>
       <div className="w-screen h-screen flex flex-col gap-16 items-center text-white justify-center text-center bg-gradient-to-b from-blue-950 to-black">
-        <h1 className="lg:text-8xl text-5xl font-extrabold">Do you have a project?</h1>
+        <h1 className="lg:text-8xl text-5xl font-extrabold">
+          Do you have a project?
+        </h1>
         <div className="relative">
           <motion.svg
             animate={{ rotate: 360 }}

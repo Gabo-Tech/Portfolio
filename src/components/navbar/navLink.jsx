@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMemo } from "react";
 
 /**
  * NavLink Component
@@ -12,16 +13,20 @@ import { usePathname } from "next/navigation";
 const NavLink = ({ link }) => {
   const pathName = usePathname();
 
+  const isActive = useMemo(() => pathName === link.url, [pathName, link.url]);
+
+  const linkClasses = useMemo(() => {
+    return isActive
+      ? "text-black bg-white font-extrabold rounded py-1 px-3"
+      : "text-white font-semibold bg-gradient-to-bl from-blue-950 to-red-950 rounded py-1 px-3";
+  }, [isActive]);
+
   return (
     <Link
       rel="noopener noreferrer"
-      className={`rounded py-1 px-3 ${
-        pathName === link.url
-          ? "text-black bg-white font-extrabold"
-          : "text-white font-semibold bg-gradient-to-bl from-blue-950 to-red-950"
-      }`}
+      className={linkClasses}
       href={link.url}
-      aria-current={pathName === link.url ? "page" : undefined}
+      aria-current={isActive ? "page" : undefined}
     >
       {link.title}
     </Link>

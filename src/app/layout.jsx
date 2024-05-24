@@ -1,10 +1,24 @@
+import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import TransitionProvider from "@/components/transitionProvider";
-import CustomCursor from "@/components/customCursor";
-import BackgroundMusic from "@/components/backgroundMusic";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+
+const TransitionProvider = dynamic(
+  () => import("@/components/transitionProvider/transitionProvider")
+);
+const CustomCursor = dynamic(() => import("@/components/customCursor"), {
+  ssr: false,
+});
+const BackgroundMusic = dynamic(() => import("@/components/backgroundMusic"), {
+  ssr: false,
+});
+const Analytics = dynamic(
+  () => import("@vercel/analytics/react").then((mod) => mod.Analytics),
+  { ssr: false }
+);
+const SpeedInsights = dynamic(
+  () => import("@vercel/speed-insights/next").then((mod) => mod.SpeedInsights),
+  { ssr: false }
+);
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +39,17 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
+        />
+        <link
+          rel="preload"
+          href={inter.href}
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={inter.className}>
         <CustomCursor />

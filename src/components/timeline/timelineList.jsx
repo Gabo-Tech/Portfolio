@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import TimelineItem from "./timelineItem";
 
 /**
@@ -8,11 +8,11 @@ import TimelineItem from "./timelineItem";
  * @param {Array} experiences - Array of experience objects containing title, description, date, and company.
  * @param {boolean} isInView - Flag to indicate if the timeline is in view.
  */
-const TimelineList = ({ experiences, isInView }) => (
-  <div role="list">
-    {experiences.map((exp, index) => (
+const TimelineList = ({ experiences, isInView }) => {
+  const memoizedTimelineItems = useMemo(() => {
+    return experiences.map((exp, index) => (
       <TimelineItem
-        key={index}
+        key={exp.id || index}
         title={exp.title}
         description={exp.description}
         date={exp.date}
@@ -20,8 +20,10 @@ const TimelineList = ({ experiences, isInView }) => (
         alternate={index % 2 !== 0}
         isInView={isInView}
       />
-    ))}
-  </div>
-);
+    ));
+  }, [experiences, isInView]);
+
+  return <div role="list">{memoizedTimelineItems}</div>;
+};
 
 export default TimelineList;

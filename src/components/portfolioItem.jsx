@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
@@ -24,37 +24,37 @@ const PortfolioItem = ({
   const ref = useRef();
   const isInView = useInView(ref, { margin: "-100px" });
 
-  // Check if the item has an empty title
-  if (!item.title) {
-    return (
-      <div
-        className={`h-screen w-screen flex items-center justify-center ${
-          item.id % 2 === 0
-            ? "bg-gradient-to-b from-red-950 to-blue-950"
-            : "bg-gradient-to-t from-blue-950 to-red-950"
-        }`}
-      ></div>
-    );
-  }
+  const bgClass = useMemo(
+    () =>
+      item.id % 2 === 0
+        ? "bg-gradient-to-b from-red-950 to-blue-950"
+        : "bg-gradient-to-t from-blue-950 to-red-950",
+    [item.id]
+  );
 
-  // Function to validate URL
+  const initialY = useMemo(() => (item.id % 2 === 0 ? -300 : 300), [item.id]);
+
   const isValidURL = (url) => {
     const urlRegex = /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm;
     return urlRegex.test(url);
   };
 
+  if (!item.title) {
+    return (
+      <div
+        className={`h-screen w-screen flex items-center justify-center ${bgClass}`}
+      ></div>
+    );
+  }
+
   return (
     <div
-      className={`h-screen w-screen flex items-center justify-center ${
-        item.id % 2 === 0
-          ? "bg-gradient-to-b from-red-950 to-blue-950"
-          : "bg-gradient-to-t from-blue-950 to-red-950"
-      }`}
+      className={`h-screen w-screen flex items-center justify-center ${bgClass}`}
     >
       <motion.div
         ref={ref}
-        initial={{ y: item.id % 2 === 0 ? -300 : 300 }}
-        animate={isInView ? { y: 0 } : { y: item.id % 2 === 0 ? -300 : 300 }}
+        initial={{ y: initialY }}
+        animate={isInView ? { y: 0 } : { y: initialY }}
         transition={{ delay: 0.5 }}
         className="flex flex-col gap-8 text-white"
       >
@@ -105,7 +105,7 @@ const PortfolioItem = ({
           </div>
           {isActiveTab === "desc" ? (
             <>
-              <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
+              <p className="w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px]">
                 {isReadMore
                   ? item.desc
                   : `${item.desc.split(" ").slice(0, 20).join(" ")}...`}
@@ -118,7 +118,7 @@ const PortfolioItem = ({
               </button>
             </>
           ) : (
-            <div className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px] flex flex-wrap gap-2 justify-end">
+            <div className="w-80 md:w-96 lg:w-[500px] lg:text-lg xl:w-[600px] flex flex-wrap gap-2 justify-end">
               {item.skills.map((skill, skillIndex) => (
                 <HoverSkill key={skillIndex}>
                   {{
