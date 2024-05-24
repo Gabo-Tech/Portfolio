@@ -148,12 +148,12 @@ const Navbar = () => {
                   href={link.url}
                   rel="noopener noreferrer"
                   onClick={handleLinkClick}
+                  key={link.title}
                   aria-label={`Navigate to ${link.title}`}
                 >
                   <motion.div
                     variants={listItemVariants}
                     className="hover:underline"
-                    key={link.title}
                     role="menuitem"
                   >
                     {link.title}
