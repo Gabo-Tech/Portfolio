@@ -84,7 +84,7 @@ const AboutPage = () => {
               programmers write code that humans can understand. – Martin Fowler
             </blockquote>
             <blockquote className="italic">
-              If I don&#39;t know it I&#39;ll learn it – Gabriel Clemente
+              If I don&#39;t know it, I&#39;ll learn it – Gabriel Clemente
             </blockquote>
             <div className="self-end">
               <SignatureSvg />

@@ -103,12 +103,12 @@ const Homepage = () => {
         initial={{ x: "-300vw" }}
         animate={{ x: "0%" }}
         transition={{ duration: 1 }}
-        style={{ height: windowHeight }}
+        style={{ minHeight: '100vh' }}
       >
         <div className="h-full flex flex-col lg:flex-row">
           {/* IMAGE CONTAINER */}
           <motion.div
-            className="relative overflow-hidden flex-1 flex items-center justify-end min-h-[50vh] lg:min-h-screen"
+            className="relative overflow-hidden flex-1 flex items-center justify-center lg:justify-end min-h-[50vh] lg:min-h-screen"
             style={{ margin: "20px 0", zIndex: 10 }}
             animate={controls}
           >
@@ -147,13 +147,13 @@ const Homepage = () => {
             className="flex-1 flex items-center justify-center lg:justify-stretch px-4 sm:px-8 md:px-12 lg:pr-0 lg:pl-0 min-h-[70vh] lg:min-h-screen"
             ref={textContainerRef}
           >
-            <div className="w-full xl:w-1/2 flex flex-col gap-8 items-center xl:items-start justify-center text-center lg:text-left">
+            <div className="w-full xl:w-1/2 flex flex-col gap-8 items-center lg:items-start justify-center text-center lg:text-left">
               {/* TITLE */}
               <div className="text-4xl md:text-6xl font-bold z-0">
                 <TypingAnimation texts={texts} />
               </div>
               {/* DESCRIPTION */}
-              <p className="md:text-xl z-0">
+              <p className="md:text-xl z-0 px-4 sm:px-8 md:px-12 lg:px-0">
                 Welcome to my digital canvas, where innovation and creativity
                 converge. With a keen eye for aesthetics and a mastery of both
                 front-end and back-end development, my portfolio showcases a
@@ -166,7 +166,7 @@ const Homepage = () => {
                 endeavor.
               </p>
               {/* BUTTONS */}
-              <div className="w-full flex flex-col lg:flex-row gap-4 z-0 mb-5">
+              <div className="w-full flex flex-col lg:flex-row gap-4 z-0 mb-5 px-4 sm:px-8 md:px-12 lg:px-0">
                 <Link
                   href="/portfolio"
                   className="p-4 rounded-lg ring-1 ring-white bg-white text-black font-extrabold"
