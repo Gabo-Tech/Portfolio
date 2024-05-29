@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import TypingAnimation from "../components/typingAnimation";
@@ -7,14 +7,11 @@ import Link from "next/link";
 import Loader from "../components/loader";
 import textsData from "../../public/data/typingTexts.json";
 
-/**
- * Homepage Component
- * Displays the homepage with a hero image, animated text, and links.
- */
 const Homepage = () => {
   const [mouseY, setMouseY] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const textContainerRef = useRef(null);
   const controls = useAnimation();
   const { texts } = textsData;
@@ -27,10 +24,29 @@ const Homepage = () => {
         setMouseY(e.clientY);
       };
 
+      const handleFullscreenChange = () => {
+        setIsFullscreen(
+          !!document.fullscreenElement ||
+          !!document.webkitFullscreenElement ||
+          !!document.mozFullScreenElement ||
+          !!document.msFullscreenElement
+        );
+      };
+
       window.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("fullscreenchange", handleFullscreenChange);
+      document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+      document.addEventListener("mozfullscreenchange", handleFullscreenChange);
+      document.addEventListener("MSFullscreenChange", handleFullscreenChange);
+
+      handleFullscreenChange();
 
       return () => {
         window.removeEventListener("mousemove", handleMouseMove);
+        document.removeEventListener("fullscreenchange", handleFullscreenChange);
+        document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
+        document.removeEventListener("mozfullscreenchange", handleFullscreenChange);
+        document.removeEventListener("MSFullscreenChange", handleFullscreenChange);
       };
     }
 
@@ -75,7 +91,7 @@ const Homepage = () => {
     };
   }, [controls]);
 
-  const openFullscreen = () => {
+  const openFullscreen = useCallback(() => {
     const elem = document.documentElement;
     if (elem.requestFullscreen) {
       elem.requestFullscreen();
@@ -84,7 +100,7 @@ const Homepage = () => {
     } else if (elem.msRequestFullscreen) {
       elem.msRequestFullscreen();
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (textContainerRef.current) {
@@ -99,11 +115,10 @@ const Homepage = () => {
     <>
       {loading && <Loader />}
       <motion.div
-        className="min-h-screen w-screen text-white bg-gradient-to-b from-blue-950 to-red-950 h-auto"
+        className="min-h-screen w-screen text-white bg-gradient-to-b from-blue-950 to-red-950"
         initial={{ x: "-300vw" }}
         animate={{ x: "0%" }}
         transition={{ duration: 1 }}
-        style={{ minHeight: '100vh' }}
       >
         <div className="h-full flex flex-col lg:flex-row">
           {/* IMAGE CONTAINER */}
@@ -113,7 +128,7 @@ const Homepage = () => {
             animate={controls}
           >
             {/* Bottom Image (hero.png) */}
-            <div className="absolute inset-0 h-auto">
+            <div className="absolute inset-0">
               <Image
                 src="/hero.png"
                 alt="Gabriel Sketch Portrait"
@@ -121,12 +136,13 @@ const Homepage = () => {
                 style={{ objectFit: "contain" }}
                 className="object-contain"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 onLoad={() => setLoading(false)}
               />
             </div>
             {/* Top Image (hero1.png) */}
             <div
-              className="absolute inset-0 h-auto"
+              className="absolute inset-0"
               style={{
                 clipPath: `inset(0px 0px ${windowHeight - mouseY - 20}px 0px)`,
               }}
@@ -138,6 +154,7 @@ const Homepage = () => {
                 style={{ objectFit: "contain" }}
                 className="object-contain"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 onLoad={() => setLoading(false)}
               />
             </div>
@@ -183,12 +200,14 @@ const Homepage = () => {
                 </Link>
               </div>
               {/* Fullscreen Button - Visible on large screens and up */}
-              <button
-                onClick={openFullscreen}
-                className="hidden lg:block p-4 mt-4 bg-white text-black ring-black border-4 rounded-full"
-              >
-                Go Fullscreen
-              </button>
+              {!isFullscreen && (
+                <button
+                  onClick={openFullscreen}
+                  className="hidden lg:block p-4 mt-4 bg-white text-black ring-black border-4 rounded-full"
+                >
+                  Go Fullscreen
+                </button>
+              )}
             </div>
           </div>
         </div>

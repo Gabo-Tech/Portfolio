@@ -16,13 +16,13 @@ import experienceData from "../../../public/data/experience.json";
  * Displays the about page with biography, skills, and experience sections.
  */
 const AboutPage = () => {
-  const containerRef = useRef();
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({ container: containerRef });
 
-  const skillRef = useRef();
+  const skillRef = useRef(null);
   const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
 
-  const experienceRef = useRef();
+  const experienceRef = useRef(null);
   const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
 
   const memoizedSkills = useMemo(
@@ -36,7 +36,7 @@ const AboutPage = () => {
           }}
         </HoverSkill>
       )),
-    [],
+    []
   );
 
   return (

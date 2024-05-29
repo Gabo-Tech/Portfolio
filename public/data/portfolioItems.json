@@ -10,11 +10,20 @@
   },
   {
     "id": 1,
+    "color": "",
+    "title": "",
+    "desc": "",
+    "img": "",
+    "link": "",
+    "skills": []
+  },
+  {
+    "id": 2,
     "color": "from-red-300 to-blue-300",
     "title": "BEYONDBMI",
     "desc": "As a Full-Stack TypeScript Engineer at Beyondbmi, I spearhead the development of an advanced online weight loss clinic platform. Utilizing Angular and Bootstrap for the front-end and Express with TypeORM for the back-end, I ensure consistent and reliable performance across the stack with TypeScript. My role involves implementing HIPAA-compliant encryption protocols to safeguard patient data, developing an Android application with React Native, and deploying AWS Lambda functions and AWS Cognito for secure authentication. My contributions have enhanced user experience, data security, and the platform's scalability.",
     "img": "/images/beyondbmiimg.png",
-    "link": "https://beyondbmi.ie",
+    "link": "",
     "skills": [
       {
         "name": "JavaScript",
@@ -104,12 +113,12 @@
     ]
   },
   {
-    "id": 2,
+    "id": 3,
     "color": "from-blue-300 to-violet-300",
     "title": "GABO",
     "desc": "The GABO Landing Page is a modern, visually appealing website built using the Astro framework, leveraging Solid.js for reactive UI components, Tailwind CSS for efficient styling, and Vercel for scalable hosting. This project integrates Better SQLite3 for lightweight database management, Gray Matter and Marked for markdown content handling, and Next.js with React for dynamic, interactive components. Featuring fast load times, smooth user experience, and improved SEO, the site employs Vercel Analytics and Speed Insights for monitoring performance. Key technologies include Astro, Solid.js, Tailwind CSS, Vercel, Next.js, React, Git, and GitHub.",
     "img": "/images/gabollcimg.png",
-    "link": "https://gabo.solutions",
+    "link": "",
     "skills": [
       {
         "name": "JavaScript",
@@ -164,12 +173,12 @@
     ]
   },
   {
-    "id": 3,
+    "id": 4,
     "color": "from-violet-300 to-purple-300",
     "title": "TALENTEAL",
     "desc": "I led the comprehensive redesign of the company’s landing page to enhance user experience (UX) and user interface (UI). My focus was on creating an intuitive and navigable website, resulting in improved accessibility and user engagement. This project demonstrated my ability to apply front-end development skills effectively to achieve significant improvements in digital interaction and user satisfaction.",
     "img": "/images/talentealimg.png",
-    "link": "https://talenteal.com",
+    "link": "",
     "skills": [
       {
         "name": "JavaScript",
@@ -214,12 +223,12 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "color": "from-purple-300 to-red-300",
     "title": "LUJO NETWORK",
     "desc": "At Lujo Network, I led the design and development of the sign-in and sign-up pages, implementing secure forms and internationalization in several languages, along with data validation for the forms. I enhanced the company’s security infrastructure by implementing firewalls and establishing robust backup systems. I also managed databases, developed website segments, and conducted security training sessions. My efforts improved the company’s digital security framework and online presence, showcasing my ability to handle both technical support and development tasks effectively.",
     "img": "/images/lujonetworkig.png",
-    "link": "https://lujonetwork.com",
+    "link": "",
     "skills": [
       {
         "name": "JavaScript",
@@ -249,12 +258,12 @@
     ]
   },
   {
-    "id": 5,
+    "id": 6,
     "color": "from-green-300 to-yellow-300",
     "title": "EXA MONSTER",
     "desc": "Exa Monster is a secure cloud storage solution that prioritizes user privacy. Developed as a SaaS application using Laravel, WordPress, and PHP, and deployed with Hetzner Cloud, it offers robust and secure storage capabilities. The platform also includes a mobile app built with React Native, providing users with seamless access to their data on the go.",
     "img": "/images/examonsterimg.png",
-    "link": "https://exa.monster",
+    "link": "",
     "skills": [
       {
         "name": "Laravel",
@@ -294,12 +303,12 @@
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "color": "from-orange-300 to-pink-300",
     "title": "IMALEVANTE",
     "desc": "I designed and developed the Imalevante company landing page using WordPress and PHP. The project involved creating a visually appealing and functional website that effectively represents the company's brand and services.",
     "img": "/images/imalevanteimg.png",
-    "link": "https://imalevante.es",
+    "link": "",
     "skills": [
       {
         "name": "WordPress",
@@ -314,7 +323,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": 8,
     "color": "from-teal-300 to-indigo-300",
     "title": "ROUTEU",
     "desc": "RouteU is a fully open-sourced route management site built with the MERN stack. This project offers users the ability to manage and share routes. It is deployed on Vercel and Heroku, providing high availability and performance. The site features a modern UI developed with React, Bootstrap, and Ant Design, and it uses MongoDB Atlas for robust data management.",
@@ -389,7 +398,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 9,
     "color": "from-yellow-300 to-green-300",
     "title": "FIGHT GAME",
     "desc": "StreetFighter-like OSG (Open Sourced Game) is a simple, open-sourced fighting game inspired by Street Fighter. Developed with HTML, CSS, and Vanilla JavaScript, the game is designed for two players. It is hosted on GitHub Pages, offering easy access and a fun gaming experience.",
@@ -414,7 +423,7 @@
     ]
   },
   {
-    "id": 11,
+    "id": 10,
     "color": "from-blue-300 to-yellow-300",
     "title": "QUIZ",
     "desc": "Custom Quiz is an open-sourced quiz game that uses the Open Trivia API and supports custom questions. Developed with HTML, CSS, and Vanilla JavaScript, the game offers a fun and interactive way to test knowledge on various topics. It is hosted on GitHub Pages.",
@@ -439,7 +448,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": 11,
     "color": "from-red-300 to-orange-300",
     "title": "GABO SL",
     "desc": "Gabo's Social Life is a fully open-sourced social media site built with the MERN stack. This project provides a platform for users to share and interact with content. It is deployed on Vercel and Heroku, ensuring high availability and performance. The site features modern UI components and comprehensive functionality, including user authentication, content sharing, and real-time updates.",
@@ -509,7 +518,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": 12,
     "color": "from-teal-300 to-purple-300",
     "title": "DGABO Token",
     "desc": "Decentralyized GABO Token is a personal cryptocurrency project developed using JavaScript and Motoko for smart contracts. Although not deployed due to high blockchain fees, this project demonstrates the process of creating and managing a token on the Internet Computer blockchain. The project includes a web mockup and emulator setup instructions for local development.",
@@ -544,7 +553,42 @@
     ]
   },
   {
-    "id": 7,
+    "id": 13,
+    "color": "from-blue-300 to-green-300",
+    "title": "My Portfolio",
+    "desc": "This portfolio it's been designed with tailwinds and framer motion, includes several animaitons and some interactivity with background music to make the experience a bit more chilling. Has been developed with Next.js 14",
+    "img": "/images/portfolioimg.png",
+    "link": "",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
+        "hoverTextColor": "#000000"
+      },
+      {
+        "name": "React",
+        "hoverColor": "#61dafb",
+        "hoverTextColor": "#000000"
+      },
+      {
+        "name": "Next.js",
+        "hoverColor": "#000000",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Tailwind CSS",
+        "hoverColor": "#38bdf8",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Framer Motion",
+        "hoverColor": "linear-gradient(45deg, #e10098, #9c1aff, #00c4ff)",
+        "hoverTextColor": "#ffffff"
+      }
+    ]
+  },
+  {
+    "id": 14,
     "color": "from-blue-300 to-green-300",
     "title": "CHURCH OF JESUS CHRIST",
     "desc": "This desktop application, developed using Tauri and Svelte, provides a convenient and efficient way to access and read the scriptures from the website of The Church of Jesus Christ of Latter-day Saints. The app features cross-platform compatibility (Windows, macOS, Linux), easy navigation, and a clean interface.",
@@ -574,12 +618,12 @@
     ]
   },
   {
-    "id": 8,
+    "id": 15,
     "color": "from-yellow-300 to-red-300",
     "title": "RENTSBY",
     "desc": "At RentsBy, I tested their software end-to-end using Cypress, ensuring the application met all functional and performance criteria. This role involved writing and executing comprehensive test cases to identify and resolve any issues, enhancing the overall quality and reliability of the software.",
     "img": "/images/rentsbyimg.png",
-    "link": "https://rentsby.com",
+    "link": "",
     "skills": [
       {
         "name": "Cypress",
@@ -597,5 +641,30 @@
         "hoverTextColor": "#ffffff"
       }
     ]
+  },
+  {
+    "id": 16,
+    "color": "",
+    "title": "",
+    "desc": "",
+    "img": "",
+    "link": "",
+    "skills": []
+  }, {
+    "id": 17,
+    "color": "",
+    "title": "",
+    "desc": "",
+    "img": "",
+    "link": "",
+    "skills": []
+  }, {
+    "id": 18,
+    "color": "",
+    "title": "",
+    "desc": "",
+    "img": "",
+    "link": "",
+    "skills": []
   }
 ]

@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
@@ -29,15 +29,15 @@ const PortfolioItem = ({
       item.id % 2 === 0
         ? "bg-gradient-to-b from-red-950 to-blue-950"
         : "bg-gradient-to-t from-blue-950 to-red-950",
-    [item.id],
+    [item.id]
   );
 
   const initialY = useMemo(() => (item.id % 2 === 0 ? -300 : 300), [item.id]);
 
-  const isValidURL = (url) => {
+  const isValidURL = useCallback((url) => {
     const urlRegex = /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm;
     return urlRegex.test(url);
-  };
+  }, []);
 
   if (!item.title) {
     return (
@@ -49,6 +49,7 @@ const PortfolioItem = ({
 
   return (
     <div
+      data-id={`portfolio-item-${item.id}`}
       className={`h-screen w-screen flex items-center justify-center ${bgClass}`}
     >
       <motion.div
@@ -75,8 +76,10 @@ const PortfolioItem = ({
             <Image
               src={item.img}
               alt={item.title}
-              layout="fill"
-              objectFit="cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ objectFit: "cover" }}
+              unoptimized={item.img.endsWith(".gif")}
             />
           </div>
           <div className="flex gap-4 justify-center mb-4">
