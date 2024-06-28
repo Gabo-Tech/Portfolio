@@ -643,14 +643,42 @@
     ]
   },
   {
-    "id": 16,
-    "color": "",
-    "title": "",
-    "desc": "",
-    "img": "",
-    "link": "",
-    "skills": []
-  }, {
+  "id": 16,
+  "color": "from-gray-300 to-black",
+  "title": "EasyApply-Linkedin",
+  "desc": "With this tool, you can easily automate the process of applying for jobs on LinkedIn! It uses Python and Selenium to navigate LinkedIn, search for jobs, and apply to them automatically based on user-defined criteria. The script handles various job search filters, logs errors, and tracks companies to which applications have been submitted.",
+  "img": "/images/easyapplylinkedinimg.png",
+  "link": "https://github.com/Gabo-Tech/EasyApply-Linkedin",
+  "skills": [
+    {
+      "name": "Python",
+      "hoverColor": "#3776ab",
+      "hoverTextColor": "#ffffff"
+    },
+    {
+      "name": "Selenium",
+      "hoverColor": "#43B02A",
+      "hoverTextColor": "#ffffff"
+    },
+    {
+      "name": "JSON",
+      "hoverColor": "#000000",
+      "hoverTextColor": "#ffffff"
+    },
+    {
+      "name": "Logging",
+      "hoverColor": "#efb210",
+      "hoverTextColor": "#000000"
+    },
+    {
+      "name": "Web Scraping",
+      "hoverColor": "#1e4d2b",
+      "hoverTextColor": "#ffffff"
+    }
+  ]
+}
+
+  {
     "id": 17,
     "color": "",
     "title": "",
@@ -660,6 +688,14 @@
     "skills": []
   }, {
     "id": 18,
+    "color": "",
+    "title": "",
+    "desc": "",
+    "img": "",
+    "link": "",
+    "skills": []
+  }, {
+    "id": 19,
     "color": "",
     "title": "",
     "desc": "",
