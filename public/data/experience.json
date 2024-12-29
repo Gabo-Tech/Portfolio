@@ -1,14 +1,20 @@
-[
+[  
+  {
+    "title": "Mid Frontend Developer",
+    "description": "As a Mid Frontend Developer at Iriusrisk, I work with React, Zustand, TanStack (formerly known as React Query), and Ant Design. My role involves developing responsive and efficient frontend applications, managing state with Zustand, optimizing data fetching and caching using TanStack, and implementing UI components with Ant Design. I'm responsible for creating intuitive interfaces, implementing complex state management logic, and ensuring smooth integration between frontend and backend services. This position has further honed my skills in modern JavaScript frameworks and libraries, allowing me to contribute to cutting-edge web applications.",
+    "date": "Oct 2022 - Present",
+    "company": "IriusRisk"
+  },
   {
     "title": "Full TypeScript Stack Engineer",
     "description": "As a Full-Stack TypeScript Engineer at Beyondbmi, I spearhead the development of an advanced online weight loss clinic platform. Utilizing Angular and Bootstrap for the front-end and Express with TypeORM for the back-end, I ensure consistent and reliable performance across the stack with TypeScript. My role involves implementing HIPAA-compliant encryption protocols to safeguard patient data, developing an Android application with React Native, and deploying AWS Lambda functions and AWS Cognito for secure authentication. My contributions have enhanced user experience, data security, and the platform's scalability.",
-    "date": "Nov 2022 - Present",
+    "date": "Nov 2022 - Apr 2024",
     "company": "Beyondbmi"
   },
   {
     "title": "Software Engineer",
     "description": "At GABO, I collaborate on a variety of projects, focusing on developing e-commerce sites, corporate websites, and online presences for small businesses. My work emphasizes Search Engine Optimization (SEO) to improve visibility and engagement. Using JavaScript frameworks, WordPress, PHP, and other tools, I deliver tailored, optimized web solutions. My role has honed my versatility in web development and client relationship management, ensuring long-term client satisfaction and successful project outcomes.",
-    "date": "Nov 2022 - Present",
+    "date": "Aug 2022 - Oct 2024",
     "company": "GABO"
   },
   {
