@@ -4,8 +4,11 @@ import { useRef, useState, useMemo, useCallback } from "react";
 import Link from "next/link";
 import PortfolioItem from "@/components/portfolioItem";
 import items from "../../../public/data/portfolioItems.json";
-import ScrollSvg from "@/components/svgs/scroll";/**PortfolioPage Component
-Displays the portfolio page with animated scrolling and portfolio items.
+import ScrollSvg from "@/components/svgs/scroll";
+
+/**
+ * PortfolioPage Component
+ * Displays the portfolio page with animated scrolling and portfolio items.
  */
 const PortfolioPage = () => {
   const ref = useRef();
@@ -14,16 +17,24 @@ const PortfolioPage = () => {
 
   const [activeTabs, setActiveTabs] = useState(() =>
     items.reduce((acc, item) => ({ ...acc, [item.id]: "skills" }), {}),
-  );  const [readMore, setReadMore] = useState(() =>
+  );
+
+  const [readMore, setReadMore] = useState(() =>
     items.reduce((acc, item) => ({ ...acc, [item.id]: false }), {}),
-  );  const handleTabClick = useCallback((id, tab) => {
+  );
+
+  const handleTabClick = useCallback((id, tab) => {
     setActiveTabs((prevTabs) => ({ ...prevTabs, [id]: tab }));
-  }, []);  const handleReadMoreClick = useCallback((id) => {
+  }, []);
+
+  const handleReadMoreClick = useCallback((id) => {
     setReadMore((prevReadMore) => ({
       ...prevReadMore,
       [id]: !prevReadMore[id],
     }));
-  }, []);  const memoizedItems = useMemo(
+  }, []);
+
+  const memoizedItems = useMemo(
     () =>
       items.map((item) => (
         <PortfolioItem
@@ -36,7 +47,9 @@ const PortfolioPage = () => {
         />
       )),
     [activeTabs, readMore, handleTabClick, handleReadMoreClick],
-  );  return (
+  );
+
+  return (
     <motion.div
       className="h-full"
       initial={{ y: "-200vh" }}
@@ -87,7 +100,7 @@ const PortfolioPage = () => {
             </defs>
             <text fill="#fff">
               <textPath xlinkHref="#circlePath" className="text-xl">
-                Full-Stack JS/TS Software Engineer 
+                Full-Stack JS/TS Software Developer 💻
               </textPath>
             </text>
           </motion.svg>
@@ -115,4 +128,3 @@ const PortfolioPage = () => {
 };
 
 export default PortfolioPage;
-
