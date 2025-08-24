@@ -64,7 +64,7 @@ const AboutPage = () => {
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             <p className="text-lg">
               Hello! I&#39;m Gabriel Clemente, a passionate and dedicated
-              Full-Stack JavaScript Software Engineer with a strong background
+              Full-Stack JavaScript Software Developer with a strong background
               in both front-end and back-end development. My professional
               journey has been defined by a relentless pursuit of excellence in
               web development, coupled with a drive to continually learn and
