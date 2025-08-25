@@ -47,10 +47,13 @@ const AboutPage = () => {
       transition={{ duration: 1 }}
     >
       <div
-        className="h-full overflow-scroll text-white lg:flex"
+        className="h-full overflow-scroll text-white relative"
         ref={containerRef}
       >
-        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pt-0 lg:pr-0 xl:w-1/2">
+        <div className="hidden lg:block absolute top-0 left-0 w-full h-full z-0">
+          <Brain scrollYProgress={scrollYProgress} />
+        </div>
+        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 z-10 relative bg-gradient-to-b from-blue-950 to-red-950">
           <div className="flex flex-col gap-12 items-center justify-center">
             {/* PROFILE IMAGE */}
             <Image
@@ -128,9 +131,6 @@ const AboutPage = () => {
               isInView={isExperienceRefInView}
             />
           </div>
-        </div>
-        <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
-          <Brain scrollYProgress={scrollYProgress} />
         </div>
       </div>
     </motion.div>
