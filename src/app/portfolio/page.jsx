@@ -53,9 +53,10 @@ const PortfolioPage = () => {
           isReadMore={readMore[item.id]}
           onTabClick={handleTabClick}
           onReadMoreClick={handleReadMoreClick}
+          isMobile={isMobile}
         />
       )),
-    [activeTabs, readMore, handleTabClick, handleReadMoreClick],
+    [activeTabs, readMore, handleTabClick, handleReadMoreClick, isMobile],
   );
 
   return (
@@ -66,7 +67,7 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="relative" ref={!isMobile ? ref : null} style={{ height: isMobile ? 'auto' : '600vh' }}>
-        <div className={`w-screen flex flex-col items-center justify-center text-center ${isMobile ? 'h-auto py-8 text-4xl' : 'h-[calc(100vh-6rem)] gap-48 lg:text-8xl text-5xl'}`}>
+        <div className={`w-screen flex flex-col items-center justify-center text-center text-white ${isMobile ? 'h-auto py-8 text-4xl bg-[#121212]' : 'h-[calc(100vh-6rem)] gap-48 lg:text-8xl text-5xl'}`}>
           <motion.div
             className="font-extrabold"
             animate={!isMobile ? {
@@ -83,7 +84,7 @@ const PortfolioPage = () => {
           {!isMobile && <ScrollSvg />}
         </div>
         {isMobile ? (
-          <div className="flex flex-col">
+          <div className="flex flex-col bg-[#121212]">
             {memoizedItems}
           </div>
         ) : (
@@ -95,7 +96,7 @@ const PortfolioPage = () => {
           </div>
         )}
       </div>
-      <div className={`w-screen flex flex-col gap-16 items-center text-white justify-center text-center bg-gradient-to-b from-blue-950 to-black ${isMobile ? 'h-auto py-16' : 'h-screen'}`}>
+      <div className={`w-screen flex flex-col gap-16 items-center text-white justify-center text-center ${isMobile ? 'h-auto py-16 bg-[#121212]' : 'h-screen bg-gradient-to-b from-blue-950 to-black'}`}>
         <h1 className="text-4xl lg:text-8xl font-extrabold">
           Do you have a project?
         </h1>
