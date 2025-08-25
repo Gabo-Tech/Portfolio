@@ -1,15 +1,11 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useMemo, useCallback } from "react";
+import { useRef, useState, useMemo, useCallback, useEffect } from "react";
 import Link from "next/link";
 import PortfolioItem from "@/components/portfolioItem";
 import items from "../../../public/data/portfolioItems.json";
 import ScrollSvg from "@/components/svgs/scroll";
 
-/**
- * PortfolioPage Component
- * Displays the portfolio page with animated scrolling and portfolio items.
- */
 const PortfolioPage = () => {
   const ref = useRef();
   const { scrollYProgress } = useScroll({ target: ref });
@@ -22,6 +18,19 @@ const PortfolioPage = () => {
   const [readMore, setReadMore] = useState(() =>
     items.reduce((acc, item) => ({ ...acc, [item.id]: false }), {}),
   );
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const handleTabClick = useCallback((id, tab) => {
     setActiveTabs((prevTabs) => ({ ...prevTabs, [id]: tab }));
@@ -56,32 +65,38 @@ const PortfolioPage = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-[600vh] relative" ref={ref}>
-        <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-48 items-center justify-center lg:text-8xl text-5xl text-center">
+      <div className="relative" ref={!isMobile ? ref : null} style={{ height: isMobile ? 'auto' : '600vh' }}>
+        <div className={`w-screen flex flex-col items-center justify-center text-center ${isMobile ? 'h-auto py-8 text-4xl' : 'h-[calc(100vh-6rem)] gap-48 lg:text-8xl text-5xl'}`}>
           <motion.div
-            className="text-white font-extrabold"
-            animate={{
+            className="font-extrabold"
+            animate={!isMobile ? {
               y: ["20px", "-20px", "20px"],
               transition: {
                 duration: 2,
                 ease: "easeInOut",
                 repeat: Infinity,
               },
-            }}
+            } : {}}
           >
             SOME OF MY WORKS
           </motion.div>
-          <ScrollSvg size={150} />
+          {!isMobile && <ScrollSvg />}
         </div>
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex">
-            <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-t from-blue-950 to-red-950" />
+        {isMobile ? (
+          <div className="flex flex-col">
             {memoizedItems}
-          </motion.div>
-        </div>
+          </div>
+        ) : (
+          <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
+            <motion.div style={{ x }} className="flex">
+              <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-t from-blue-950 to-red-950" />
+              {memoizedItems}
+            </motion.div>
+          </div>
+        )}
       </div>
-      <div className="w-screen h-screen flex flex-col gap-16 items-center text-white justify-center text-center bg-gradient-to-b from-blue-950 to-black">
-        <h1 className="lg:text-8xl text-5xl font-extrabold">
+      <div className={`w-screen flex flex-col gap-16 items-center text-white justify-center text-center bg-gradient-to-b from-blue-950 to-black ${isMobile ? 'h-auto py-16' : 'h-screen'}`}>
+        <h1 className="text-4xl lg:text-8xl font-extrabold">
           Do you have a project?
         </h1>
         <div className="relative">
