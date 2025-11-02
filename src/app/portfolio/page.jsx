@@ -78,7 +78,7 @@ const PortfolioPage = () => {
                   y: ["20px", "-20px", "20px"],
                   transition: {
                     duration: 2,
-                    ease: "easeInOut,
+                    ease: "easeInOut",
                     repeat: Infinity,
                   },
                 }
