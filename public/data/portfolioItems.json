@@ -1,99 +1,54 @@
 [
-  {
-    "id": 1,
-    "color": "from-red-300 to-blue-300",
-    "title": "IRIUSRISK",
-    "desc": "As a Full-Stack TypeScript Engineer at Beyondbmi, I spearhead the development of an advanced online weight loss clinic platform. Utilizing Angular and Bootstrap for the front-end and Express with TypeORM for the back-end, I ensure consistent and reliable performance across the stack with TypeScript. My role involves implementing HIPAA-compliant encryption protocols to safeguard patient data, developing an Android application with React Native, and deploying AWS Lambda functions and AWS Cognito for secure authentication. My contributions have enhanced user experience, data security, and the platform's scalability.",
-    "img": "/images/beyondbmiimg.png",
-    "link": "",
-    "skills": [
-      {
-        "name": "JavaScript",
-        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
-        "hoverTextColor": "#000000"
-      },
-      {
-        "name": "Angular",
-        "hoverColor": "linear-gradient(45deg, #dd1b16, #c3002f)",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "TypeScript",
-        "hoverColor": "#007acc",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "Bootstrap",
-        "hoverColor": "#563d7c",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "React Native",
-        "hoverColor": "#61dafb",
-        "hoverTextColor": "#000000"
-      },
-      {
-        "name": "Metro",
-        "hoverColor": "#5a4fcf",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "AWS",
-        "hoverColor": "linear-gradient(45deg, #ff9900, #ff5c00)",
-        "hoverTextColor": "#000000"
-      },
-      {
-        "name": "Express",
-        "hoverColor": "#000000",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "TypeORM",
-        "hoverColor": "#ff4088",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "Postgres",
-        "hoverColor": "#336791",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "Jest",
-        "hoverColor": "#C21325",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "CI/CD",
-        "hoverColor": "#4caf50",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "Docker",
-        "hoverColor": "linear-gradient(45deg, #2496ed, #0db7ed)",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "Jira",
-        "hoverColor": "#0052cc",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "Bitbucket",
-        "hoverColor": "#2684ff",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "Git",
-        "hoverColor": "#f05032",
-        "hoverTextColor": "#ffffff"
-      },
-      {
-        "name": "Stripe",
-        "hoverColor": "#6772e5",
-        "hoverTextColor": "#ffffff"
-      }
-    ]
-  },
+ {
+  "id": 1,
+  "color": "from-purple-300 to-pink-300",
+  "title": "IRIUSRISK",
+  "desc": "As a Frontend Developer at IriusRisk, I led comprehensive technical implementations while driving innovation and team excellence. I architected scalable React components with React Query for enhanced data optimization, implemented efficient state management with Zustand, and developed responsive SASS-based styling systems. Key accomplishments included deploying multiple feature enhancements using Ant Design components, resolving critical bugs across the application stack, and conducting thorough code reviews. Notably, I demonstrated exceptional technical prowess by securing second place in a company-wide hackathon, showcasing innovative problem-solving capabilities while collaborating effectively with cross-functional teams to drive feature development and system improvements.",
+  "img": "/images/iriusriskimg.png",
+  "link": "",
+  "skills": [
+    {
+      "name": "React",
+      "hoverColor": "#61dafb",
+      "hoverTextColor": "#000000"
+    },
+    {
+      "name": "React Query",
+      "hoverColor": "linear-gradient(45deg, #ff4154, #ff6b6b)",
+      "hoverTextColor": "#ffffff"
+    },
+    {
+      "name": "Zustand",
+      "hoverColor": "#443333",
+      "hoverTextColor": "#ffffff"
+    },
+    {
+      "name": "SASS",
+      "hoverColor": "#cc6699",
+      "hoverTextColor": "#ffffff"
+    },
+    {
+      "name": "Ant Design",
+      "hoverColor": "linear-gradient(45deg, #1890ff, #40a9ff)",
+      "hoverTextColor": "#ffffff"
+    },
+    {
+      "name": "JavaScript",
+      "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
+      "hoverTextColor": "#000000"
+    },
+    {
+      "name": "TypeScript",
+      "hoverColor": "#007acc",
+      "hoverTextColor": "#ffffff"
+    },
+    {
+      "name": "Git",
+      "hoverColor": "#f05032",
+      "hoverTextColor": "#ffffff"
+    }
+  ]
+},
   {
     "id": 2,
     "color": "from-blue-300 to-green-300",
@@ -667,7 +622,7 @@
   {
     "id": 14,
     "color": "from-red-300 to-blue-300",
-    "title": "CHURCH OF JESUS CHRIST",
+    "title": "COJC",
     "desc": "This desktop application, developed using Tauri and Svelte, provides a convenient and efficient way to access and read the scriptures from the website of The Church of Jesus Christ of Latter-day Saints. The app features cross-platform compatibility (Windows, macOS, Linux), easy navigation, and a clean interface.",
     "img": "/images/churchofjesuschristimg.png",
     "link": "https://github.com/Gabo-Tech/Scriptures-of-The-Church-of-Jesus-Christ-of-Latter-Day-Saints",
