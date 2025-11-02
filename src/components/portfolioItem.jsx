@@ -52,13 +52,13 @@ const PortfolioItem = ({
       data-id={`portfolio-item-${item.id}`}
       className={`h-screen w-screen flex items-center justify-center ${bgClass}`}
     >
-      <motion.div
-        ref={ref}
-        initial={{ y: initialY }}
-        animate={isInView ? { y: 0 } : { y: initialY }}
-        transition={{ delay: 0.5 }}
-        className="flex flex-col gap-8 text-white"
-      >
+  <motion.div
+      ref={ref}
+      initial={{ x: -100 }}                   
+      animate={isInView ? { x: 0 } : { x: -100 }}
+      transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
+      className="flex flex-col gap-8 text-white"
+    >
         <motion.div
           animate={{
             y: ["20px", "0px", "20px"],
