@@ -28,7 +28,7 @@ const PortfolioItem = ({
     () =>
       item.id % 2 === 0
         ? "bg-gradient-to-b from-red-950 to-blue-950"
-        : "bg-gradient-to-t from-blue-950 to-red-950",
+        : "bg-gradient-to-b from-blue-950 to-red-950",
     [item.id]
   );
 
