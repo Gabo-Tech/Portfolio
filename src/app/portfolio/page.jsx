@@ -69,7 +69,7 @@ const PortfolioPage = () => {
       <div className="relative" ref={!isMobile ? ref : null} style={{ height: isMobile ? 'auto' : '600vh' }}>
         <div className={`w-screen flex flex-col items-center justify-center text-center text-white ${isMobile ? 'h-auto py-8 text-4xl bg-[#121212]' : 'h-[calc(100vh-6rem)] gap-48 lg:text-8xl text-5xl'}`}>
           <motion.div
-            className="font-extrabold"
+            className="font-extrabold text-white"
             animate={!isMobile ? {
               y: ["20px", "-20px", "20px"],
               transition: {
