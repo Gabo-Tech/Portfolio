@@ -1,23 +1,5 @@
 [
   {
-    "id": 0,
-    "color": "",
-    "title": "",
-    "desc": "",
-    "img": "",
-    "link": "",
-    "skills": []
-  },
-  {
-    "id": 1,
-    "color": "",
-    "title": "",
-    "desc": "",
-    "img": "",
-    "link": "",
-    "skills": []
-  },
-  {
     "id": 2,
     "color": "from-red-300 to-blue-300",
     "title": "BEYONDBMI",
@@ -676,32 +658,5 @@
         "hoverTextColor": "#ffffff"
       }
     ]
-  },
-  {
-    "id": 17,
-    "color": "",
-    "title": "",
-    "desc": "",
-    "img": "",
-    "link": "",
-    "skills": []
-  },
-  {
-    "id": 18,
-    "color": "",
-    "title": "",
-    "desc": "",
-    "img": "",
-    "link": "",
-    "skills": []
-  },
-  {
-    "id": 19,
-    "color": "",
-    "title": "",
-    "desc": "",
-    "img": "",
-    "link": "",
-    "skills": []
   }
 ]
