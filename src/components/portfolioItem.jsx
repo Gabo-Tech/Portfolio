@@ -54,8 +54,8 @@ const PortfolioItem = ({
     >
   <motion.div
       ref={ref}
-      initial={{ x: -100 }}                   
-      animate={isInView ? { x: 0 } : { x: -100 }}
+      initial={{ x: initialY }}                   
+      animate={isInView ? { x: 0 } : { x: initialY }}
       transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
       className="flex flex-col gap-8 text-white"
     >
