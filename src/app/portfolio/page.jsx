@@ -23,9 +23,9 @@ const PortfolioPage = () => {
     };
 
     checkMobile();
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
 
-    return () => window.removeEventListener('resize', checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   const handleTabClick = useCallback((id, tab) => {
@@ -63,70 +63,46 @@ const PortfolioPage = () => {
       transition={{ duration: 1 }}
     >
       {/* ===== HERO SECTION ===== */}
-      <div className={`w-screen flex flex-col items-center justify-center text-center text-white ${isMobile ? 'h-auto py-8 text-4xl bg-[#121212]' : 'h-[calc(100vh-6rem)] gap-48 lg:text-8xl text-5xl'}`}>
+      <div
+        className={`w-screen flex flex-col items-center justify-center text-center text-white ${
+          isMobile
+            ? "h-auto py-8 text-4xl bg-[#121212]"
+            : "h-[calc(100vh-6rem)] gap-48 lg:text-8xl text-5xl"
+        }`}
+      >
         <motion.div
           className="font-extrabold text-white"
-          animate={!isMobile ? {
-            y: ["20px", "-20px", "20px"],
-            transition: {
-              duration: 2,
-              ease: "easeInOut",
-              repeat: Infinity,
-            },
-          } : {}}
+          animate={
+            !isMobile
+              ? {
+                  y: ["20px", "-20px", "20px"],
+                  transition: {
+                    duration: 2,
+                    ease: "easeInOut,
+                    repeat: Infinity,
+                  },
+                }
+              : {}
+          }
         >
           SOME OF MY WORKS
         </motion.div>
         {!isMobile && <ScrollSvg />}
       </div>
 
-      {/* ===== PORTFOLIO SECTION: HORIZONTAL (Desktop) / VERTICAL (Mobile) ===== */}
-      {!isMobile ? (
-        <div className="overflow-x-auto overflow-y-hidden snap-x snap-mandatory scrollbar-hidden">
-          {/* Hide scrollbar */}
-          <style jsx>{`
-            .scrollbar-hidden::-webkit-scrollbar { display: none; }
-            .scrollbar-hidden { -ms-overflow-style: none; scrollbar-width: none; }
-          `}</style>
-
-          <div className="flex h-screen">
-            {/* Gradient Intro Screen */}
-            <div className="flex-shrink-0 w-screen h-full flex items-center justify-center bg-gradient-to-t from-blue-950 to-red-950 snap-center" />
-
-            {/* Portfolio Items */}
-            {items.map((item) => (
-              <div
-                key={item.id}
-                className="flex-shrink-0 w-screen h-full snap-center"
-              >
-                <PortfolioItem
-                  item={item}
-                  isActiveTab={activeTabs[item.id]}
-                  isReadMore={readMore[item.id]}
-                  onTabClick={handleTabClick}
-                  onReadMoreClick={handleReadMoreClick}
-                  isMobile={isMobile}
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Scroll Hint Arrow (Desktop Only) */}
-          <div className="fixed bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
-            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </div>
-      ) : (
-        /* Mobile: Vertical Stack */
-        <div className="flex flex-col bg-[#121212]">
-          {memoizedItems}
-        </div>
-      )}
+      {/* ===== PORTFOLIO SECTION: VERTICAL STACK (All Devices) ===== */}
+      <div className="flex flex-col bg-[#121212]">
+        {memoizedItems}
+      </div>
 
       {/* ===== CTA SECTION ===== */}
-      <div className={`w-screen flex flex-col gap-16 items-center text-white justify-center text-center ${isMobile ? 'h-auto py-16 bg-[#121212]' : 'h-screen bg-gradient-to-b from-blue-950 to-black'}`}>
+      <div
+        className={`w-screen flex flex-col gap-16 items-center text-white justify-center text-center ${
+          isMobile
+            ? "h-auto py-16 bg-[#121212]"
+            : "h-screen bg-gradient-to-b from-blue-950 to-black"
+        }`}
+      >
         <h1 className="text-4xl lg:text-8xl font-extrabold">
           Do you have a project?
         </h1>
