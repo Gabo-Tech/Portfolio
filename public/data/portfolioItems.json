@@ -1,7 +1,102 @@
 [
   {
-    "id": 2,
+    "id": 1,
     "color": "from-red-300 to-blue-300",
+    "title": "IRIUSRISK",
+    "desc": "As a Full-Stack TypeScript Engineer at Beyondbmi, I spearhead the development of an advanced online weight loss clinic platform. Utilizing Angular and Bootstrap for the front-end and Express with TypeORM for the back-end, I ensure consistent and reliable performance across the stack with TypeScript. My role involves implementing HIPAA-compliant encryption protocols to safeguard patient data, developing an Android application with React Native, and deploying AWS Lambda functions and AWS Cognito for secure authentication. My contributions have enhanced user experience, data security, and the platform's scalability.",
+    "img": "/images/beyondbmiimg.png",
+    "link": "",
+    "skills": [
+      {
+        "name": "JavaScript",
+        "hoverColor": "linear-gradient(45deg, #f7e018, #f7df1e)",
+        "hoverTextColor": "#000000"
+      },
+      {
+        "name": "Angular",
+        "hoverColor": "linear-gradient(45deg, #dd1b16, #c3002f)",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "TypeScript",
+        "hoverColor": "#007acc",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Bootstrap",
+        "hoverColor": "#563d7c",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "React Native",
+        "hoverColor": "#61dafb",
+        "hoverTextColor": "#000000"
+      },
+      {
+        "name": "Metro",
+        "hoverColor": "#5a4fcf",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "AWS",
+        "hoverColor": "linear-gradient(45deg, #ff9900, #ff5c00)",
+        "hoverTextColor": "#000000"
+      },
+      {
+        "name": "Express",
+        "hoverColor": "#000000",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "TypeORM",
+        "hoverColor": "#ff4088",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Postgres",
+        "hoverColor": "#336791",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Jest",
+        "hoverColor": "#C21325",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "CI/CD",
+        "hoverColor": "#4caf50",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Docker",
+        "hoverColor": "linear-gradient(45deg, #2496ed, #0db7ed)",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Jira",
+        "hoverColor": "#0052cc",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Bitbucket",
+        "hoverColor": "#2684ff",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Git",
+        "hoverColor": "#f05032",
+        "hoverTextColor": "#ffffff"
+      },
+      {
+        "name": "Stripe",
+        "hoverColor": "#6772e5",
+        "hoverTextColor": "#ffffff"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "color": "from-blue-300 to-green-300",
     "title": "BEYONDBMI",
     "desc": "As a Full-Stack TypeScript Engineer at Beyondbmi, I spearhead the development of an advanced online weight loss clinic platform. Utilizing Angular and Bootstrap for the front-end and Express with TypeORM for the back-end, I ensure consistent and reliable performance across the stack with TypeScript. My role involves implementing HIPAA-compliant encryption protocols to safeguard patient data, developing an Android application with React Native, and deploying AWS Lambda functions and AWS Cognito for secure authentication. My contributions have enhanced user experience, data security, and the platform's scalability.",
     "img": "/images/beyondbmiimg.png",
@@ -96,7 +191,7 @@
   },
   {
     "id": 3,
-    "color": "from-blue-300 to-violet-300",
+    "color": "from-green-300 to-violet-300",
     "title": "GABO",
     "desc": "The GABO Landing Page is a modern, visually appealing website built using the Astro framework, leveraging Solid.js for reactive UI components, Tailwind CSS for efficient styling, and Vercel for scalable hosting. This project integrates Better SQLite3 for lightweight database management, Gray Matter and Marked for markdown content handling, and Next.js with React for dynamic, interactive components. Featuring fast load times, smooth user experience, and improved SEO, the site employs Vercel Analytics and Speed Insights for monitoring performance. Key technologies include Astro, Solid.js, Tailwind CSS, Vercel, Next.js, React, Git, and GitHub.",
     "img": "/images/gabollcimg.png",
@@ -241,7 +336,7 @@
   },
   {
     "id": 6,
-    "color": "from-green-300 to-yellow-300",
+    "color": "from-red-300 to-yellow-300",
     "title": "EXA MONSTER",
     "desc": "Exa Monster is a secure cloud storage solution that prioritizes user privacy. Developed as a SaaS application using Laravel, WordPress, and PHP, and deployed with Hetzner Cloud, it offers robust and secure storage capabilities. The platform also includes a mobile app built with React Native, providing users with seamless access to their data on the go.",
     "img": "/images/examonsterimg.png",
@@ -286,7 +381,7 @@
   },
   {
     "id": 7,
-    "color": "from-orange-300 to-pink-300",
+    "color": "from-yellow-300 to-pink-300",
     "title": "IMALEVANTE",
     "desc": "I designed and developed the Imalevante company landing page using WordPress and PHP. The project involved creating a visually appealing and functional website that effectively represents the company's brand and services.",
     "img": "/images/imalevanteimg.png",
@@ -306,7 +401,7 @@
   },
   {
     "id": 8,
-    "color": "from-teal-300 to-indigo-300",
+    "color": "from-pink-300 to-indigo-300",
     "title": "ROUTEU",
     "desc": "RouteU is a fully open-sourced route management site built with the MERN stack. This project offers users the ability to manage and share routes. It is deployed on Vercel and Heroku, providing high availability and performance. The site features a modern UI developed with React, Bootstrap, and Ant Design, and it uses MongoDB Atlas for robust data management.",
     "img": "/images/routesuimg.png",
@@ -381,7 +476,7 @@
   },
   {
     "id": 9,
-    "color": "from-yellow-300 to-green-300",
+    "color": "from-indigo-300 to-green-300",
     "title": "FIGHT GAME",
     "desc": "StreetFighter-like OSG (Open Sourced Game) is a simple, open-sourced fighting game inspired by Street Fighter. Developed with HTML, CSS, and Vanilla JavaScript, the game is designed for two players. It is hosted on GitHub Pages, offering easy access and a fun gaming experience.",
     "img": "/images/gameimg.png",
@@ -406,7 +501,7 @@
   },
   {
     "id": 10,
-    "color": "from-blue-300 to-yellow-300",
+    "color": "from-green-300 to-blue-300",
     "title": "QUIZ",
     "desc": "Custom Quiz is an open-sourced quiz game that uses the Open Trivia API and supports custom questions. Developed with HTML, CSS, and Vanilla JavaScript, the game offers a fun and interactive way to test knowledge on various topics. It is hosted on GitHub Pages.",
     "img": "/images/quizig.png",
@@ -431,7 +526,7 @@
   },
   {
     "id": 11,
-    "color": "from-red-300 to-orange-300",
+    "color": "from-blue-300 to-red-300",
     "title": "GABO SL",
     "desc": "Gabo's Social Life is a fully open-sourced social media site built with the MERN stack. This project provides a platform for users to share and interact with content. It is deployed on Vercel and Heroku, ensuring high availability and performance. The site features modern UI components and comprehensive functionality, including user authentication, content sharing, and real-time updates.",
     "img": "/images/gabosl.gif",
@@ -501,7 +596,7 @@
   },
   {
     "id": 12,
-    "color": "from-teal-300 to-purple-300",
+    "color": "from-red-300 to-purple-300",
     "title": "DGABO Token",
     "desc": "Decentralyized GABO Token is a personal cryptocurrency project developed using JavaScript and Motoko for smart contracts. Although not deployed due to high blockchain fees, this project demonstrates the process of creating and managing a token on the Internet Computer blockchain. The project includes a web mockup and emulator setup instructions for local development.",
     "img": "/images/dtokenimg.png",
@@ -536,7 +631,7 @@
   },
   {
     "id": 13,
-    "color": "from-blue-300 to-green-300",
+    "color": "from-purple-300 to-red-300",
     "title": "My Portfolio",
     "desc": "This portfolio it's been designed with tailwinds and framer motion, includes several animaitons and some interactivity with background music to make the experience a bit more chilling. Has been developed with Next.js 14",
     "img": "/images/portfolioimg.png",
@@ -571,7 +666,7 @@
   },
   {
     "id": 14,
-    "color": "from-blue-300 to-green-300",
+    "color": "from-red-300 to-blue-300",
     "title": "CHURCH OF JESUS CHRIST",
     "desc": "This desktop application, developed using Tauri and Svelte, provides a convenient and efficient way to access and read the scriptures from the website of The Church of Jesus Christ of Latter-day Saints. The app features cross-platform compatibility (Windows, macOS, Linux), easy navigation, and a clean interface.",
     "img": "/images/churchofjesuschristimg.png",
@@ -601,7 +696,7 @@
   },
   {
     "id": 15,
-    "color": "from-gray-300 to-black",
+    "color": "from-blue-300 to-black",
     "title": "EasyApply-Linkedin",
     "desc": "With this tool, you can easily automate the process of applying for jobs on LinkedIn! It uses Python and Selenium to navigate LinkedIn, search for jobs, and apply to them automatically based on user-defined criteria. The script handles various job search filters, logs errors, and tracks companies to which applications have been submitted.",
     "img": "/images/easyapplylinkedinimg.png",
@@ -636,7 +731,7 @@
   },
   {
     "id": 16,
-    "color": "from-yellow-300 to-red-300",
+    "color": "from-black to-red-300",
     "title": "RENTSBY",
     "desc": "At RentsBy, I tested their software end-to-end using Cypress, ensuring the application met all functional and performance criteria. This role involved writing and executing comprehensive test cases to identify and resolve any issues, enhancing the overall quality and reliability of the software.",
     "img": "/images/rentsbyimg.png",
