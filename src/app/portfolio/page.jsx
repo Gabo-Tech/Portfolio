@@ -66,7 +66,7 @@ const PortfolioPage = () => {
       <div
         className={`w-screen flex flex-col items-center justify-center text-center text-white ${
           isMobile
-            ? "h-auto py-8 text-4xl bg-[#121212]"
+            ? "h-auto py-8 text-4xl"
             : "h-[calc(100vh-6rem)] gap-48 lg:text-8xl text-5xl"
         }`}
       >
@@ -99,7 +99,7 @@ const PortfolioPage = () => {
       <div
         className={`w-screen flex flex-col gap-16 items-center text-white justify-center text-center ${
           isMobile
-            ? "h-auto py-16 bg-[#121212]"
+            ? "h-auto py-16 bg-gradient-to-b from-blue-950 to-black"
             : "h-screen bg-gradient-to-b from-blue-950 to-black"
         }`}
       >
