@@ -21,7 +21,6 @@ const BrandCarousel = dynamic(() => import("../../components/carousel"), {
 
 /**
  * ContactPage Component
- * Displays the contact page with a form, animated text, and brand carousel.
  */
 const ContactPage = () => {
   const [success, setSuccess] = useState(false);
@@ -34,13 +33,13 @@ const ContactPage = () => {
   const [isFormValid, setIsFormValid] = useState(false);
   const text = "Say Hello! ";
 
-  const form = useRef<HTMLFormElement>(null);
+  const form = useRef(null);
 
   // ──────────────────────────────────────────────────────────────
-  // 1. Log env variables on mount (check if Fly injected them)
+  // 1. Log env vars on mount
   // ──────────────────────────────────────────────────────────────
   useEffect(() => {
-    console.log("🔑 EMAILJS ENV VARS (client-side):");
+    console.log("EMAILJS ENV VARS (client-side):");
     console.log("   SERVICE_ID :", process.env.NEXT_PUBLIC_SERVICE_ID);
     console.log("   TEMPLATE_ID:", process.env.NEXT_PUBLIC_TEMPLATE_ID);
     console.log("   PUBLIC_KEY :", process.env.NEXT_PUBLIC_PUBLIC_KEY);
@@ -50,17 +49,17 @@ const ContactPage = () => {
       !process.env.NEXT_PUBLIC_TEMPLATE_ID ||
       !process.env.NEXT_PUBLIC_PUBLIC_KEY
     ) {
-      console.error("❌ ONE OR MORE EMAILJS ENV VARS ARE MISSING!");
+      console.error("ONE OR MORE EMAILJS ENV VARS ARE MISSING!");
     } else {
-      console.log("✅ All EmailJS env vars are present.");
+      console.log("All EmailJS env vars are present.");
     }
   }, []);
 
   // ──────────────────────────────────────────────────────────────
-  // 2. Form validation
+  // 2. Form validation (PURE JS)
   // ──────────────────────────────────────────────────────────────
   useEffect(() => {
-    const isValidEmail = (email: string) => {
+    const isValidEmail = (email) => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
     };
@@ -74,7 +73,7 @@ const ContactPage = () => {
     setIsFormValid(valid);
   }, [formData]);
 
-  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   }, []);
@@ -83,46 +82,43 @@ const ContactPage = () => {
   // 3. Send email with full logging
   // ──────────────────────────────────────────────────────────────
   const sendEmail = useCallback(
-    (e: React.FormEvent) => {
+    (e) => {
       e.preventDefault();
 
-      console.log("📤 SEND EMAIL CALLED");
+      console.log("SEND EMAIL CALLED");
       console.log("   Form valid:", isFormValid);
       if (!isFormValid) {
-        console.warn("🚫 Form not valid – aborting send.");
+        console.warn("Form not valid – aborting send.");
         return;
       }
 
-      // Reset UI
       setError(false);
       setSuccess(false);
 
-      // Log payload before sending
-      console.log("📋 FORM PAYLOAD (from DOM):");
       const formEl = form.current;
       if (formEl) {
+        console.log("FORM PAYLOAD:");
         const formDataObj = new FormData(formEl);
         for (const [key, val] of formDataObj.entries()) {
           console.log(`   ${key}:`, val);
         }
       }
 
-      // Log EmailJS config
-      console.log("⚙️ EMAILJS CONFIG:");
+      console.log("EMAILJS CONFIG:");
       console.log("   Service ID :", process.env.NEXT_PUBLIC_SERVICE_ID);
       console.log("   Template ID:", process.env.NEXT_PUBLIC_TEMPLATE_ID);
       console.log("   Public Key :", process.env.NEXT_PUBLIC_PUBLIC_KEY);
 
       emailjs
         .sendForm(
-          process.env.NEXT_PUBLIC_SERVICE_ID!,
-          process.env.NEXT_PUBLIC_TEMPLATE_ID!,
-          form.current!,
-          process.env.NEXT_PUBLIC_PUBLIC_KEY!
+          process.env.NEXT_PUBLIC_SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID,
+          form.current,
+          process.env.NEXT_PUBLIC_PUBLIC_KEY
         )
         .then(
           (result) => {
-            console.log("✅ EMAILJS SUCCESS:", result);
+            console.log("EMAILJS SUCCESS:", result);
             setSuccess(true);
             formEl?.reset();
             setFormData({
@@ -132,14 +128,14 @@ const ContactPage = () => {
             });
           },
           (err) => {
-            console.error("❌ EMAILJS ERROR:", err);
+            console.error("EMAILJS ERROR:", err);
             console.error("   Status:", err.status);
             console.error("   Text  :", err.text);
             setError(true);
           }
         )
         .catch((catchErr) => {
-          console.error("💥 EMAILJS UNCAUGHT ERROR:", catchErr);
+          console.error("UNCAUGHT ERROR:", catchErr);
           setError(true);
         });
     },
@@ -183,7 +179,7 @@ const ContactPage = () => {
         <div className="flex-grow lg:flex-grow-0 lg:w-1/2 flex flex-col md:flex-row items-center justify-center text-6xl">
           <div>{memoizedText}</div>
           <div className="p-8" role="img" aria-label="smiling emoji">
-            😊
+            smiling face
           </div>
         </div>
 
@@ -284,7 +280,7 @@ const ContactPage = () => {
 
             {error && (
               <span className="text-red-600 font-semibold">
-                Something went wrong! Check console for details.
+                Something went wrong! Check browser console.
               </span>
             )}
           </motion.form>
