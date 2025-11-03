@@ -9,7 +9,7 @@ import Image from "next/image";
  */
 const BrandCarousel = ({ logos }) => {
   const memoizedLogos = useMemo(() => {
-    return [...logos, ...logos];
+    return [...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos, ...logos];
   }, [logos]);
 
   return (
