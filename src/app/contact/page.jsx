@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef, useState, useEffect, useMemo, useCallback } from "react";
+import {
+  useRef,
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+} from "react";
 import emailjs from "@emailjs/browser";
 import dynamic from "next/dynamic";
 import CustomersLogos from "../../../public/data/customersLogos";
@@ -28,60 +34,121 @@ const ContactPage = () => {
   const [isFormValid, setIsFormValid] = useState(false);
   const text = "Say Hello! ";
 
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
+  // ──────────────────────────────────────────────────────────────
+  // 1. Log env variables on mount (check if Fly injected them)
+  // ──────────────────────────────────────────────────────────────
   useEffect(() => {
-    const isValidEmail = (email) => {
+    console.log("🔑 EMAILJS ENV VARS (client-side):");
+    console.log("   SERVICE_ID :", process.env.NEXT_PUBLIC_SERVICE_ID);
+    console.log("   TEMPLATE_ID:", process.env.NEXT_PUBLIC_TEMPLATE_ID);
+    console.log("   PUBLIC_KEY :", process.env.NEXT_PUBLIC_PUBLIC_KEY);
+
+    if (
+      !process.env.NEXT_PUBLIC_SERVICE_ID ||
+      !process.env.NEXT_PUBLIC_TEMPLATE_ID ||
+      !process.env.NEXT_PUBLIC_PUBLIC_KEY
+    ) {
+      console.error("❌ ONE OR MORE EMAILJS ENV VARS ARE MISSING!");
+    } else {
+      console.log("✅ All EmailJS env vars are present.");
+    }
+  }, []);
+
+  // ──────────────────────────────────────────────────────────────
+  // 2. Form validation
+  // ──────────────────────────────────────────────────────────────
+  useEffect(() => {
+    const isValidEmail = (email: string) => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
     };
 
     const { user_message, user_email, user_name } = formData;
-    setIsFormValid(
+    const valid =
       user_message.trim().length > 0 &&
-        user_name.trim().length > 0 &&
-        isValidEmail(user_email)
-    );
+      user_name.trim().length > 0 &&
+      isValidEmail(user_email);
+
+    setIsFormValid(valid);
   }, [formData]);
 
-  const handleInputChange = useCallback((e) => {
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   }, []);
 
+  // ──────────────────────────────────────────────────────────────
+  // 3. Send email with full logging
+  // ──────────────────────────────────────────────────────────────
   const sendEmail = useCallback(
-    (e) => {
+    (e: React.FormEvent) => {
       e.preventDefault();
-      if (!isFormValid) return;
 
+      console.log("📤 SEND EMAIL CALLED");
+      console.log("   Form valid:", isFormValid);
+      if (!isFormValid) {
+        console.warn("🚫 Form not valid – aborting send.");
+        return;
+      }
+
+      // Reset UI
       setError(false);
       setSuccess(false);
 
+      // Log payload before sending
+      console.log("📋 FORM PAYLOAD (from DOM):");
+      const formEl = form.current;
+      if (formEl) {
+        const formDataObj = new FormData(formEl);
+        for (const [key, val] of formDataObj.entries()) {
+          console.log(`   ${key}:`, val);
+        }
+      }
+
+      // Log EmailJS config
+      console.log("⚙️ EMAILJS CONFIG:");
+      console.log("   Service ID :", process.env.NEXT_PUBLIC_SERVICE_ID);
+      console.log("   Template ID:", process.env.NEXT_PUBLIC_TEMPLATE_ID);
+      console.log("   Public Key :", process.env.NEXT_PUBLIC_PUBLIC_KEY);
+
       emailjs
         .sendForm(
-          process.env.NEXT_PUBLIC_SERVICE_ID,
-          process.env.NEXT_PUBLIC_TEMPLATE_ID,
-          form.current,
-          process.env.NEXT_PUBLIC_PUBLIC_KEY
+          process.env.NEXT_PUBLIC_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID!,
+          form.current!,
+          process.env.NEXT_PUBLIC_PUBLIC_KEY!
         )
         .then(
-          () => {
+          (result) => {
+            console.log("✅ EMAILJS SUCCESS:", result);
             setSuccess(true);
-            form.current.reset();
+            formEl?.reset();
             setFormData({
               user_message: "",
               user_email: "",
               user_name: "",
             });
           },
-          () => {
+          (err) => {
+            console.error("❌ EMAILJS ERROR:", err);
+            console.error("   Status:", err.status);
+            console.error("   Text  :", err.text);
             setError(true);
           }
-        );
+        )
+        .catch((catchErr) => {
+          console.error("💥 EMAILJS UNCAUGHT ERROR:", catchErr);
+          setError(true);
+        });
     },
     [isFormValid]
   );
 
+  // ──────────────────────────────────────────────────────────────
+  // 4. Animated text
+  // ──────────────────────────────────────────────────────────────
   const memoizedText = useMemo(
     () =>
       text.split("").map((letter, index) => (
@@ -98,9 +165,12 @@ const ContactPage = () => {
           {letter}
         </motion.span>
       )),
-    [text]
+    []
   );
 
+  // ──────────────────────────────────────────────────────────────
+  // 5. Render
+  // ──────────────────────────────────────────────────────────────
   return (
     <motion.div
       className="relative min-h-screen bg-gradient-to-b from-blue-950 to-red-950 h-auto"
@@ -116,6 +186,7 @@ const ContactPage = () => {
             😊
           </div>
         </div>
+
         {/* FORM CONTAINER */}
         <motion.div
           animate={{
@@ -137,6 +208,7 @@ const ContactPage = () => {
           >
             Download My Resume
           </motion.a>
+
           <motion.form
             onSubmit={sendEmail}
             ref={form}
@@ -151,6 +223,7 @@ const ContactPage = () => {
               value={formData.user_message}
               onChange={handleInputChange}
             />
+
             <label htmlFor="user_email">My mail address is:</label>
             <input
               id="user_email"
@@ -160,6 +233,7 @@ const ContactPage = () => {
               value={formData.user_email}
               onChange={handleInputChange}
             />
+
             <label htmlFor="user_name">
               You can call me... (What&rsquo;s your name?)
             </label>
@@ -171,8 +245,11 @@ const ContactPage = () => {
               value={formData.user_name}
               onChange={handleInputChange}
             />
+
             <label>Regards</label>
+
             <motion.button
+              type="submit"
               whileHover={{
                 scale: 1.1,
                 boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.8)",
@@ -204,14 +281,16 @@ const ContactPage = () => {
                 </>
               )}
             </motion.button>
+
             {error && (
               <span className="text-red-600 font-semibold">
-                Something went wrong!
+                Something went wrong! Check console for details.
               </span>
             )}
           </motion.form>
         </motion.div>
       </div>
+
       <div className="mt-8 lg:mt-0 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:mb-20">
         <BrandCarousel logos={CustomersLogos} type="p" />
       </div>
