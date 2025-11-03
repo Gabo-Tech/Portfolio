@@ -113,10 +113,9 @@ const ContactPage = () => {
         <div className="flex-grow lg:flex-grow-0 lg:w-1/2 flex flex-col md:flex-row items-center justify-center text-6xl">
           <div>{memoizedText}</div>
           <div className="p-8" role="img" aria-label="smiling emoji">
-            smiling face
+            😊
           </div>
         </div>
-
         {/* FORM CONTAINER */}
         <motion.div
           animate={{
@@ -138,7 +137,6 @@ const ContactPage = () => {
           >
             Download My Resume
           </motion.a>
-
           <motion.form
             onSubmit={sendEmail}
             ref={form}
@@ -153,7 +151,6 @@ const ContactPage = () => {
               value={formData.user_message}
               onChange={handleInputChange}
             />
-
             <label htmlFor="user_email">My mail address is:</label>
             <input
               id="user_email"
@@ -163,7 +160,6 @@ const ContactPage = () => {
               value={formData.user_email}
               onChange={handleInputChange}
             />
-
             <label htmlFor="user_name">
               You can call me... (What&rsquo;s your name?)
             </label>
@@ -175,11 +171,8 @@ const ContactPage = () => {
               value={formData.user_name}
               onChange={handleInputChange}
             />
-
             <label>Regards</label>
-
             <motion.button
-              type="submit"
               whileHover={{
                 scale: 1.1,
                 boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.8)",
@@ -211,7 +204,6 @@ const ContactPage = () => {
                 </>
               )}
             </motion.button>
-
             {error && (
               <span className="text-red-600 font-semibold">
                 Something went wrong!
@@ -220,7 +212,6 @@ const ContactPage = () => {
           </motion.form>
         </motion.div>
       </div>
-
       <div className="mt-8 lg:mt-0 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:mb-20">
         <BrandCarousel logos={CustomersLogos} type="p" />
       </div>
