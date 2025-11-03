@@ -6,8 +6,21 @@
 app = 'portfolio-kc3z1a'
 primary_region = 'cdg'
 
+# ────────────────────────────────
+# BUILD CONFIGURATION
+# ────────────────────────────────
 [build]
+  dockerfile = "Dockerfile"   # (optional – Fly will use Dockerfile by default)
 
+  # <-- IMPORTANT: Pass EmailJS keys at **build time**
+  [build.args]
+    NEXT_PUBLIC_SERVICE_ID = "service_j65320s"
+    NEXT_PUBLIC_TEMPLATE_ID = "template_yirel6n"
+    NEXT_PUBLIC_PUBLIC_KEY = "bALVoDGnok_LWsWZN"
+
+# ────────────────────────────────
+# RUNTIME SERVICE
+# ────────────────────────────────
 [http_service]
   internal_port = 3000
   force_https = true
@@ -16,6 +29,9 @@ primary_region = 'cdg'
   min_machines_running = 0
   processes = ['app']
 
+# ────────────────────────────────
+# VM SETTINGS
+# ────────────────────────────────
 [[vm]]
   memory = '1gb'
   cpu_kind = 'shared'
