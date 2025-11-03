@@ -50,9 +50,6 @@ const AboutPage = () => {
         className="h-full overflow-scroll text-white relative"
         ref={containerRef}
       >
-        {/*  <div className="hidden lg:block absolute top-0 left-0 w-full h-full z-0">
-          <Brain scrollYProgress={scrollYProgress} />
-        </div>*/}
         <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 z-10 relative bg-gradient-to-b from-blue-950 to-red-950">
           <div className="flex flex-col gap-12 items-center justify-center">
             {/* PROFILE IMAGE */}
@@ -126,14 +123,21 @@ const AboutPage = () => {
             >
               EXPERIENCE
             </motion.h1>
-            <TimelineList
-              experiences={experienceData}
-              isInView={isExperienceRefInView}
-            />
+            <div className="relative lg:flex lg:flex-row">
+              <div className="lg:w-1/2">
+                <TimelineList
+                  experiences={experienceData}
+                  isInView={isExperienceRefInView}
+                />
+              </div>
+              <div className="hidden lg:block lg:w-1/2 sticky top-0 self-start z-30">
+                <Brain scrollYProgress={scrollYProgress} />
+              </div>
+              <div className="lg:hidden absolute inset-0 z-0 opacity-50">
+                <Brain scrollYProgress={scrollYProgress} />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
-          <Brain scrollYProgress={scrollYProgress} />
         </div>
       </div>
     </motion.div>
