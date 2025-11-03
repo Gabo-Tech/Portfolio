@@ -12,6 +12,17 @@ WORKDIR /app
 # Set production environment
 ENV NODE_ENV="production"
 
+# ────────────────────────────────
+# EMAILJS: Accept build args (for client-side)
+# ────────────────────────────────
+ARG NEXT_PUBLIC_SERVICE_ID
+ARG NEXT_PUBLIC_TEMPLATE_ID
+ARG NEXT_PUBLIC_PUBLIC_KEY
+
+# Set them as ENV so Next.js sees them during build
+ENV NEXT_PUBLIC_SERVICE_ID=$NEXT_PUBLIC_SERVICE_ID
+ENV NEXT_PUBLIC_TEMPLATE_ID=$NEXT_PUBLIC_TEMPLATE_ID
+ENV NEXT_PUBLIC_PUBLIC_KEY=$NEXT_PUBLIC_PUBLIC_KEY
 
 # Throw-away build stage to reduce size of final image
 FROM base AS build
@@ -33,7 +44,6 @@ RUN npx next build --experimental-build-mode compile
 # Remove development dependencies
 RUN npm prune --omit=dev
 
-
 # Final stage for app image
 FROM base
 
@@ -43,6 +53,6 @@ COPY --from=build /app /app
 # Entrypoint sets up the container.
 ENTRYPOINT [ "/app/docker-entrypoint.js" ]
 
-# Start the server by default, this can be overwritten at runtime
+# Start the server by default
 EXPOSE 3000
 CMD [ "npm", "run", "start" ]
