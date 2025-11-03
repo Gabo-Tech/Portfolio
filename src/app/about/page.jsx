@@ -124,17 +124,17 @@ const AboutPage = () => {
               EXPERIENCE
             </motion.h1>
             <div className="relative lg:flex lg:flex-row">
-              <div className="lg:w-1/2">
+              <div className="lg:w-1/2 lg:bg-transparent bg-black/30 z-10 relative">
                 <TimelineList
                   experiences={experienceData}
                   isInView={isExperienceRefInView}
                 />
               </div>
-              <div className="hidden lg:block lg:w-1/2 sticky top-0 self-start z-30">
-                <Brain scrollYProgress={scrollYProgress} />
+              <div className="hidden lg:block lg:w-1/2 sticky top-0 self-start z-30 h-screen">
+                <Brain className="w-full h-full" preserveAspectRatio="none" scrollYProgress={scrollYProgress} />
               </div>
               <div className="lg:hidden absolute inset-0 z-0 opacity-50">
-                <Brain scrollYProgress={scrollYProgress} />
+                <Brain className="w-full h-full" preserveAspectRatio="none" scrollYProgress={scrollYProgress} />
               </div>
             </div>
           </div>
