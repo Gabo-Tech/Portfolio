@@ -1,4 +1,3 @@
-````markdown
 # Gabriel Clemente Portfolio
 
 This is the portfolio website of Gabriel Clemente, a Full-Stack JavaScript/TypeScript Software Engineer. The site showcases projects, skills, and experience, and provides a way to contact Gabriel.
@@ -47,7 +46,6 @@ To run the application in development mode, use the following command:
 ```sh
 npm run dev
 ```
-````
 
 or
 
