@@ -3,7 +3,7 @@
     "id": 1,
     "color": "from-amber-300 to-orange-300",
     "title": "ARTURO RODÉS",
-    "desc": "Designed and developed arturorodes.com, a sleek, high-performance professional website for Arturo Rodés — a salary negotiation coach specializing in tech professionals. Built with Astro for exceptional speed and SEO, Alpine.js for lightweight interactivity, and GSAP for smooth, engaging animations. To empower the client with full content control, I created and published the npm package **frontend-auto-cms**, which adds an intuitive dashboard allowing non-technical users to edit website content in real time and automatically publish changes back to the repository.",
+    "desc": "Designed and developed arturorodes.com, a sleek, high-performance professional website for Arturo Rodés, a salary negotiation coach specializing in tech professionals. Built with Astro for exceptional speed and SEO, Alpine.js for lightweight interactivity, and GSAP for smooth, engaging animations. To empower the client with full content control, I created and published the npm package frontend-auto-cms, which adds an intuitive dashboard allowing non-technical users to edit website content in real time and automatically publish changes back to the repository.",
     "img": "/images/arturorodes.png",
     "link": "https://arturorodes.com",
     "skills": [
