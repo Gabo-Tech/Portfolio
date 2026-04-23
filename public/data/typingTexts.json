@@ -1,14 +1,38 @@
 {
-  "texts": [
-    "Hi!",
-    "My name is Gabriel Clemente",
-    "I'm a Software Developer",
-    "I love automating processes",
-    "Specialized in JavaScript and TypeScript",
-    "Worked with Express, Postgres, AWS, and Docker on the backend...",
-    "Angular, React, React Native on the frontend...",
-    "My motto is, if I don't know it, I'll learn it!",
-    "Feel free to explore this site to know more about the rojects I worked in.",
-    "I hope you enjoy it!"
+  "en": [
+    "Hi, I'm|Gabriel Clemente",
+    "I live in Switzerland 🇨🇭. Looking in Zürich, Zug, or good remote",
+    "Full stack|JavaScript, TypeScript, React, Node, APIs, cloud",
+    "Two dev startup, then|a bigger product team",
+    "I run GABO on the side: solutions.gabo.rocks",
+    "English for work, plus Spanish, Valencian, Dutch, Portuguese, German in progress",
+    "I dropped the long college path|and shipped for real clients",
+    "Give me a week with|a new stack if the job needs it",
+    "There's more|in the portfolio tab",
+    "Contact is open|if you want to talk"
+  ],
+  "de": [
+    "Hi, ich bin|Gabriel Clemente",
+    "Ich lebe in der Schweiz 🇨🇭. Suche in Zürich, Zug oder gutes Remote",
+    "Full Stack|JavaScript, TypeScript, React, Node, APIs, Cloud",
+    "Zwei-Dev-Startup, dann|grösseres Produkt",
+    "GABO nebenher: solutions.gabo.rocks",
+    "Englisch fürs Arbeiten, dazu Spanisch, Valencianisch, Niederländisch, Portugiesisch, Deutsch in Arbeit",
+    "Ich habe den langen Uni-Weg abgebrochen|und für echte Kunden ausgeliefert",
+    "Eine Woche|mit einem neuen Stack, wenn der Job es braucht",
+    "Mehr im|Portfolio-Tab",
+    "Kontakt offen|wenn du reden willst"
+  ],
+  "es": [
+    "Hola, soy|Gabriel Clemente",
+    "Vivo en Suiza 🇨🇭. Busco en Zúrich, Zug o un buen remoto",
+    "Full stack|JavaScript, TypeScript, React, Node, APIs, cloud",
+    "Startup de dos devs, luego|un producto más grande",
+    "Llevo GABO aparte: solutions.gabo.rocks",
+    "Inglés para el trabajo, más español, valenciano, neerlandés, portugués y alemán en progreso",
+    "Dejé el recorrido largo|y saqué cosas a clientes reales",
+    "Dame una semana|con un stack nuevo si el trabajo lo pide",
+    "Hay más|en la pestaña de portfolio",
+    "El contacto está abierto|si quieres hablar"
   ]
 }

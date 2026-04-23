@@ -1,14 +1,13 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useMemo } from "react";
 
 /**
- * NavLink Component
- * Displays a navigation link with dynamic styles based on the current pathname.
+ * NavLink: active styles for the current pathname (locale-unaware path).
  *
- * @param {Object} link - The link object containing the URL and title.
+ * @param {Object} props
+ * @param {{ url: string, title: string }} props.link
  */
 const NavLink = ({ link }) => {
   const pathName = usePathname();
@@ -17,8 +16,8 @@ const NavLink = ({ link }) => {
 
   const linkClasses = useMemo(() => {
     return isActive
-      ? "text-black bg-white font-extrabold rounded py-1 px-3"
-      : "text-white font-semibold bg-gradient-to-bl from-blue-950 to-red-950 rounded py-1 px-3";
+      ? "font-display text-stone-950 bg-stone-100 font-semibold rounded-md py-1.5 px-3 border border-stone-200/80"
+      : "font-display text-stone-300 font-medium rounded-md py-1.5 px-3 hover:text-stone-100 hover:bg-white/5";
   }, [isActive]);
 
   return (

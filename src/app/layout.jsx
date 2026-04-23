@@ -1,62 +1,59 @@
 import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const TransitionProvider = dynamic(
-  () => import("@/components/transitionProvider/transitionProvider"),
-);
+const isProd = process.env.NODE_ENV === "production";
+
 const CustomCursor = dynamic(() => import("@/components/customCursor"), {
   ssr: false,
 });
-const BackgroundMusic = dynamic(() => import("@/components/backgroundMusic"), {
-  ssr: false,
+// Only in production: avoid pulling `@vercel/*` (and their vendor chunk) in `next dev`.
+const VercelTelemetry = isProd
+  ? dynamic(
+      () => import("@/components/vercelTelemetry").then((m) => m.VercelTelemetry),
+      { ssr: false },
+    )
+  : () => null;
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
-const Analytics = dynamic(
-  () => import("@vercel/analytics/react").then((mod) => mod.Analytics),
-  { ssr: false },
-);
-const SpeedInsights = dynamic(
-  () => import("@vercel/speed-insights/next").then((mod) => mod.SpeedInsights),
-  { ssr: false },
-);
 
-const inter = Inter({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
-export const metadata = {
-  title: "Gabriel Clemente - Full-Stack JavaScript Software Engineer",
-  description:
-    "Gabriel Clemente - Full-Stack JavaScript Software Engineer specializing in developing innovative, user-friendly, and scalable web applications. Contact me now!",
-};
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-editorial",
+  display: "swap",
+  style: ["normal", "italic"],
+});
 
 /**
- * RootLayout Component
- * The root layout for the application, including global styles, custom cursor, and transition provider.
- *
- * @param {Object} children - The child components to be rendered within the layout.
+ * @param {Object} props
+ * @param {React.ReactNode} props.children
  */
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta charSet="UTF-8" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
         />
-        <link
-          rel="preload"
-          href={inter.href}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
       </head>
-      <body className={inter.className}>
+      <body
+        className={`${inter.variable} ${plusJakarta.variable} ${sourceSerif.variable} font-sans antialiased text-stone-200 bg-stone-950`}
+      >
         <CustomCursor />
-        <TransitionProvider>{children}</TransitionProvider>
-        <BackgroundMusic />
-        <Analytics />
-        <SpeedInsights />
+        {children}
+        {isProd ? <VercelTelemetry /> : null}
       </body>
     </html>
   );

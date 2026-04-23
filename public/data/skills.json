@@ -5,6 +5,16 @@
     "hoverTextColor": "#fff"
   },
   {
+    "name": "JavaScript",
+    "hoverColor": "linear-gradient(90deg, #F7DF1E 0%, #F0DB4F 50%)",
+    "hoverTextColor": "#000000"
+  },
+  {
+    "name": "TypeScript",
+    "hoverColor": "#3178C6",
+    "hoverTextColor": "#ffffff"
+  },
+  {
     "name": "Angular",
     "hoverColor": "#DD0031",
     "hoverTextColor": "#ffffff"
@@ -28,6 +38,11 @@
     "name": "Astro",
     "hoverColor": "#FF7E33",
     "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Alpine.js",
+    "hoverColor": "#77C1D2",
+    "hoverTextColor": "#000000"
   },
   {
     "name": "Tailwind CSS",
@@ -80,8 +95,13 @@
     "hoverTextColor": "#ffffff"
   },
   {
-    "name": "Grommet",
-    "hoverColor": "#865CD6",
+    "name": "GSAP",
+    "hoverColor": "#88CE02",
+    "hoverTextColor": "#000000"
+  },
+  {
+    "name": "Framer Motion",
+    "hoverColor": "#0055FF",
     "hoverTextColor": "#ffffff"
   },
   {
@@ -120,28 +140,13 @@
     "hoverTextColor": "#ffffff"
   },
   {
+    "name": "Python",
+    "hoverColor": "#3776AB",
+    "hoverTextColor": "#ffffff"
+  },
+  {
     "name": "Hetzner",
     "hoverColor": "#DD0031",
-    "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "Sequelize",
-    "hoverColor": "#52B0E7",
-    "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "Spring Boot",
-    "hoverColor": "#6DB33F",
-    "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "GraphQL",
-    "hoverColor": "#E10098",
-    "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "Apollo",
-    "hoverColor": "#311C87",
     "hoverTextColor": "#ffffff"
   },
   {
@@ -155,13 +160,18 @@
     "hoverTextColor": "#ffffff"
   },
   {
+    "name": "Vitest",
+    "hoverColor": "#646CFF",
+    "hoverTextColor": "#ffffff"
+  },
+  {
     "name": "Cypress",
     "hoverColor": "#17202C",
     "hoverTextColor": "#ffffff"
   },
   {
-    "name": "Playwright",
-    "hoverColor": "#0A0A0A",
+    "name": "Selenium",
+    "hoverColor": "#43B02A",
     "hoverTextColor": "#ffffff"
   },
   {
@@ -172,6 +182,11 @@
   {
     "name": "Firebase",
     "hoverColor": "#039BE5",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Stripe",
+    "hoverColor": "#635BFF",
     "hoverTextColor": "#ffffff"
   },
   {
@@ -193,11 +208,6 @@
     "name": "Swagger",
     "hoverColor": "#85EA2D",
     "hoverTextColor": "#000000"
-  },
-  {
-    "name": "Motoko",
-    "hoverColor": "#02B5B9",
-    "hoverTextColor": "#ffffff"
   },
   {
     "name": "CI/CD",
@@ -235,23 +245,18 @@
     "hoverTextColor": "#000000"
   },
   {
+    "name": "Zapier",
+    "hoverColor": "#FF4A00",
+    "hoverTextColor": "#ffffff"
+  },
+  {
     "name": "Vercel",
     "hoverColor": "#000000",
     "hoverTextColor": "#ffffff"
   },
   {
-    "name": "DigitalOcean",
-    "hoverColor": "#008BC4",
-    "hoverTextColor": "#ffffff"
-  },
-  {
     "name": "Heroku",
     "hoverColor": "#430098",
-    "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "Netlify",
-    "hoverColor": "#00C7B7",
     "hoverTextColor": "#ffffff"
   },
   {
@@ -265,8 +270,13 @@
     "hoverTextColor": "#000000"
   },
   {
-    "name": "Recoil",
-    "hoverColor": "#3578E5",
+    "name": "Google Apps Script",
+    "hoverColor": "#34A853",
+    "hoverTextColor": "#ffffff"
+  },
+  {
+    "name": "Odoo",
+    "hoverColor": "#714B67",
     "hoverTextColor": "#ffffff"
   },
   {
@@ -275,18 +285,13 @@
     "hoverTextColor": "#ffffff"
   },
   {
+    "name": "TanStack Query",
+    "hoverColor": "linear-gradient(90deg, #FF4154 0%, #FF6B6B 50%)",
+    "hoverTextColor": "#ffffff"
+  },
+  {
     "name": "Vite",
     "hoverColor": "#646CFF",
-    "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "Vitest",
-    "hoverColor": "#646CFF",
-    "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "Bun",
-    "hoverColor": "#000000",
     "hoverTextColor": "#ffffff"
   },
   {
@@ -295,28 +300,8 @@
     "hoverTextColor": "#ffffff"
   },
   {
-    "name": "MariaDB",
-    "hoverColor": "#003545",
-    "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "Mocha",
-    "hoverColor": "#8D6748",
-    "hoverTextColor": "#ffffff"
-  },
-  {
     "name": "NPM",
     "hoverColor": "#CB3837",
     "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "Yarn",
-    "hoverColor": "#2C8EBB",
-    "hoverTextColor": "#ffffff"
-  },
-  {
-    "name": "Webpack",
-    "hoverColor": "#8DD6F9",
-    "hoverTextColor": "#000000"
   }
 ]

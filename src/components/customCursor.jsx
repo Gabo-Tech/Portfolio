@@ -82,10 +82,14 @@ const CustomCursor = () => {
   return (
     <motion.div
       ref={cursorRef}
-      className="circle"
+      className="custom-cursor"
       aria-hidden="true"
       animate={controls}
-    />
+    >
+      <span className="custom-cursor__ring" />
+      <span className="custom-cursor__dot" />
+      <span className="custom-cursor__cross" aria-hidden="true" />
+    </motion.div>
   );
 };
 

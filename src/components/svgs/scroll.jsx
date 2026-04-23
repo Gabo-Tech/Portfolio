@@ -1,3 +1,4 @@
+"use client";
 // components/svg/ScrollSvg.js
 import { motion } from "framer-motion";
 

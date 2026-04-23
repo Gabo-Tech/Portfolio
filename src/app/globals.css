@@ -6,72 +6,130 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  cursor: none !important;
   scroll-behavior: smooth;
+}
+
+/* Custom cursor only when it is shown (see `.custom-cursor` visibility). */
+@media (min-width: 1025px) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+html {
+  /* Keeps layout width stable when scrollbars appear so centered content stays visually centered. */
+  scrollbar-gutter: stable;
 }
 
 body {
   min-height: 100vh;
   -webkit-text-size-adjust: 100%;
-  background-color: #050908;
 }
 
-.circle {
-  --circle-size: 40px;
+/* Primary reader layer; reserve chroma (e.g. sky) for actions only. */
+@layer base {
+  ::selection {
+    @apply bg-sky-500/25 text-stone-100;
+  }
+}
+
+.blinking-cursor {
+  @apply text-stone-500 font-light ml-0.5 inline-block;
+  font-weight: 300;
+}
+
+@layer components {
+  .page-gradient {
+    @apply bg-gradient-to-b from-slate-950 via-stone-900 to-slate-950;
+  }
+  .page-gradient-deep {
+    @apply bg-gradient-to-b from-slate-950 via-stone-950 to-neutral-950;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg border border-sky-400/40
+      bg-sky-500 px-4 py-3 font-display font-semibold text-white shadow-sm
+      transition hover:bg-sky-400 focus-visible:outline focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-sky-400;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-lg border border-stone-600/80
+      bg-stone-900/50 px-4 py-3 font-display font-medium text-stone-200
+      transition hover:border-stone-500 hover:bg-stone-800/60
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-stone-500;
+  }
+}
+
+/* Ring + center dot + hair cross: intersection and dot = true click (client) point. */
+.custom-cursor {
+  --cursor-size: 40px;
+  --cursor-dot: 6px;
   position: fixed;
-  height: var(--circle-size);
-  width: var(--circle-size);
-  border: 10px solid rgba(0, 0, 0, 1);
-  border-radius: 100%;
-  top: calc(var(--circle-size) / 2 * -1);
-  left: calc(var(--circle-size) / 2 * -1);
+  top: calc(var(--cursor-size) / -2);
+  left: calc(var(--cursor-size) / -2);
+  width: var(--cursor-size);
+  height: var(--cursor-size);
   pointer-events: none;
   z-index: 1000;
-  filter: invert(100%);
-  mix-blend-mode: difference;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 50% 50%;
+  will-change: transform;
 }
 
-::selection {
-  background-color: #ffffff;
-  filter: invert(100%);
-  color: #000000;
+.custom-cursor__ring {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45);
+}
+
+/* Exact hotspot: sky dot so it’s visible on both light and dark UI. */
+.custom-cursor__dot {
+  position: relative;
+  z-index: 2;
+  width: var(--cursor-dot);
+  height: var(--cursor-dot);
+  border-radius: 50%;
+  background-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 0 6px rgba(56, 189, 248, 0.55);
+  flex-shrink: 0;
+}
+
+/* Hair cross: center lines meet at the same point as the dot. */
+.custom-cursor__cross {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 12px;
+  height: 12px;
+  margin: auto;
+  background: linear-gradient(
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      )
+      center / 1px 100% no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)) center/100% 1px
+      no-repeat;
+  filter: drop-shadow(0 0 0.5px rgba(0, 0, 0, 0.55));
+  pointer-events: none;
 }
 
 ::-webkit-selection {
-  background-color: #ffffff;
-  color: #000000;
-  filter: invert(100%);
+  background-color: rgb(14 165 233 / 0.25);
+  color: #f5f5f4;
 }
 
 ::-moz-selection {
-  background-color: #ffffff;
-  color: #000000;
-  filter: invert(100%);
-}
-
-.audio-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.audio-controls button {
-  padding: 8px 16px;
-  background-color: #fff;
-  color: #000;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.audio-controls input[type="range"] {
-  width: 150px;
-  cursor: pointer;
+  background-color: rgb(14 165 233 / 0.25);
+  color: #f5f5f4;
 }
 
 @media (max-width: 1024px) {
-  .circle {
+  .custom-cursor {
     display: none;
   }
 }

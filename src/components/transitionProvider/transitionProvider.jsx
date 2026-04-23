@@ -1,19 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "../navbar/navbar";
-import { usePathname } from "next/navigation";
+import { usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { AppScrollContainerRefContext } from "@/components/scrollContainerContext";
 import "./transitions.css";
 
 /**
- * TransitionProvider Component
- * Provides page transition animations and manages the first visit state.
+ * TransitionProvider: page transitions and first-visit home treatment.
  *
- * @param {Object} children - The child components to be rendered.
+ * @param {Object} props
+ * @param {React.ReactNode} props.children
  */
 const TransitionProvider = ({ children }) => {
+  const mainScrollRef = useRef(/** @type {HTMLDivElement | null} */ (null));
   const pathName = usePathname();
+  const t = useTranslations("PageTitle");
   const [firstVisit, setFirstVisit] = useState(true);
 
   useEffect(() => {
@@ -22,16 +26,22 @@ const TransitionProvider = ({ children }) => {
     }
   }, [pathName]);
 
-  const displayName =
-    pathName === "/"
-      ? "Home"
-      : pathName.charAt(1).toUpperCase() + pathName.substring(2);
+  const displayName = useMemo(() => {
+    if (pathName === "/") {
+      return t("home");
+    }
+    const segment = pathName.replace(/^\//, "").split("/")[0];
+    const key = ["about", "portfolio", "contact"].includes(segment)
+      ? segment
+      : "home";
+    return t(key);
+  }, [pathName, t]);
 
   return (
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className="w-screen h-full bg-gradient-to-b from-blue-950 to-red-950"
+        className="page-gradient flex min-h-screen w-full min-w-0 max-w-full flex-col"
         aria-live="polite"
       >
         {!(pathName === "/" && firstVisit) && (
@@ -59,10 +69,18 @@ const TransitionProvider = ({ children }) => {
             />
           </>
         )}
-        <div className="h-24">
+        <header className="relative z-50 h-24 shrink-0">
           <Navbar />
-        </div>
-        <div className="h-[calc(100vh-6rem)]">{children}</div>
+        </header>
+        <AppScrollContainerRefContext.Provider value={mainScrollRef}>
+          <main
+            id="app-scroll-root"
+            ref={mainScrollRef}
+            className="relative z-0 flex min-h-0 w-full max-w-full flex-1 flex-col overflow-y-auto"
+          >
+            {children}
+          </main>
+        </AppScrollContainerRefContext.Provider>
       </div>
     </AnimatePresence>
   );

@@ -1,73 +1,93 @@
+"use client";
+import { useEffect, useLayoutEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
-import { useMemo } from "react";
 
+/**
+ * Full-viewport blocking loader: opaque backdrop + bouncing dots.
+ * Renders in a portal to document.body (above the nav / scroll root stacking so it is
+ * always visible on client navigations) and blocks pointer events while up.
+ */
 const Loader = () => {
-  const loadingContainerStyle = {
+  const [mountNode, setMountNode] = useState(null);
+
+  useLayoutEffect(() => {
+    setMountNode(document.body);
+  }, []);
+
+  useEffect(() => {
+    const scrollRoot = document.getElementById("app-scroll-root");
+    const prevBody = document.body.style.overflow;
+    const prevRoot = scrollRoot ? scrollRoot.style.overflowY : "";
+    document.body.style.overflow = "hidden";
+    if (scrollRoot) scrollRoot.style.overflowY = "hidden";
+    return () => {
+      document.body.style.overflow = prevBody;
+      if (scrollRoot) scrollRoot.style.overflowY = prevRoot;
+    };
+  }, []);
+
+  const containerStyle = {
     width: "4rem",
     height: "4rem",
     display: "flex",
     justifyContent: "space-around",
   };
 
-  const loadingCircleStyle = {
+  const circleStyle = {
     display: "block",
     width: "1rem",
     height: "1rem",
-    backgroundColor: "#3A36DB",
+    backgroundColor: "#38bdf8",
     borderRadius: "0.5rem",
   };
 
-  const loadingContainerVariants = {
-    start: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-    end: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+  const containerVariants = {
+    start: { transition: { staggerChildren: 0.2 } },
+    end: { transition: { staggerChildren: 0.2 } },
   };
 
-  const loadingCircleVariants = {
-    start: {
-      y: "0%",
-    },
-    end: {
-      y: "60%",
-    },
+  const circleVariants = {
+    start: { y: "0%" },
+    end: { y: "60%" },
   };
 
-  const loadingCircleTransition = {
+  const circleTransition = {
     duration: 0.4,
     yoyo: Infinity,
     ease: "easeInOut",
   };
 
-  return (
+  const content = (
     <div
-      className="fixed w-full min-h-screen z-50 bg-black opacity-30 flex items-center justify-center"
+      className="fixed inset-0 z-[100] flex min-h-screen w-full items-center justify-center bg-stone-950"
       role="status"
       aria-live="polite"
+      aria-label="Loading"
     >
       <motion.div
-        style={loadingContainerStyle}
-        variants={loadingContainerVariants}
+        style={containerStyle}
+        variants={containerVariants}
         initial="start"
         animate="end"
       >
         {[...Array(3)].map((_, index) => (
           <motion.span
             key={index}
-            style={loadingCircleStyle}
-            variants={loadingCircleVariants}
-            transition={loadingCircleTransition}
-          ></motion.span>
+            style={circleStyle}
+            variants={circleVariants}
+            transition={circleTransition}
+          />
         ))}
       </motion.div>
     </div>
   );
+
+  if (mountNode) {
+    return createPortal(content, mountNode);
+  }
+
+  return content;
 };
 
 export default Loader;

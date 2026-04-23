@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -34,7 +36,7 @@ const HoverSkill = ({ children }) => {
 
   return (
     <motion.div
-      className="rounded p-2 text-sm cursor-pointer font-bold text-white border border-white"
+      className="cursor-pointer rounded border border-white px-2 py-1 text-xs font-bold leading-tight text-white sm:rounded-md sm:px-3 sm:py-1.5 sm:text-sm md:px-4 md:py-3 md:text-base"
       style={hoverStyles}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

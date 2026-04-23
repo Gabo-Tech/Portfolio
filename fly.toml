@@ -10,7 +10,7 @@ primary_region = 'cdg'
 # BUILD CONFIGURATION
 # ────────────────────────────────
 [build]
-  dockerfile = "Dockerfile"   # (optional – Fly will use Dockerfile by default)
+  dockerfile = "Dockerfile"   # (optional - Fly will use Dockerfile by default)
 
   # <-- IMPORTANT: Pass EmailJS keys at **build time**
   [build.args]

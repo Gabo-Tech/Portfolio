@@ -1,0 +1,136 @@
+{
+  "Meta": {
+    "title": "Gabriel Clemente | Full-Stack (JS/TS, React, Node)",
+    "description": "Full-Stack-Entwickler. React, TypeScript, Node, AWS, Docker. Projekte, Hintergrund, Kontakt. In der Schweiz, offen für Zürich, Zug und Remote.",
+    "keywords": "Full-Stack, Entwickler, React, TypeScript, Node.js, Webentwicklung, Portfolio, Schweiz, Zürich, Zug, Remote, AWS, Docker, Gabriel Clemente, JavaScript"
+  },
+  "nav": {
+    "home": "Start",
+    "about": "Über mich",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt",
+    "closeMenu": "Menü schließen",
+    "mobileNavigation": "Seitennavigation"
+  },
+  "PageTitle": {
+    "home": "Start",
+    "about": "Über mich",
+    "portfolio": "Portfolio",
+    "contact": "Kontakt"
+  },
+  "langSwitcher": {
+    "en": "EN",
+    "de": "DE",
+    "es": "ES",
+    "label": "Sprache"
+  },
+  "Home": {
+    "viewWork": "Meine Arbeit",
+    "contactMe": "Kontakt",
+    "goFullscreen": "Vollbild",
+    "ariaViewWork": "Meine Arbeit ansehen",
+    "ariaContact": "Kontakt aufnehmen",
+    "ariaHeroBottom": "Gabriel, Skizzenporträt",
+    "ariaHeroTop": "Gabriel, künstlerisches Porträt",
+    "proofLine": "Full-Stack TypeScript und JavaScript, vom Zwei-Personen-Telemedizin-Produkt bis Frontend in Threat-Modeling. In der Schweiz; Zürich, Zug oder starkes EU-Remote.",
+    "chip1": "Full-Stack JS/TS",
+    "chip2": "React · Node · APIs",
+    "chip3": "CH / EU-Remote (2026)",
+    "chipsAriaLabel": "Kurzüberblick Rolle & Verfügbarkeit",
+    "downloadResume": "Lebenslauf (PDF)",
+    "ariaResume": "Lebenslauf als PDF herunterladen"
+  },
+  "About": {
+    "biography": "ÜBER|MICH",
+    "bio": "Ich bin Gabriel. Ich liefere Full-Stack-Produkte Ende-zu-Ende: klare UI, solide APIs, Integrationen und der operative Kleber drumherum. Als zweiter Entwickler in Telemedizin (Angular, React Native, Node, Postgres, AWS), als Frontend in Threat-Modeling (React, TanStack Query, Vitest) und heute als Gründer-Engineer bei GABO mit Kundenarbeit und eigenen Produkten (Newsletter, Automatisierung, npm-Tooling). Mir wichtig: lesbarer Code und Systeme, die Produktion überstehen.",
+    "bioPath": "Weg: Informatik BYU Idaho (2020-21), dann direkt Kundenarbeit in Spanien, on the job gelernt und ausgeliefert. Formalisiert als GABO (solutions.gabo.rocks); jetzt in der Schweiz. Was ich im Stack nicht kenne, lerne ich. Mail: sendmessage@gabo.email. Sag, was du baust.",
+    "quoteFowler": "Jeder Trottel kann Code schreiben, den der Computer versteht. Gute Programmierer schreiben Code, den Menschen verstehen. (Martin Fowler)",
+    "quoteMe": "Wenn ich es nicht weiss, lerne ich es. (ich)",
+    "skills": "SKILLS",
+    "languagesHeading": "SPRACHEN",
+    "languagesNote": "Standard für die Arbeit ist Englisch. Ich kann auf eine der oben genannten Sprachen wechseln, wenn Team oder Kunde es so wünscht. Diese Seite gibt es auf Englisch, Deutsch und Spanisch. Ich biete keine beglaubigte Übersetzung; wenn du Entwicklung plus Texte in einer anderen Sprache brauchst, sag das von Anfang an.",
+    "experience": "ERFAHRUNG",
+    "hireCtaTitle": "Du stellst ein oder brauchst eine starke IC-Rolle?",
+    "hireCtaBody": "Lebenslauf, Projekte und Empfehlungen findest du hier, oder schreib mir direkt; ich antworte mit Kalender und Links.",
+    "hireCtaContact": "Kontakt",
+    "hireCtaResume": "Lebenslauf",
+    "ariaHireCtaContact": "Zur Kontaktseite",
+    "ariaHireCtaResume": "Lebenslauf als PDF herunterladen",
+    "langItems": [
+      { "name": "Englisch", "note": "Muttersprache" },
+      { "name": "Spanisch", "note": "Muttersprache" },
+      { "name": "Valencianisch", "note": "Muttersprache" },
+      { "name": "Niederländisch", "note": "Voll fliessend" },
+      { "name": "Portugiesisch", "note": "Fliessend" },
+      { "name": "Deutsch", "note": "In Arbeit (Richtung Alltag in der CH)" }
+    ],
+    "caseStudy": {
+      "imageAlt": "Screenshot der Coaching-Website von Arturo Rodés",
+      "title": "Fallstudie: Coach-Site + CMS in Kundenhand",
+      "lede": "Ein GABO-Build 2026 für einen Gehaltsverhandlungs-Coach: schnelle Marketing-Site, saubere Motion und ein Redaktions-Workflow ohne Dev für jeden Copy-Tweak.",
+      "problemLabel": "Problem:",
+      "problem": "Es brauchte eine glaubwürdige, schnelle öffentliche Site und einen tragfähigen Weg, Inhalte zu pflegen, statt einem einmaligen Handover, das das Business in statischem Text einfriert.",
+      "approachLabel": "Vorgehen:",
+      "approach": "Astro + Alpine + GSAP vorne; schlanker Headless-Workflow mit dem Open-Source-npm-Paket frontend-auto-cms, damit Änderungen aus einem Dashboard ins Repo fliessen, mit Guardrails.",
+      "outcomeLabel": "Ergebnis:",
+      "outcome": "Live-Produkt mit echtem Redaktions-Loop: der Kunde bringt Copy-Änderungen über Tooling statt Notfall-Tickets. Gleiches Muster für andere static-first Sites wiederverwendbar.",
+      "linkLabel": "arturorodes.com ansehen"
+    },
+    "testimonials": {
+      "heading": "Empfehlungen",
+      "arturo": {
+        "quote": "Einer der wenigen Menschen, die ich in der Tech-Branche empfehlen würde. Hohe Qualität, unglaubliche Umsetzungsgeschwindigkeit und konstantes Overdelivery. Er hört nicht auf, bevor die Aufgabe erledigt ist. Ich bin froh, mit dir gearbeitet zu haben.",
+        "name": "Arturo Rodés",
+        "role": "Product Manager",
+        "relation": "Kunde, arturorodes.com"
+      },
+      "ciro": {
+        "quote": "Mit Gabriel zu arbeiten war eine Freude. Sehr fleissig und engagiert, immer neugierig auf Neues und darauf, Dinge besser zu machen. Er sucht proaktiv Lösungen aus verschiedenen Quellen und denkt langfristig. Das ist vorbildlich.",
+        "name": "Ciro Vivacqua",
+        "role": "CTO · Enterprise Architect",
+        "relation": "Direkter Vorgesetzter"
+      },
+      "michael": {
+        "quote": "Eines der seltenen Talente. Frisst Wissen und bleibt nie bei 100% stehen, immer Richtung 110%. Hilft jedem gerne; kein Bug bleibt lange bestehen. Vier Monate im Klassenzimmer mit ihm waren ein Vergnügen.",
+        "name": "Michael Lara Sánchez",
+        "role": "Full-Stack · UX/UI",
+        "relation": "Studienkollege"
+      }
+    }
+  },
+  "Contact": {
+    "hello": "Sag Hallo! ",
+    "downloadResume": "Lebenslauf herunterladen",
+    "dearGabo": "Lieber GABO, DU BIST GROSSARTIG!",
+    "myMail": "Meine E-Mail ist:",
+    "yourName": "Du kannst mich nennen... (Wie heisst du?)",
+    "regards": "Grüsse",
+    "send": "Senden",
+    "sentSuccess": "Erfolgreich gesendet",
+    "tryAgain": "Nochmals versuchen",
+    "formError": "Etwas ist schiefgelaufen!",
+    "smilingEmoji": "lachendes Emoji",
+    "availability": "Offen für Vollzeit: Zürich, Zug oder starkes EU-Remote (2026). Antwort am selben Tag auf seriöse Anfragen.",
+    "secondaryCta": "Nur E-Mail? sendmessage@gabo.email"
+  },
+  "Portfolio": {
+    "someOfMyWork": "CASES &|AUSLIEFERUNGEN",
+    "heroSubhead": "Produkt-UI, Content-Systeme und Automatisierung, von Kundenlaunches bis eigenem Newsletter und npm-Tooling.",
+    "chip1": "React / TS Produktteams",
+    "chip2": "Astro + CMS-Flows",
+    "chip3": "Echte Nutzer & Produktion",
+    "chipsAriaLabel": "Schwerpunkte",
+    "availabilityLine": "Verfügbar 2026 · Zürich · Zug · EU-Remote",
+    "projectQuestion": "Hast du ein|Projekt?",
+    "devRole": "Full-Stack-JS/TS-Entwickler",
+    "hireMe": "Anfragen",
+    "ariaHire": "Kontakt aufnehmen",
+    "aboutTheProject": "ÜBER DAS PROJEKT",
+    "skills": "SKILLS",
+    "readMore": "Mehr",
+    "readLess": "Weniger",
+    "seeProject": "Projekt ansehen",
+    "footerResume": "Lebenslauf (PDF)",
+    "ariaFooterResume": "Lebenslauf als PDF herunterladen"
+  }
+}

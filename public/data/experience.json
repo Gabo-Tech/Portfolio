@@ -1,37 +1,32 @@
-[  
+[
   {
-    "title": "Frontend Developer",
-    "description": "As a Frontend Developer at Iriusrisk, I work with React, Zustand, TanStack (formerly known as React Query), and Ant Design. My role involves developing responsive and efficient frontend applications, managing state with Zustand, optimizing data fetching and caching using TanStack, and implementing UI components with Ant Design. I'm responsible for creating intuitive interfaces, implementing complex state management logic, and ensuring smooth integration between frontend and backend services. This position has further honed my skills in modern JavaScript frameworks and libraries, allowing me to contribute to cutting-edge web applications.",
-    "date": "Oct 2022 - Oct 2025",
+    "title": "Founder & lead engineer",
+    "description": "Scope: GABO LLC (solutions.gabo.rocks), Switzerland. Client delivery plus own products. Shipped Puto Pulse (putopulse.org): newsletter, 500+ subscribers, automation for email and social. Client build arturorodes.com (Astro, Alpine, GSAP) plus npm package frontend-auto-cms for repo-backed content edits. Stack varies by project; I still write the production code. Fully remote.",
+    "date": "Oct 2025 - Present",
+    "company": "GABO"
+  },
+  {
+    "title": "Frontend developer",
+    "description": "Scope: enterprise threat-modeling product UI. React, Ant Design, TanStack Query, Zustand, SASS, Vitest. PR review, API work with backend, production incidents. Outcome: 2nd place company hackathon; reliable feature delivery in a regulated product context. Full-time remote EU. Role ended on relocation to Switzerland.",
+    "date": "Oct 2024 - Oct 2025",
     "company": "IriusRisk"
   },
   {
-    "title": "Full-Stack TypeScript Engineer",
-    "description": "As a Full-Stack TypeScript Engineer at Beyondbmi, I spearhead the development of an advanced online weight loss clinic platform. Utilizing Angular and Bootstrap for the front-end and Express with TypeORM for the back-end, I ensure consistent and reliable performance across the stack with TypeScript. My role involves implementing HIPAA-compliant encryption protocols to safeguard patient data, developing an Android application with React Native, and deploying AWS Lambda functions and AWS Cognito for secure authentication. My contributions have enhanced user experience, data security, and the platform's scalability.",
+    "title": "Independent build period",
+    "description": "Scope: active interviewing for full-time roles while shipping side projects (visible on GitHub and this portfolio) so skills and shipping cadence stayed current. No employment gap in terms of output: continuous commits and public work.",
+    "date": "Apr 2024 - Oct 2024",
+    "company": "Independent"
+  },
+  {
+    "title": "Full-stack TypeScript engineer",
+    "description": "Scope: telehealth product, team of two engineers, TypeScript end to end. Learned Angular from zero; first MR in week one. Express, TypeORM, Postgres, React Native, AWS, Stripe, messaging. Outcome: one month of solo ownership while senior was away, including production DB access, critical bugs, and releases. Engagement ended when company budget tightened; product near target milestone.",
     "date": "Nov 2022 - Apr 2024",
     "company": "Beyondbmi"
   },
   {
-    "title": "Software Engineer",
-    "description": "At GABO, I collaborate on a variety of projects, focusing on developing e-commerce sites, corporate websites, and online presences for small businesses. My work emphasizes Search Engine Optimization (SEO) to improve visibility and engagement. Using JavaScript frameworks, WordPress, PHP, and other tools, I deliver tailored, optimized web solutions. My role has honed my versatility in web development and client relationship management, ensuring long-term client satisfaction and successful project outcomes.",
-    "date": "Feb 2022 - Nov 2022",
-    "company": "GABO"
-  },
-  {
-    "title": "User Interface Engineer",
-    "description": "During my internship at talenTeal, I led the comprehensive redesign of the company’s landing page to enhance user experience (UX) and user interface (UI). My focus was on creating an intuitive and navigable website, resulting in improved accessibility and user engagement. This project demonstrated my ability to apply front-end development skills effectively to achieve significant improvements in digital interaction and user satisfaction.",
-    "date": "Jul 2022 - Aug 2022",
-    "company": "talenTeal"
-  },
-  {
-    "title": "Technical Support Specialist",
-    "description": "At Lujo Network, I enhanced the company’s security infrastructure by implementing firewalls and establishing robust backup systems. I also managed databases, developed website segments, and conducted security training sessions. My efforts improved the company’s digital security framework and online presence, showcasing my ability to handle both technical support and development tasks effectively.",
-    "date": "Feb 2022 - Mar 2022",
-    "company": "Lujo Network"
-  },
-  {
-    "title": "Freelancer",
-    "description": "I provided web solutions, applying a range of technologies to address client requirements.",
-    "date": "Feb 2021 - Feb 2022"
+    "title": "Solo developer to GABO",
+    "description": "Scope: Spain-based delivery for SMBs and startups. Landings, e-commerce, SEO. US entity (GABO) for clean contracting. Clients via Valencia accelerators (Demium, Lanzadera): RentsBy, talenTeal, Tronando, etc. With Futuria (Digital Kit): Imalevante, Rehubik automation (forms, SQL, Odoo, Zapier, APIs, PHP, Python, Apps Script). Mostly remote. Breadth: from marketing sites to integration-heavy workflows.",
+    "date": "Aug 2021 - Nov 2022",
+    "company": "GABO / self-employed"
   }
 ]
