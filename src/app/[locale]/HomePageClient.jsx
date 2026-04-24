@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import { motion, useAnimation, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { getFadeInUpProps } from "@/lib/motionVariants";
 import TypingAnimation from "@/components/typingAnimation";
 import CredibilityStrip from "@/components/credibilityStrip";
@@ -22,7 +22,6 @@ const HomePageClient = () => {
   const { showLoader } = usePageImageLoader(HOME_IMAGE_URLS);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const textContainerRef = useRef(null);
-  const controls = useAnimation();
   const reducedMotion = useReducedMotion();
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -69,39 +68,6 @@ const HomePageClient = () => {
     }
     return undefined;
   }, []);
-  useEffect(() => {
-    let isMounted = true;
-    const startFloatingAnimation = () => {
-      setTimeout(() => {
-        if (isMounted) {
-          controls.start({
-            y: ["10px", "-10px", "10px", "-10px"],
-            x: ["20px", "-20px", "20px"],
-            transition: {
-              y: {
-                duration: 2,
-                ease: "easeInOut",
-                repeat: Infinity,
-                repeatType: "mirror",
-              },
-              x: {
-                duration: 3,
-                ease: "easeInOut",
-                repeat: Infinity,
-                repeatType: "mirror",
-              },
-            },
-          });
-        }
-      }, 15000);
-    };
-    document.addEventListener("click", startFloatingAnimation);
-    return () => {
-      isMounted = false;
-      document.removeEventListener("click", startFloatingAnimation);
-      controls.stop();
-    };
-  }, [controls]);
   const openFullscreen = useCallback(() => {
     const elem = document.documentElement;
     if (elem.requestFullscreen) {
@@ -139,9 +105,8 @@ const HomePageClient = () => {
         aria-busy={false}
       >
         <div className="mx-auto flex w-full min-h-0 max-w-screen-3xl flex-1 flex-col items-stretch gap-0 pb-6 pt-1 sm:pb-8 sm:pt-2 md:min-h-0 md:pb-8 lg:min-h-[min(100dvh,100%)] lg:flex-row lg:items-stretch lg:pb-0 lg:pt-0 3xl:min-h-0 4xl:max-w-[min(100rem,100%)]">
-          <motion.div
+          <div
             className="relative z-10 order-1 flex w-full min-h-[min(45dvh,20rem)] flex-1 flex-col items-center justify-center overflow-hidden min-[380px]:min-h-[min(50dvh,24rem)] sm:min-h-[min(52dvh,28rem)] sm:my-2 md:min-h-[min(55dvh,30rem)] md:my-3 lg:order-1 lg:my-0 lg:min-h-0 lg:max-w-[50%] lg:shrink-0 lg:basis-1/2 lg:py-2 xl:py-4 2xl:py-6 3xl:max-w-[min(50%,48rem)]"
-            animate={controls}
           >
             <motion.div
               className="absolute inset-0 m-1 min-[400px]:m-2 sm:m-3 md:m-4 lg:m-2 lg:min-h-0 2xl:m-4"
@@ -181,7 +146,7 @@ const HomePageClient = () => {
                 />
               </div>
             </motion.div>
-          </motion.div>
+          </div>
           <div
             className="order-2 flex min-h-0 w-full min-w-0 max-w-full flex-col items-center justify-center px-3 [padding-bottom:max(1rem,env(safe-area-inset-bottom))] [padding-left:max(0.75rem,env(safe-area-inset-left))] [padding-right:max(0.75rem,env(safe-area-inset-right))] min-[400px]:px-4 sm:px-6 sm:min-h-0 sm:py-2 md:px-8 md:py-4 lg:min-h-0 lg:w-1/2 lg:max-w-[50%] lg:shrink-0 lg:basis-1/2 lg:px-6 lg:py-2 xl:px-10 2xl:px-12 2xl:py-6 3xl:px-14 3xl:py-8 4xl:px-20"
             ref={textContainerRef}

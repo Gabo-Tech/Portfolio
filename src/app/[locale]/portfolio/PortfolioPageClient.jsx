@@ -94,21 +94,7 @@ const PortfolioPageClient = () => {
                 className="inline-block max-w-[min(100%,calc(100vw-2rem))] whitespace-nowrap text-center text-2xl !font-extrabold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
               />
             </motion.div>
-            <motion.div
-              className="flex w-full flex-col items-center gap-6 lg:gap-8"
-              animate={
-                rm
-                  ? {}
-                  : {
-                      y: ["12px", "-12px", "12px"],
-                      transition: {
-                        duration: 2,
-                        ease: "easeInOut",
-                        repeat: Infinity,
-                      },
-                    }
-              }
-            >
+            <div className="flex w-full flex-col items-center gap-6 lg:gap-8">
               <motion.div
                 {...fadeInUp(0.4, !!rm)}
                 className="flex w-full justify-center"
@@ -121,7 +107,7 @@ const PortfolioPageClient = () => {
                   className="max-w-3xl xl:max-w-4xl 2xl:max-w-5xl"
                 />
               </motion.div>
-            </motion.div>
+            </div>
           </div>
           <motion.div
             {...fadeInUp(0.55, !!rm)}
