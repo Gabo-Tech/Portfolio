@@ -10,7 +10,6 @@ import TimelineList from "@/components/timeline/timelineList";
 import FeaturedCaseStudy from "@/components/featuredCaseStudy";
 import TestimonialsSection from "@/components/testimonialsSection";
 import Brain from "@/components/svgs/brain";
-import ExperienceBrain from "@/components/svgs/experienceBrain";
 import SignatureSvg from "@/components/svgs/signature";
 import ScrollSvg from "@/components/svgs/scroll";
 import { Link } from "@/i18n/navigation";
@@ -260,11 +259,24 @@ const AboutPageClient = () => {
             >
               {t("experience")}
             </motion.h1>
-            <div className="relative z-10 bg-neutral-950/96 backdrop-blur-[2px] sm:bg-neutral-950/94 md:bg-stone-950/90 lg:col-start-1 lg:bg-transparent lg:backdrop-blur-none">
+            <div className="relative z-10 bg-neutral-950/96 backdrop-blur-[2px] sm:bg-neutral-950/94 md:bg-stone-950/90 lg:col-start-1 lg:row-start-2 lg:bg-transparent lg:backdrop-blur-none">
               <TimelineList
                 experiences={experienceData}
                 isInView={isExperienceRefInView}
               />
+            </div>
+            {/* Desktop: brain in grid column 2 (avoids viewport-fixed right edge overflow on wide screens). */}
+            <div
+              className="pointer-events-none relative z-10 hidden min-h-0 min-w-0 self-stretch lg:col-start-2 lg:row-start-2 lg:flex lg:h-full lg:min-h-0 lg:items-center lg:justify-center"
+              aria-hidden
+            >
+              <div className="box-border h-full min-h-0 w-full min-w-0 max-h-[min(86dvh,960px)] max-w-lg px-1 2xl:max-w-xl 3xl:max-w-2xl">
+                <Brain
+                  className="h-full w-full min-h-0 min-w-0"
+                  preserveAspectRatio="xMidYMid meet"
+                  scrollYProgress={brainScrollProgress}
+                />
+              </div>
             </div>
             {/* Mobile/tablet only: ambient background brain behind the timeline. */}
             <div className="pointer-events-none absolute inset-0 z-0 opacity-[0.16] sm:opacity-[0.22] md:opacity-[0.28] lg:hidden">
@@ -275,13 +287,6 @@ const AboutPageClient = () => {
               />
             </div>
           </div>
-          {/* Desktop: portaled, position:fixed brain. Lives outside this subtree so no
-              ancestor transform/overflow can affect positioning. It follows the
-              experience section's rect: scrolls in, pins at center, scrolls out. */}
-          <ExperienceBrain
-            sectionRef={experienceRef}
-            scrollYProgress={brainScrollProgress}
-          />
           <TestimonialsSection />
           <motion.div
             className="mx-auto flex w-full max-w-2xl flex-col items-center gap-6 px-4 pb-32 text-center sm:px-6"

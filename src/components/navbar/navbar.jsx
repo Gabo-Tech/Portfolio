@@ -190,8 +190,8 @@ const Navbar = () => {
   );
   return (
     <div className="box-border flex h-full min-h-[inherit] w-full border-b border-white/5 bg-stone-950/50 text-sm backdrop-blur-sm sm:text-base md:text-[0.95rem] lg:text-base 3xl:text-lg">
-      <div className="grid w-full max-w-screen-3xl grid-cols-[auto_1fr_auto] items-center gap-2 px-3 py-2 sm:gap-3 sm:px-4 md:px-5 md:py-2.5 lg:gap-4 lg:px-6 xl:px-8 2xl:px-10 3xl:px-12 4xl:px-16 min-[320px]:px-[max(0.75rem,env(safe-area-inset-left))]">
-        <div className="flex min-w-0 max-w-full items-center">
+      <div className="mx-auto grid w-full min-w-0 max-w-screen-3xl grid-cols-[1fr_auto_1fr] items-center gap-2 px-3 py-2 sm:gap-3 sm:px-4 md:px-5 md:py-2.5 lg:gap-4 lg:px-6 xl:px-8 2xl:px-10 3xl:px-12 4xl:max-w-[min(100rem,100%)] 4xl:px-16 min-[320px]:px-[max(0.75rem,env(safe-area-inset-left))]">
+        <div className="flex min-w-0 max-w-full items-center justify-self-start">
           <div
             className="flex shrink-0 gap-0.5 sm:gap-1 md:hidden"
             role="group"
@@ -207,7 +207,7 @@ const Navbar = () => {
           </nav>
         </div>
 
-        <div className="flex min-w-0 justify-center px-1 min-[400px]:px-2 sm:px-3">
+        <div className="flex min-w-0 justify-center justify-self-center px-1 min-[400px]:px-2 sm:px-3">
           <Link
             rel="noopener noreferrer"
             href="/"

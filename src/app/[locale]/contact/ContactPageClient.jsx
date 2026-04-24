@@ -288,13 +288,11 @@ const ContactPageClient = () => {
         className="relative z-20 w-full min-w-0 max-w-full shrink-0 border-t border-stone-700/40 bg-stone-950/95 shadow-[0_-4px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm [padding-bottom:env(safe-area-inset-bottom,0px)] [padding-left:max(0px,env(safe-area-inset-left,0px))] [padding-right:max(0px,env(safe-area-inset-right,0px))]"
         {...getFadeInUpProps(!!reducedMotion, 0.32)}
       >
-        <div className="mx-auto w-full max-w-screen-3xl 4xl:max-w-[min(100rem,100%)]">
-          <BrandCarousel
-            logos={CustomersLogos}
-            type="p"
-            className="!px-1 !py-2.5 sm:!px-2 sm:!py-3 min-[1000px]:!py-4 2xl:!py-5 3xl:!py-6"
-          />
-        </div>
+        <BrandCarousel
+          logos={CustomersLogos}
+          type="p"
+          className="!px-0 !py-2.5 sm:!py-3 min-[1000px]:!py-4 2xl:!py-5 3xl:!py-6"
+        />
       </motion.div>
     </div>
   );
