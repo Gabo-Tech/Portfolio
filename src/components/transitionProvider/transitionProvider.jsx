@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo, useRef } from "react";
+import { useEffect, useLayoutEffect, useState, useMemo, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "../navbar/navbar";
 import { usePathname } from "@/i18n/navigation";
@@ -16,6 +16,7 @@ import "./transitions.css";
  */
 const TransitionProvider = ({ children }) => {
   const mainScrollRef = useRef(/** @type {HTMLDivElement | null} */ (null));
+  const headerRef = useRef(/** @type {HTMLElement | null} */ (null));
   const pathName = usePathname();
   const t = useTranslations("PageTitle");
   const [firstVisit, setFirstVisit] = useState(true);
@@ -25,6 +26,28 @@ const TransitionProvider = ({ children }) => {
       setFirstVisit(false);
     }
   }, [pathName]);
+
+  useLayoutEffect(() => {
+    const el = headerRef.current;
+    if (typeof document === "undefined" || !el) return undefined;
+
+    const setVar = () => {
+      const h = el.getBoundingClientRect().height;
+      if (h > 0) {
+        document.documentElement.style.setProperty(
+          "--app-navbar-height",
+          `${h}px`,
+        );
+      }
+    };
+    setVar();
+    const ro = new ResizeObserver(setVar);
+    ro.observe(el);
+    return () => {
+      ro.disconnect();
+      document.documentElement.style.removeProperty("--app-navbar-height");
+    };
+  }, []);
 
   const displayName = useMemo(() => {
     if (pathName === "/") {
@@ -69,7 +92,10 @@ const TransitionProvider = ({ children }) => {
             />
           </>
         )}
-        <header className="relative z-50 flex min-h-[3.5rem] shrink-0 sm:min-h-16 md:min-h-[4.5rem] lg:min-h-24">
+        <header
+          ref={headerRef}
+          className="relative z-50 flex min-h-[3.5rem] shrink-0 sm:min-h-16 md:min-h-[4.5rem] lg:min-h-24"
+        >
           <Navbar />
         </header>
         <AppScrollContainerRefContext.Provider value={mainScrollRef}>

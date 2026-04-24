@@ -124,16 +124,19 @@ const ContactPageClient = () => {
   }
 
   return (
-    <div className="relative flex w-full min-w-0 max-w-full flex-col overflow-x-clip page-gradient">
+    <div className="page-gradient relative flex h-full min-h-0 w-full min-w-0 max-w-full flex-1 flex-col overflow-hidden">
       <motion.div
-        className="flex w-full min-w-0 flex-col"
+        className="flex min-h-0 w-full min-w-0 flex-1 flex-col overflow-hidden"
         initial={false}
         animate={{ y: "0%", opacity: 1 }}
         transition={{ duration: 0.4 }}
         aria-busy={false}
       >
         <div
-          className="mx-auto grid w-full max-w-screen-3xl grid-cols-1 items-stretch gap-10 py-4 pl-[max(0.75rem,env(safe-area-inset-left,0px))] pr-[max(0.75rem,env(safe-area-inset-right,0px))] pb-[max(9rem,env(safe-area-inset-bottom,0px))] text-stone-100 min-[400px]:gap-12 min-[400px]:pl-[max(1rem,env(safe-area-inset-left,0px))] min-[400px]:pr-[max(1rem,env(safe-area-inset-right,0px))] sm:gap-12 sm:py-6 sm:pb-[max(10rem,env(safe-area-inset-bottom,0px))] md:pt-2 md:pl-[max(1.5rem,env(safe-area-inset-left,0px))] md:pr-[max(1.5rem,env(safe-area-inset-right,0px))] md:pb-[max(10.5rem,env(safe-area-inset-bottom,0px))] lg:grid-cols-2 lg:items-start lg:gap-16 lg:px-4 lg:pt-4 lg:pb-[max(11.5rem,env(safe-area-inset-bottom,0px))] xl:gap-20 xl:px-6 xl:pb-[max(12rem,env(safe-area-inset-bottom,0px))] 2xl:gap-24 2xl:px-8 2xl:pb-[max(13rem,env(safe-area-inset-bottom,0px))] 3xl:px-10 3xl:pb-[max(13.5rem,env(safe-area-inset-bottom,0px))] 4xl:px-12"
+          className="mx-auto min-h-0 w-full min-w-0 max-w-full flex-1 overflow-y-auto overflow-x-clip [overscroll-behavior-y:contain] [scrollbar-gutter:stable]"
+        >
+        <div
+          className="mx-auto grid w-full max-w-screen-3xl min-h-0 grid-cols-1 items-stretch gap-10 pt-4 pl-[max(0.75rem,env(safe-area-inset-left,0px))] pr-[max(0.75rem,env(safe-area-inset-right,0px))] pb-6 text-stone-100 min-[400px]:gap-12 min-[400px]:pl-[max(1rem,env(safe-area-inset-left,0px))] min-[400px]:pr-[max(1rem,env(safe-area-inset-right,0px))] sm:gap-12 sm:pt-6 md:pt-2 md:pl-[max(1.5rem,env(safe-area-inset-left,0px))] md:pr-[max(1.5rem,env(safe-area-inset-right,0px))] lg:grid-cols-2 lg:items-start lg:gap-16 lg:px-4 lg:pt-4 xl:gap-20 xl:px-6 2xl:gap-24 2xl:px-8 3xl:px-10 4xl:px-12"
         >
         <motion.div
           className="flex w-full min-w-0 max-w-2xl flex-col items-center justify-center gap-4 self-center text-center min-[500px]:gap-5 min-[500px]:max-w-none lg:max-w-lg lg:min-h-0 lg:justify-start lg:justify-items-start lg:self-stretch lg:pt-2 2xl:pt-4"
@@ -269,9 +272,10 @@ const ContactPageClient = () => {
           </div>
         </motion.div>
         </div>
+        </div>
       </motion.div>
       <motion.div
-        className="fixed bottom-0 left-0 right-0 z-30 w-full min-w-0 max-w-full border-t border-stone-700/40 bg-stone-950/95 shadow-[0_-4px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm [padding-bottom:env(safe-area-inset-bottom,0px)] [padding-left:max(0px,env(safe-area-inset-left,0px))] [padding-right:max(0px,env(safe-area-inset-right,0px))]"
+        className="relative z-20 w-full min-w-0 max-w-full shrink-0 border-t border-stone-700/40 bg-stone-950/95 shadow-[0_-4px_24px_rgba(0,0,0,0.35)] backdrop-blur-sm [padding-bottom:env(safe-area-inset-bottom,0px)] [padding-left:max(0px,env(safe-area-inset-left,0px))] [padding-right:max(0px,env(safe-area-inset-right,0px))]"
         {...getFadeInUpProps(!!reducedMotion, 0.32)}
       >
         <div className="mx-auto w-full max-w-screen-3xl 4xl:max-w-[min(100rem,100%)]">
