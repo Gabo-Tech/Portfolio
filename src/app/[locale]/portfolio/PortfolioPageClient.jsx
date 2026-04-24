@@ -117,7 +117,7 @@ const PortfolioPageClient = () => {
         </motion.div>
       </div>
 
-      <div className="flex w-full min-w-0 flex-col page-gradient-deep">
+      <div className="flex w-full min-w-0 flex-col gap-6 page-gradient-deep sm:gap-10 md:gap-12">
         {memoizedItems}
       </div>
 

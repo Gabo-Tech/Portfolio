@@ -68,7 +68,7 @@ const PortfolioItem = ({
   return (
     <div
       data-id={`portfolio-item-${item.id}`}
-      className="flex min-h-[100dvh] w-full max-w-full items-start justify-center bg-transparent px-3 pt-10 pb-20 sm:px-4 sm:pt-12 sm:pb-24 md:h-screen md:items-center md:pt-0 md:pb-0"
+      className="flex min-h-[100dvh] w-full max-w-full items-start justify-center bg-transparent px-3 pt-10 pb-20 sm:px-4 sm:pt-12 sm:pb-24 md:min-h-screen md:items-center md:pt-0 md:pb-0"
     >
       <motion.div
         initial={
@@ -108,7 +108,7 @@ const PortfolioItem = ({
                 }
           }
         >
-          <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl mb-4">
+          <h1 className="mb-4 max-w-full break-words text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
             {item.title}
           </h1>
           <div className="mb-4 flex w-full max-w-4xl justify-center px-2">
