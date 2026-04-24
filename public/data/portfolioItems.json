@@ -4,7 +4,7 @@
     "color": "from-amber-300 to-orange-300",
     "title": "ARTURO RODÉS",
     "desc": "Client project for GABO in 2026 from Switzerland. arturorodes.com for a salary negotiation coach. Astro, Alpine, GSAP. I also published frontend-auto-cms on npm so they can edit copy in a small dashboard and push to the repo. Not a one off handoff.",
-    "img": "/images/arturorodes.png",
+    "img": "/images/arturorodes.webp",
     "link": "https://arturorodes.com",
     "skills": [
       {
@@ -49,7 +49,7 @@
     "color": "from-rose-300 to-amber-300",
     "title": "PUTO PULSE",
     "desc": "putopulse.org: I started this in Oct 2025. Weekly book summary newsletter, 500 plus subscribers, big back catalog. I built the site and wired a lot of automation (AI where it helps, email, social) so it doesn't need a full content team. Real product, real readers, not a tutorial.",
-    "img": "/images/putopulseimg.png",
+    "img": "/images/putopulseimg.webp",
     "link": "https://putopulse.org",
     "skills": [
       {
@@ -89,7 +89,7 @@
     "color": "from-purple-300 to-red-300",
     "title": "My Portfolio",
     "desc": "Personal site and living résumé: Next.js 14 (App Router), Tailwind CSS, Framer Motion, next-intl (EN/DE/ES), scroll-driven layout, and performance-minded images. Built to showcase case studies, recommendations, and contact in one cohesive experience, not a theme demo.",
-    "img": "/images/portfolioimg.png",
+    "img": "/images/portfolioimg.webp",
     "link": "",
     "skills": [
       {
@@ -124,7 +124,7 @@
     "color": "from-purple-300 to-pink-300",
     "title": "IRIUSRISK",
     "desc": "Oct 2024 to Oct 2025, full time remote. React, Ant Design, TanStack Query, Zustand, SASS, Vitest for unit tests. Lots of async edge cases; we used Query for server state and tried to keep client state small. Code review, working with backend, prod bugs. 2nd in the company hackathon. In-app work is NDA; the link is their public company site.",
-    "img": "/images/iriusriskimg.png",
+    "img": "/images/iriusriskimg.webp",
     "link": "https://www.iriusrisk.com/",
     "skills": [
       {
@@ -179,7 +179,7 @@
     "color": "from-blue-300 to-green-300",
     "title": "BEYONDBMI",
     "desc": "Nov 2022 to Apr 2024, full time remote contractor. Two devs. I learned Angular on the job, first merge request in week one. Express, TypeORM, Postgres, React Native, AWS, Stripe, SendGrid, Twilio, Daily, and we were careful with health data. Senior was gone a month; I was in prod and on the DB. Job ended when cash was low and they didn't need as much engineering. Member app is not public; link is their marketing site.",
-    "img": "/images/beyondbmiimg.png",
+    "img": "/images/beyondbmiimg.webp",
     "link": "https://beyondbmi.ie/",
     "skills": [
       {
@@ -274,7 +274,7 @@
     "color": "from-green-300 to-violet-300",
     "title": "GABO",
     "desc": "My company site is solutions.gabo.rocks. It's how I explain GABO after starting alone in Spain and setting up the US company. Astro, Solid, Tailwind, Vercel. Same brand as the client work, Puto Pulse, and the cms package.",
-    "img": "/images/gabollcimg.png",
+    "img": "/images/gabollcimg.webp",
     "link": "https://solutions.gabo.rocks",
     "skills": [
       {
@@ -334,8 +334,8 @@
     "color": "from-violet-300 to-purple-300",
     "title": "TALENTEAL",
     "desc": "July to Aug 2022, part time while I was still running GABO in Spain. Met them through the Valencia startup scene (think Lanzadera / Demium type accelerators). They said frontend but what they really needed was a landing that converts. Mostly remote, I went in person sometimes.",
-    "img": "/images/talentealimg.png",
-    "link": "https://www.talenteal.com/",
+    "img": "/images/talentealimg.webp",
+    "link": "",
     "skills": [
       {
         "name": "JavaScript",
@@ -384,7 +384,7 @@
     "color": "from-yellow-300 to-pink-300",
     "title": "IMALEVANTE",
     "desc": "Freelance with Futuria (Digital Kit type work for SMEs). WordPress and PHP landing for this company. Same era as the Rehubik automation, different client.",
-    "img": "/images/imalevanteimg.png",
+    "img": "/images/imalevanteimg.webp",
     "link": "https://imalevante.es/",
     "skills": [
       {
@@ -404,7 +404,7 @@
     "color": "from-sky-300 to-lime-300",
     "title": "REHUBIK (FUTURIA)",
     "desc": "Contract with Futuria for Rehubik (IKEA renovation network in Spain). I mapped how data should move and then built it: web forms into SQL, hook to Odoo and Zapier with Gmail, Trello API from the web for project cards, Coefficient into Google Sheets and Excel for reporting, Nodemailer, Google Apps Script on Drive, plus custom PHP and Python where the off the shelf tools stopped. The screenshot is the architecture I used to align with their team. Live public page for the product line: IKEA lead form and copy.",
-    "img": "/images/rehubik-architecture.png",
+    "img": "/images/rehubik-architecture.webp",
     "link": "https://rehubik.com/trabajamos-con-ikea/",
     "skills": [
       {
@@ -454,7 +454,7 @@
     "color": "from-red-300 to-yellow-300",
     "title": "EXA MONSTER",
     "desc": "Freelance contract. SaaS style storage product: Laravel, WordPress, PHP, Hetzner, React Native client, Stripe. Client work from my early contractor days, not a school exercise.",
-    "img": "/images/examonsterimg.png",
+    "img": "/images/examonsterimg.webp",
     "link": "",
     "skills": [
       {
@@ -499,7 +499,7 @@
     "color": "from-purple-300 to-red-300",
     "title": "LUJO NETWORK",
     "desc": "Early 2022 while I was independent. Sign in and sign up with i18n and validation, plus IT type work: firewalls, backups, DB, short security training for people in the office. Half support, half dev. Still shapes how I think about not shipping stupid mistakes.",
-    "img": "/images/lujonetworkig.png",
+    "img": "/images/lujonetworkig.webp",
     "link": "https://www.lujonetwork.com/v/home",
     "skills": [
       {
@@ -534,8 +534,8 @@
     "color": "from-black to-red-300",
     "title": "RENTSBY",
     "desc": "Paid contract (startup in the accelerator world). Cypress E2E, find regressions, log bugs. They needed coverage; I was the testing side.",
-    "img": "/images/rentsbyimg.png",
-    "link": "https://www.rentsby.com/",
+    "img": "/images/rentsbyimg.webp",
+    "link": "",
     "skills": [
       {
         "name": "Cypress",
@@ -560,7 +560,7 @@
     "title": "GABO SL",
     "desc": "Personal / student style project, MERN, open source. Social feed experiment. I shipped it to learn, not as a paid build.",
     "img": "/images/gabosl.gif",
-    "link": "https://gabosl.com",
+    "link": "https://github.com/Gabo-Tech/Gabo-s-Social-Life",
     "skills": [
       {
         "name": "React.js",
@@ -629,7 +629,7 @@
     "color": "from-pink-300 to-indigo-300",
     "title": "ROUTEU",
     "desc": "Personal / learning project, open source. MERN, Vercel, Heroku. Route list and sharing. I built it for practice, not for a paying client.",
-    "img": "/images/routesuimg.png",
+    "img": "/images/routesuimg.webp",
     "link": "https://route-u.vercel.app",
     "skills": [
       {
@@ -704,7 +704,7 @@
     "color": "from-green-300 to-blue-300",
     "title": "QUIZ",
     "desc": "Small personal project. Open Trivia API, HTML, CSS, JS, GitHub Pages. Weekend code, not contract work.",
-    "img": "/images/quizig.png",
+    "img": "/images/quizig.webp",
     "link": "https://gabo-tech.github.io/Custom-Quizz",
     "skills": [
       {
@@ -729,7 +729,7 @@
     "color": "from-indigo-300 to-green-300",
     "title": "FIGHT GAME",
     "desc": "Side project, open on GitHub Pages. HTML, CSS, vanilla JS, two player toy game. For fun, not a client deliverable.",
-    "img": "/images/gameimg.png",
+    "img": "/images/gameimg.webp",
     "link": "https://gabo-tech.github.io/StreetFighter-like-OSG",
     "skills": [
       {
@@ -754,7 +754,7 @@
     "color": "from-blue-300 to-black",
     "title": "EasyApply-Linkedin",
     "desc": "Personal tool I wrote for my own job search: Python and Selenium to run LinkedIn Easy Apply with filters, logging, and a simple list of who I already hit. Solves a boring problem for me, not a paying customer.",
-    "img": "/images/easyapplylinkedinimg.png",
+    "img": "/images/easyapplylinkedinimg.webp",
     "link": "https://github.com/Gabo-Tech/EasyApply-Linkedin",
     "skills": [
       {
@@ -789,7 +789,7 @@
     "color": "from-red-300 to-blue-300",
     "title": "COJC",
     "desc": "Personal project for something I use myself: scripture study in a small desktop app. Tauri, Svelte, Windows / macOS / Linux. Not client work, just my own need for a calmer way to read.",
-    "img": "/images/churchofjesuschristimg.png",
+    "img": "/images/churchofjesuschristimg.webp",
     "link": "https://github.com/Gabo-Tech/Scriptures-of-The-Church-of-Jesus-Christ-of-Latter-Day-Saints",
     "skills": [
       {
@@ -819,7 +819,7 @@
     "color": "from-red-300 to-purple-300",
     "title": "DGABO Token",
     "desc": "Decentralyized GABO Token is a personal cryptocurrency project developed using JavaScript and Motoko for smart contracts. Although not deployed due to high blockchain fees, this project demonstrates the process of creating and managing a token on the Internet Computer blockchain. The project includes a web mockup and emulator setup instructions for local development.",
-    "img": "/images/dtokenimg.png",
+    "img": "/images/dtokenimg.webp",
     "link": "https://github.com/Gabo-Tech/Web3-Token-and-Faucet",
     "skills": [
       {

@@ -16,8 +16,8 @@ const NavLink = ({ link }) => {
 
   const linkClasses = useMemo(() => {
     return isActive
-      ? "font-display text-stone-950 bg-stone-100 font-semibold rounded-md py-1.5 px-3 border border-stone-200/80"
-      : "font-display text-stone-300 font-medium rounded-md py-1.5 px-3 hover:text-stone-100 hover:bg-white/5";
+      ? "font-display text-stone-950 bg-stone-100 text-xs sm:text-sm font-semibold rounded-md border border-stone-200/80 py-1 px-2 sm:px-2.5 md:px-3 md:py-1.5 lg:text-[0.95rem] whitespace-nowrap"
+      : "font-display text-stone-300 text-xs sm:text-sm font-medium rounded-md py-1 px-2 sm:px-2.5 md:px-3 md:py-1.5 lg:text-[0.95rem] hover:text-stone-100 hover:bg-white/5 whitespace-nowrap";
   }, [isActive]);
 
   return (

@@ -10,7 +10,8 @@
     "portfolio": "Portfolio",
     "contact": "Contact",
     "closeMenu": "Close menu",
-    "mobileNavigation": "Site navigation"
+    "mobileNavigation": "Site navigation",
+    "mainNavigation": "Main navigation"
   },
   "PageTitle": {
     "home": "Home",

@@ -30,7 +30,10 @@ const PortfolioItem = ({
 }) => {
   const t = useTranslations("Portfolio");
   const isGif = item.img?.endsWith(".gif");
-  const isUnoptimized = isGif;
+  // Local /public files: same URL as `usePageImageLoader` (raw path). The default optimizer
+  // uses /_next/image?…, so the loader could hide while that second request is still in flight.
+  const isUnoptimized =
+    typeof item.img === "string" && item.img.startsWith("/");
   const mainScrollRef = useAppScrollContainerRef();
   const prefersReducedMotion = useReducedMotion();
   const [allowFloatAnimation, setAllowFloatAnimation] = useState(false);
@@ -60,26 +63,34 @@ const PortfolioItem = ({
     );
   }
 
+  const isStaticFirst = priority;
+
   return (
     <div
       data-id={`portfolio-item-${item.id}`}
-      className="flex min-h-[100dvh] w-full max-w-full items-start justify-center bg-transparent px-3 pb-16 pt-8 md:h-screen md:items-center md:pb-0 md:pt-0"
+      className="flex min-h-[100dvh] w-full max-w-full items-start justify-center bg-transparent px-3 pt-10 pb-20 sm:px-4 sm:pt-12 sm:pb-24 md:h-screen md:items-center md:pt-0 md:pb-0"
     >
       <motion.div
         initial={
-          prefersReducedMotion
-            ? { opacity: 0 }
-            : { opacity: 0, x: enterX }
+          isStaticFirst
+            ? { opacity: 1, x: 0 }
+            : prefersReducedMotion
+              ? { opacity: 0 }
+              : { opacity: 0, x: enterX }
         }
-        whileInView={
-          prefersReducedMotion ? { opacity: 1 } : { opacity: 1, x: 0 }
-        }
-        viewport={{
-          root: mainScrollRef ?? undefined,
-          once: true,
-          amount: priority ? "some" : 0.12,
-          margin: "0px",
-        }}
+        {...(!isStaticFirst
+          ? {
+              whileInView: prefersReducedMotion
+                ? { opacity: 1 }
+                : { opacity: 1, x: 0 },
+              viewport: {
+                root: mainScrollRef ?? undefined,
+                once: true,
+                amount: 0.12,
+                margin: "0px",
+              },
+            }
+          : {})}
         transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
         className="flex w-full max-w-4xl flex-col gap-8 text-white"
       >
@@ -115,8 +126,9 @@ const PortfolioItem = ({
                 height: "auto",
               }}
               priority={priority}
-              placeholder={isUnoptimized ? "empty" : "blur"}
-              blurDataURL={isUnoptimized ? undefined : PORTFOLIO_IMAGE_BLUR}
+              fetchPriority={priority ? "high" : "auto"}
+              placeholder={isGif ? "empty" : "blur"}
+              blurDataURL={isGif ? undefined : PORTFOLIO_IMAGE_BLUR}
               unoptimized={isUnoptimized}
             />
           </div>

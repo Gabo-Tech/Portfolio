@@ -7,6 +7,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1920px",
+        "4xl": "2560px",
+      },
+      maxWidth: {
+        "screen-3xl": "100rem", // ~1600px content cap on 4K
+      },
       fontFamily: {
         sans: [
           "var(--font-sans)",

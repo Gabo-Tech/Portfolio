@@ -33,7 +33,7 @@ export default function CredibilityStrip({
     >
       {proofLine ? (
         <p
-          className={`w-full text-base leading-relaxed text-stone-300 [text-wrap:balance] sm:text-lg ${textAlign}`}
+          className={`w-full text-base leading-relaxed text-stone-300 [text-wrap:balance] sm:text-lg 2xl:text-xl 3xl:text-2xl 3xl:leading-snug 4xl:max-w-4xl ${textAlign}`}
         >
           {proofLine}
         </p>

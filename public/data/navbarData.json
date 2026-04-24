@@ -2,12 +2,12 @@
   "socialLinks": [
     {
       "href": "https://github.com/Gabo-Tech",
-      "src": "/github.png",
+      "src": "/github.webp",
       "alt": "Github Logo"
     },
     {
       "href": "https://www.linkedin.com/in/bugslayer/",
-      "src": "/linkedin.png",
+      "src": "/linkedin.webp",
       "alt": "LinkedIn Logo"
     }
   ]

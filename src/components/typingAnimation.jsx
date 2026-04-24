@@ -108,7 +108,7 @@ const TypingAnimation = ({ texts }) => {
 
   return (
     <h1
-      className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold text-stone-100 leading-[1.08] sm:leading-[1.07]"
+      className="w-full break-words font-semibold text-stone-100 leading-[1.12] sm:leading-[1.1] md:leading-[1.08] lg:leading-[1.06] [font-size:clamp(1.55rem,0.6rem+4.2vw,5.5rem)]"
       aria-live="polite"
     >
       <span className="font-display">

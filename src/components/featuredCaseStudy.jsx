@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-const CASE_IMG = "/images/arturorodes.png";
+const CASE_IMG = "/images/arturorodes.webp";
 const CASE_HREF = "https://arturorodes.com";
 
 /**
@@ -16,11 +16,11 @@ export default function FeaturedCaseStudy() {
 
   return (
     <section
-      className="mx-auto flex w-full max-w-6xl flex-col gap-8 rounded-2xl border border-stone-700/45 bg-stone-900/25 p-6 shadow-[0_16px_48px_rgba(0,0,0,0.4)] sm:p-8 xl:max-w-7xl lg:flex-row lg:items-stretch lg:gap-10"
+      className="mx-auto flex w-full max-w-6xl flex-col gap-8 rounded-2xl border border-stone-700/45 bg-stone-900/25 p-6 shadow-[0_16px_48px_rgba(0,0,0,0.4)] sm:p-8 xl:max-w-7xl lg:flex-row lg:items-start lg:gap-10"
       aria-labelledby="case-study-heading"
     >
       <motion.div
-        className="relative w-full shrink-0 overflow-hidden rounded-xl border border-stone-800/60 bg-stone-950/50 lg:w-[min(100%,420px)]"
+        className="relative w-full shrink-0 self-start overflow-hidden rounded-xl border border-stone-800/60 bg-stone-950/50 lg:w-[min(100%,420px)]"
         initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.98 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-40px" }}
@@ -31,9 +31,10 @@ export default function FeaturedCaseStudy() {
           alt={t("imageAlt")}
           width={1200}
           height={900}
-          className="h-auto w-full object-cover object-top"
+          className="h-auto w-full max-w-full object-contain object-top"
           sizes="(max-width: 1024px) 100vw, 420px"
           priority
+          unoptimized
         />
       </motion.div>
       <div className="flex min-w-0 flex-1 flex-col gap-4">

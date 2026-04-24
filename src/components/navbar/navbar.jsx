@@ -150,6 +150,7 @@ const Navbar = () => {
           height={20}
           className="object-contain"
           loading="lazy"
+          unoptimized
         />
       </a>
     ));
@@ -177,110 +178,125 @@ const Navbar = () => {
   );
 
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-3 lg:px-5 xl:px-40 text-base md:text-lg border-b border-white/5 bg-stone-950/50 backdrop-blur-sm">
-      <div className="hidden md:flex gap-4 w-1/3 flex-wrap items-center">
-        {memoizedMenuLinks}
-      </div>
-      <div className="md:hidden lg:flex xl:justify-center">
-        <Link
-          rel="noopener noreferrer"
-          href="/"
-          className="text-sm font-display font-semibold rounded-md border border-stone-600/60 bg-stone-900/40 p-1 flex items-center justify-center text-stone-200 hover:border-stone-500/80"
-        >
-          <span className="mx-1">gabo</span>
-          <span className="h-8 rounded px-4 bg-sky-500/90 text-white flex items-center justify-center text-xs tracking-wide">
-            .rocks
-          </span>
-        </Link>
-      </div>
-      <div className="hidden md:flex gap-2 w-1/3 justify-end items-center flex-wrap">
-        <div
-          className="flex gap-1 items-center"
-          role="group"
-          aria-label={tLang("label")}
-        >
-          {langButtons}
+    <div className="box-border flex h-full min-h-[inherit] w-full border-b border-white/5 bg-stone-950/50 text-sm backdrop-blur-sm sm:text-base md:text-[0.95rem] lg:text-base 3xl:text-lg">
+      <div className="grid w-full max-w-screen-3xl grid-cols-[auto_1fr_auto] items-center gap-2 px-3 py-2 sm:gap-3 sm:px-4 md:px-5 md:py-2.5 lg:gap-4 lg:px-6 xl:px-8 2xl:px-10 3xl:px-12 4xl:px-16 min-[320px]:px-[max(0.75rem,env(safe-area-inset-left))]">
+        <div className="flex min-w-0 max-w-full items-center">
+          <div
+            className="flex shrink-0 gap-0.5 sm:gap-1 md:hidden"
+            role="group"
+            aria-label={tLang("label")}
+          >
+            {langButtons}
+          </div>
+          <nav
+            className="hidden min-w-0 items-center gap-0.5 md:flex md:flex-wrap md:gap-x-1.5 md:gap-y-1.5 md:pl-0 lg:gap-2 2xl:gap-2.5"
+            aria-label={t("mainNavigation")}
+          >
+            {memoizedMenuLinks}
+          </nav>
         </div>
-        <div className="flex gap-3 rounded-full border border-stone-600/50 bg-stone-900/40 px-3 py-1.5">
-          {memoizedSocialLinks}
+
+        <div className="flex min-w-0 justify-center px-1 min-[400px]:px-2 sm:px-3">
+          <Link
+            rel="noopener noreferrer"
+            href="/"
+            className="font-display font-semibold text-stone-200 [font-size:clamp(0.7rem,0.35rem+1.2vw,0.95rem)] flex h-8 max-w-full shrink-0 items-stretch justify-center overflow-hidden rounded-md border border-stone-600/60 bg-stone-900/40 sm:h-9 2xl:h-10"
+          >
+            <span className="flex min-w-0 items-center px-1.5 min-[400px]:px-2 2xl:px-2.5">
+              gabo
+            </span>
+            <span className="inline-flex min-w-0 max-w-full items-center bg-sky-500/90 px-2.5 text-[0.6rem] font-semibold tracking-wide text-white min-[400px]:px-3 min-[400px]:text-xs sm:px-4 2xl:text-sm">
+              .rocks
+            </span>
+          </Link>
         </div>
-      </div>
-      <div className="relative z-[150] flex items-center gap-2 md:hidden">
-        <div className="flex gap-1" role="group" aria-label={tLang("label")}>
-          {langButtons}
-        </div>
-        <button
-          className="relative flex h-8 w-10 flex-col justify-between"
-          onClick={() => setOpen(!open)}
-          type="button"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-        >
-          <motion.div
-            variants={topVariants}
-            animate={open ? "opened" : "closed"}
-            className="h-1 w-10 origin-left rounded bg-stone-200"
-          />
-          <motion.div
-            variants={centerVariants}
-            animate={open ? "opened" : "closed"}
-            className="h-1 w-10 rounded bg-stone-200"
-          />
-          <motion.div
-            variants={bottomVariants}
-            animate={open ? "opened" : "closed"}
-            className="h-1 w-10 origin-left rounded bg-stone-200"
-          />
-        </button>
-        {menuMounted &&
-          createPortal(
-            <AnimatePresence>
-              {open && (
-                <motion.div
-                  key="mobile-nav-overlay"
-                  role="dialog"
-                  aria-modal="true"
-                  aria-label={t("mobileNavigation")}
-                  variants={mobileOverlayVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className="fixed inset-0 z-[140] flex items-center justify-center overscroll-contain"
-                >
-                  <button
-                    type="button"
-                    className="absolute inset-0 cursor-pointer border-0 bg-black/82 backdrop-blur-md"
-                    aria-label={t("closeMenu")}
-                    onClick={() => setOpen(false)}
-                  />
-                  <nav
-                    className="relative z-10 flex max-h-[min(85dvh,100%)] flex-col items-center justify-center gap-8 overflow-y-auto px-8 py-16 text-center text-3xl font-display font-semibold text-stone-100 sm:gap-10 sm:text-4xl"
-                    role="menu"
-                    onClick={(e) => e.stopPropagation()}
+
+        <div className="relative z-[150] flex min-w-0 max-w-full items-center justify-end gap-1.5 sm:gap-2">
+          <div
+            className="hidden flex-wrap items-center justify-end gap-1.5 md:flex md:gap-2 2xl:gap-2.5"
+            role="group"
+            aria-label={tLang("label")}
+          >
+            {langButtons}
+          </div>
+          <div className="hidden md:flex md:shrink-0">
+            <div className="flex items-center gap-1.5 rounded-full border border-stone-600/50 bg-stone-900/40 px-1.5 py-1 sm:px-2 sm:py-1.5 lg:gap-2.5 lg:px-2.5 lg:py-1.5 2xl:px-3">
+              {memoizedSocialLinks}
+            </div>
+          </div>
+          <button
+            className="flex h-8 w-10 min-h-11 min-w-11 flex-col items-center justify-between p-0.5 md:hidden"
+            onClick={() => setOpen(!open)}
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+          >
+            <motion.div
+              variants={topVariants}
+              animate={open ? "opened" : "closed"}
+              className="h-1 w-8 min-w-8 max-w-8 origin-left rounded bg-stone-200"
+            />
+            <motion.div
+              variants={centerVariants}
+              animate={open ? "opened" : "closed"}
+              className="h-1 w-8 min-w-8 max-w-8 rounded bg-stone-200"
+            />
+            <motion.div
+              variants={bottomVariants}
+              animate={open ? "opened" : "closed"}
+              className="h-1 w-8 min-w-8 max-w-8 origin-left rounded bg-stone-200"
+            />
+          </button>
+          {menuMounted &&
+            createPortal(
+              <AnimatePresence>
+                {open && (
+                  <motion.div
+                    key="mobile-nav-overlay"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={t("mobileNavigation")}
+                    variants={mobileOverlayVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    className="fixed inset-0 z-[140] flex items-center justify-center overscroll-contain"
                   >
-                    {menuLinks.map((link) => (
-                      <Link
-                        href={link.url}
-                        rel="noopener noreferrer"
-                        onClick={handleLinkClick}
-                        key={link.url}
-                        aria-label={`Navigate to ${link.title}`}
-                      >
-                        <motion.div
-                          variants={mobileLinkVariants}
-                          className="hover:underline"
-                          role="menuitem"
+                    <button
+                      type="button"
+                      className="absolute inset-0 cursor-pointer border-0 bg-black/82 backdrop-blur-md"
+                      aria-label={t("closeMenu")}
+                      onClick={() => setOpen(false)}
+                    />
+                    <nav
+                      className="relative z-10 flex max-h-[min(85dvh,100%)] w-full max-w-md flex-col items-center justify-center gap-6 overflow-y-auto px-6 py-12 text-center text-2xl font-display font-semibold text-stone-100 min-[400px]:gap-8 min-[400px]:text-3xl sm:gap-10 sm:text-4xl"
+                      role="menu"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {menuLinks.map((link) => (
+                        <Link
+                          href={link.url}
+                          rel="noopener noreferrer"
+                          onClick={handleLinkClick}
+                          key={link.url}
+                          aria-label={`Navigate to ${link.title}`}
                         >
-                          {link.title}
-                        </motion.div>
-                      </Link>
-                    ))}
-                  </nav>
-                </motion.div>
-              )}
-            </AnimatePresence>,
-            document.body
-          )}
+                          <motion.div
+                            variants={mobileLinkVariants}
+                            className="hover:underline"
+                            role="menuitem"
+                          >
+                            {link.title}
+                          </motion.div>
+                        </Link>
+                      ))}
+                    </nav>
+                  </motion.div>
+                )}
+              </AnimatePresence>,
+              document.body
+            )}
+        </div>
       </div>
     </div>
   );

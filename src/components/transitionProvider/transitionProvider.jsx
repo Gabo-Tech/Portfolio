@@ -41,7 +41,7 @@ const TransitionProvider = ({ children }) => {
     <AnimatePresence mode="wait">
       <div
         key={pathName}
-        className="page-gradient flex min-h-screen w-full min-w-0 max-w-full flex-col"
+        className="page-gradient flex min-h-screen w-full min-w-0 max-w-full flex-col overflow-x-clip"
         aria-live="polite"
       >
         {!(pathName === "/" && firstVisit) && (
@@ -69,7 +69,7 @@ const TransitionProvider = ({ children }) => {
             />
           </>
         )}
-        <header className="relative z-50 h-24 shrink-0">
+        <header className="relative z-50 flex min-h-[3.5rem] shrink-0 sm:min-h-16 md:min-h-[4.5rem] lg:min-h-24">
           <Navbar />
         </header>
         <AppScrollContainerRefContext.Provider value={mainScrollRef}>
