@@ -1,12 +1,8 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import createNextIntlPlugin from "next-intl/plugin";
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
 const withNextIntl = createNextIntlPlugin("./src/i18n/request.js");
-
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack: (config, { dev }) => {
     if (dev) {
@@ -25,5 +21,4 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
 };
-
 export default withNextIntl(nextConfig);

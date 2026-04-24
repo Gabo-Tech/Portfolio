@@ -1,11 +1,8 @@
 "use client";
 
 import { motion, useInView, useReducedMotion } from "framer-motion";
-import {
-  getFadeInUpProps,
-  getFadeInUpInViewProps,
-} from "@/lib/motionVariants";
-import { useRef, useMemo, useEffect, useCallback } from "react";
+import { getFadeInUpProps, getFadeInUpInViewProps } from "@/lib/motionVariants";
+import { useRef, useMemo } from "react";
 import Image from "next/image";
 import HoverSkill from "@/components/hoverSkill";
 import MixedHeadline from "@/components/mixedHeadline";
@@ -13,6 +10,7 @@ import TimelineList from "@/components/timeline/timelineList";
 import FeaturedCaseStudy from "@/components/featuredCaseStudy";
 import TestimonialsSection from "@/components/testimonialsSection";
 import Brain from "@/components/svgs/brain";
+import ExperienceBrain from "@/components/svgs/experienceBrain";
 import SignatureSvg from "@/components/svgs/signature";
 import ScrollSvg from "@/components/svgs/scroll";
 import { Link } from "@/i18n/navigation";
@@ -24,57 +22,30 @@ import { useAppScrollContainerRef } from "@/components/scrollContainerContext";
 import Loader from "@/components/loader";
 import { usePageImageLoader } from "@/hooks/usePageImageLoader";
 import { useElementViewportProgress } from "@/hooks/useElementViewportProgress";
-
 const ABOUT_IMAGE_URLS = [
   "/images/profilepic.webp",
   "/images/arturorodes.webp",
 ];
-
-/**
- * About page client: biography, skills, languages, and experience.
- */
 const AboutPageClient = () => {
   const t = useTranslations("About");
   const messages = useMessages();
   const languageItems = messages.About.langItems;
-
-  /**
-   * Same ref as on `#app-scroll-root` in TransitionProvider. Used for in-view and hire CTA.
-   */
   const scrollContainerRef = useAppScrollContainerRef();
-
   const skillRef = useRef(null);
-  const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
-
+  const isSkillRefInView = useInView(skillRef, {
+    margin: "-100px",
+  });
   const experienceRef = useRef(null);
-  const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
-
+  const isExperienceRefInView = useInView(experienceRef, {
+    margin: "-100px",
+  });
   const brainScrollProgress = useElementViewportProgress(experienceRef);
-
   const languageRef = useRef(null);
-  const isLanguageRefInView = useInView(languageRef, { margin: "-100px" });
-
+  const isLanguageRefInView = useInView(languageRef, {
+    margin: "-100px",
+  });
   const { showLoader } = usePageImageLoader(ABOUT_IMAGE_URLS);
   const reducedMotion = useReducedMotion();
-
-  const pageMotionRef = useRef(/** @type {HTMLDivElement | null} */ (null));
-
-  /**
-   * Framer’s `x` uses `transform` on this node; that creates a containing block and
-   * breaks `position: sticky` in descendants relative to #app-scroll-root. Clear
-   * after the entrance so the experience brain can stick in the main scrollport.
-   */
-  const clearPageEntryTransform = useCallback(() => {
-    const el = pageMotionRef.current;
-    if (!el) return;
-    el.style.removeProperty("transform");
-  }, []);
-
-  useEffect(() => {
-    const id = window.setTimeout(clearPageEntryTransform, 1200);
-    return () => window.clearTimeout(id);
-  }, [clearPageEntryTransform]);
-
   const memoizedSkills = useMemo(
     () =>
       skillsData.map((skill, index) => (
@@ -86,22 +57,16 @@ const AboutPageClient = () => {
           }}
         </HoverSkill>
       )),
-    []
+    [],
   );
-
   return (
     <>
       {showLoader && <Loader />}
-      <motion.div
-        ref={pageMotionRef}
-        className="w-full min-h-0"
-        initial={{ x: "-200vh", opacity: 0 }}
-        animate={{ x: "0%", opacity: 1 }}
-        transition={{ duration: 1 }}
-        onAnimationComplete={clearPageEntryTransform}
+      <div
+        className={`w-full min-h-0${reducedMotion ? "" : " about-page-entrance"}`}
         aria-busy={showLoader}
       >
-      <div className="relative z-10 flex flex-col gap-24 p-4 text-stone-100 page-gradient sm:p-6 md:gap-32 md:p-10 lg:gap-48 lg:p-16 xl:gap-64 xl:p-20 2xl:p-24">
+        <div className="relative z-10 flex flex-col gap-24 p-4 text-stone-100 page-gradient sm:p-6 md:gap-32 md:p-10 lg:gap-48 lg:p-16 xl:gap-64 xl:p-20 2xl:p-24">
           <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-center gap-10 sm:gap-12">
             <motion.div {...getFadeInUpProps(!!reducedMotion, 0)}>
               <Image
@@ -164,16 +129,38 @@ const AboutPageClient = () => {
             ref={skillRef}
           >
             <motion.h1
-              initial={{ x: "-300px", opacity: 0 }}
-              animate={isSkillRefInView ? { x: 0, opacity: 1 } : {}}
-              transition={{ delay: 0.2 }}
+              initial={{
+                x: "-300px",
+                opacity: 0,
+              }}
+              animate={
+                isSkillRefInView
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                    }
+                  : {}
+              }
+              transition={{
+                delay: 0.2,
+              }}
               className="font-display text-stone-200 font-semibold text-2xl tracking-tight"
             >
               {t("skills")}
             </motion.h1>
             <motion.div
-              initial={{ x: "-300px", opacity: 0 }}
-              animate={isSkillRefInView ? { x: 0, opacity: 1 } : {}}
+              initial={{
+                x: "-300px",
+                opacity: 0,
+              }}
+              animate={
+                isSkillRefInView
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                    }
+                  : {}
+              }
               className="flex flex-wrap justify-center gap-1.5 sm:gap-3 md:justify-start md:gap-4 lg:gap-5"
             >
               {memoizedSkills}
@@ -187,16 +174,38 @@ const AboutPageClient = () => {
             ref={languageRef}
           >
             <motion.h1
-              initial={{ x: "-300px", opacity: 0 }}
-              animate={isLanguageRefInView ? { x: 0, opacity: 1 } : {}}
-              transition={{ delay: 0.2 }}
+              initial={{
+                x: "-300px",
+                opacity: 0,
+              }}
+              animate={
+                isLanguageRefInView
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                    }
+                  : {}
+              }
+              transition={{
+                delay: 0.2,
+              }}
               className="font-display text-stone-200 font-semibold text-2xl tracking-tight"
             >
               {t("languagesHeading")}
             </motion.h1>
             <motion.ul
-              initial={{ x: "-300px", opacity: 0 }}
-              animate={isLanguageRefInView ? { x: 0, opacity: 1 } : {}}
+              initial={{
+                x: "-300px",
+                opacity: 0,
+              }}
+              animate={
+                isLanguageRefInView
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                    }
+                  : {}
+              }
               className="w-full list-inside list-disc space-y-2 text-center text-lg md:text-left"
             >
               {languageItems.map((lang) => (
@@ -208,8 +217,18 @@ const AboutPageClient = () => {
             </motion.ul>
             <motion.p
               className="mx-auto w-full max-w-3xl text-center text-sm text-stone-400 [text-wrap:balance] md:mx-0 md:text-left"
-              initial={{ x: "-300px", opacity: 0 }}
-              animate={isLanguageRefInView ? { x: 0, opacity: 1 } : {}}
+              initial={{
+                x: "-300px",
+                opacity: 0,
+              }}
+              animate={
+                isLanguageRefInView
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                    }
+                  : {}
+              }
             >
               {t("languagesNote")}
             </motion.p>
@@ -222,9 +241,21 @@ const AboutPageClient = () => {
             ref={experienceRef}
           >
             <motion.h1
-              initial={{ x: "-300px", opacity: 0 }}
-              animate={isExperienceRefInView ? { x: 0, opacity: 1 } : {}}
-              transition={{ delay: 0.2 }}
+              initial={{
+                x: "-300px",
+                opacity: 0,
+              }}
+              animate={
+                isExperienceRefInView
+                  ? {
+                      x: 0,
+                      opacity: 1,
+                    }
+                  : {}
+              }
+              transition={{
+                delay: 0.2,
+              }}
               className="font-display text-stone-200 font-semibold text-2xl tracking-tight lg:col-span-2"
             >
               {t("experience")}
@@ -235,25 +266,7 @@ const AboutPageClient = () => {
                 isInView={isExperienceRefInView}
               />
             </div>
-            {/* Desktop: Sticky must sit in a full-height track (tall as the timeline
-                cell). Inset-0 gives a box as tall as the row; `transform` on the page
-                `motion` ancestor is cleared after the entrance (see ref). */}
-            <div
-              className="relative -mr-4 hidden min-w-0 sm:-mr-6 md:-mr-10 lg:col-start-2 lg:row-start-2 lg:block lg:h-full lg:min-h-0 lg:max-w-none lg:self-stretch lg:-mr-16 xl:-mr-20 2xl:-mr-24"
-            >
-              <div className="absolute inset-0 z-20 min-h-0 min-w-0">
-                <div className="sticky top-0 z-30 flex h-[100dvh] w-full min-h-0 min-w-0 items-center justify-end pl-0 sm:pl-1 md:pl-2 lg:pl-3">
-                  <div className="h-[min(86dvh,960px)] w-full 2xl:h-[min(84dvh,1000px)]">
-                    <Brain
-                      className="h-full w-full"
-                      preserveAspectRatio="xMaxYMid meet"
-                      scrollYProgress={brainScrollProgress}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Mobile/tablet: Brain as ambient background behind timeline. */}
+            {/* Mobile/tablet only: ambient background brain behind the timeline. */}
             <div className="pointer-events-none absolute inset-0 z-0 opacity-[0.16] sm:opacity-[0.22] md:opacity-[0.28] lg:hidden">
               <Brain
                 className="h-full w-full"
@@ -262,6 +275,13 @@ const AboutPageClient = () => {
               />
             </div>
           </div>
+          {/* Desktop: portaled, position:fixed brain. Lives outside this subtree so no
+              ancestor transform/overflow can affect positioning. It follows the
+              experience section's rect: scrolls in, pins at center, scrolls out. */}
+          <ExperienceBrain
+            sectionRef={experienceRef}
+            scrollYProgress={brainScrollProgress}
+          />
           <TestimonialsSection />
           <motion.div
             className="mx-auto flex w-full max-w-2xl flex-col items-center gap-6 px-4 pb-32 text-center sm:px-6"
@@ -291,10 +311,9 @@ const AboutPageClient = () => {
               </a>
             </div>
           </motion.div>
+        </div>
       </div>
-    </motion.div>
     </>
   );
 };
-
 export default AboutPageClient;

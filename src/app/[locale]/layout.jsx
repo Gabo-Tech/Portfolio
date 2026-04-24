@@ -1,29 +1,37 @@
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import dynamic from "next/dynamic";
 import HtmlLang from "@/components/html-lang";
 import { getPersonJsonLd } from "@/lib/personJsonLd";
 import { getSiteUrl } from "@/lib/siteUrl";
-
 const TransitionProvider = dynamic(
   () => import("@/components/transitionProvider/transitionProvider"),
 );
-
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
+  return routing.locales.map((locale) => ({
+    locale,
+  }));
 }
-
-/** OpenGraph `locale` values (Switzerland–oriented, multilingual site). */
-const OG_LOCALE = { en: "en_CH", de: "de_CH", es: "es_ES" };
-
+const OG_LOCALE = {
+  en: "en_CH",
+  de: "de_CH",
+  es: "es_ES",
+};
 export async function generateMetadata({ params }) {
   const { locale } = params;
   if (!routing.locales.includes(locale)) {
     notFound();
   }
-  const t = await getTranslations({ locale, namespace: "Meta" });
+  const t = await getTranslations({
+    locale,
+    namespace: "Meta",
+  });
   const title = t("title");
   const description = t("description");
   const keywords = t("keywords");
@@ -33,13 +41,17 @@ export async function generateMetadata({ params }) {
     .filter((l) => l !== locale)
     .map((l) => OG_LOCALE[l])
     .filter(Boolean);
-
   return {
     metadataBase: new URL(site),
     title,
     description,
     keywords: keywords.split(",").map((k) => k.trim()),
-    authors: [{ name: "Gabriel Clemente", url: site }],
+    authors: [
+      {
+        name: "Gabriel Clemente",
+        url: site,
+      },
+    ],
     creator: "Gabriel Clemente",
     robots: {
       index: true,
@@ -51,8 +63,7 @@ export async function generateMetadata({ params }) {
       title,
       description,
       locale: ogLocale,
-      alternateLocale:
-        alternateLocale.length > 0 ? alternateLocale : undefined,
+      alternateLocale: alternateLocale.length > 0 ? alternateLocale : undefined,
     },
     twitter: {
       card: "summary",
@@ -61,30 +72,26 @@ export async function generateMetadata({ params }) {
     },
   };
 }
-
-/**
- * @param {Object} props
- * @param {React.ReactNode} props.children
- * @param {{ locale: string }} props.params
- */
 export default async function LocaleLayout({ children, params }) {
   const { locale } = params;
   if (!routing.locales.includes(locale)) {
     notFound();
   }
-
   setRequestLocale(locale);
   const messages = await getMessages();
-  const t = await getTranslations({ locale, namespace: "Meta" });
+  const t = await getTranslations({
+    locale,
+    namespace: "Meta",
+  });
   const personLd = getPersonJsonLd(locale, t("description"));
   const jsonLd = JSON.stringify(personLd);
-
   return (
     <NextIntlClientProvider messages={messages}>
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: jsonLd }}
+        dangerouslySetInnerHTML={{
+          __html: jsonLd,
+        }}
       />
       <HtmlLang />
       <TransitionProvider>{children}</TransitionProvider>

@@ -1,10 +1,9 @@
 "use client";
+
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
 import { motion, useAnimation, useReducedMotion } from "framer-motion";
-import {
-  getFadeInUpProps,
-} from "@/lib/motionVariants";
+import { getFadeInUpProps } from "@/lib/motionVariants";
 import TypingAnimation from "@/components/typingAnimation";
 import CredibilityStrip from "@/components/credibilityStrip";
 import { Link } from "@/i18n/navigation";
@@ -13,14 +12,11 @@ import { useLocale, useTranslations } from "next-intl";
 import typingTextsByLocale from "../../../public/data/typingTexts.json";
 import { RESUME_PATH } from "@/lib/resume";
 import { usePageImageLoader } from "@/hooks/usePageImageLoader";
-
 const HOME_IMAGE_URLS = ["/hero.webp", "/hero1.webp"];
-
 const HomePageClient = () => {
   const t = useTranslations("Home");
   const locale = useLocale();
-  const texts =
-    typingTextsByLocale[locale] ?? typingTextsByLocale.en;
+  const texts = typingTextsByLocale[locale] ?? typingTextsByLocale.en;
   const [mouseY, setMouseY] = useState(0);
   const [windowHeight, setWindowHeight] = useState(1080);
   const { showLoader } = usePageImageLoader(HOME_IMAGE_URLS);
@@ -28,46 +24,53 @@ const HomePageClient = () => {
   const textContainerRef = useRef(null);
   const controls = useAnimation();
   const reducedMotion = useReducedMotion();
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       setWindowHeight(window.innerHeight);
-
       const handleMouseMove = (e) => {
         setMouseY(e.clientY);
       };
-
       const handleFullscreenChange = () => {
         setIsFullscreen(
           !!document.fullscreenElement ||
             !!document.webkitFullscreenElement ||
             !!document.mozFullScreenElement ||
-            !!document.msFullscreenElement
+            !!document.msFullscreenElement,
         );
       };
-
       window.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("fullscreenchange", handleFullscreenChange);
-      document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+      document.addEventListener(
+        "webkitfullscreenchange",
+        handleFullscreenChange,
+      );
       document.addEventListener("mozfullscreenchange", handleFullscreenChange);
       document.addEventListener("MSFullscreenChange", handleFullscreenChange);
-
       handleFullscreenChange();
-
       return () => {
         window.removeEventListener("mousemove", handleMouseMove);
-        document.removeEventListener("fullscreenchange", handleFullscreenChange);
-        document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
-        document.removeEventListener("mozfullscreenchange", handleFullscreenChange);
-        document.removeEventListener("MSFullscreenChange", handleFullscreenChange);
+        document.removeEventListener(
+          "fullscreenchange",
+          handleFullscreenChange,
+        );
+        document.removeEventListener(
+          "webkitfullscreenchange",
+          handleFullscreenChange,
+        );
+        document.removeEventListener(
+          "mozfullscreenchange",
+          handleFullscreenChange,
+        );
+        document.removeEventListener(
+          "MSFullscreenChange",
+          handleFullscreenChange,
+        );
       };
     }
     return undefined;
   }, []);
-
   useEffect(() => {
     let isMounted = true;
-
     const startFloatingAnimation = () => {
       setTimeout(() => {
         if (isMounted) {
@@ -92,16 +95,13 @@ const HomePageClient = () => {
         }
       }, 15000);
     };
-
     document.addEventListener("click", startFloatingAnimation);
-
     return () => {
       isMounted = false;
       document.removeEventListener("click", startFloatingAnimation);
       controls.stop();
     };
   }, [controls]);
-
   const openFullscreen = useCallback(() => {
     const elem = document.documentElement;
     if (elem.requestFullscreen) {
@@ -112,7 +112,6 @@ const HomePageClient = () => {
       elem.msRequestFullscreen();
     }
   }, []);
-
   useEffect(() => {
     if (textContainerRef.current) {
       const textContainerHeight = textContainerRef.current.offsetHeight;
@@ -121,20 +120,22 @@ const HomePageClient = () => {
       }
     }
   }, [windowHeight, texts]);
-
   const topHeroClipBottom = Math.max(0, windowHeight - mouseY - 20);
-
   if (showLoader) {
     return <Loader />;
   }
-
   return (
     <>
       <motion.div
         className="flex w-full min-h-0 flex-1 flex-col text-stone-100 page-gradient"
         initial={false}
-        animate={{ x: "0%", opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        animate={{
+          x: "0%",
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.4,
+        }}
         aria-busy={false}
       >
         <div className="mx-auto flex w-full min-h-0 max-w-screen-3xl flex-1 flex-col items-stretch gap-0 pb-6 pt-1 sm:pb-8 sm:pt-2 md:min-h-0 md:pb-8 lg:min-h-[min(100dvh,100%)] lg:flex-row lg:items-stretch lg:pb-0 lg:pt-0 3xl:min-h-0 4xl:max-w-[min(100rem,100%)]">
@@ -151,7 +152,9 @@ const HomePageClient = () => {
                   src="/hero.webp"
                   alt={t("ariaHeroBottom")}
                   fill
-                  style={{ objectFit: "contain" }}
+                  style={{
+                    objectFit: "contain",
+                  }}
                   className="object-contain object-bottom sm:object-center"
                   priority
                   unoptimized
@@ -168,7 +171,9 @@ const HomePageClient = () => {
                   src="/hero1.webp"
                   alt={t("ariaHeroTop")}
                   fill
-                  style={{ objectFit: "contain" }}
+                  style={{
+                    objectFit: "contain",
+                  }}
                   className="object-contain object-bottom sm:object-center"
                   priority
                   unoptimized
@@ -243,5 +248,4 @@ const HomePageClient = () => {
     </>
   );
 };
-
 export default HomePageClient;

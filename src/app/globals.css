@@ -7,9 +7,14 @@
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Custom cursor only when it is shown (see `.custom-cursor` visibility). */
+*::-webkit-scrollbar {
+  display: none;
+}
+
 @media (min-width: 1025px) and (pointer: fine) {
   * {
     cursor: none !important;
@@ -17,8 +22,7 @@
 }
 
 html {
-  /* Keeps layout width stable when scrollbars appear so centered content stays visually centered. */
-  scrollbar-gutter: stable;
+  scrollbar-gutter: auto;
 }
 
 body {
@@ -26,7 +30,6 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Primary reader layer; reserve chroma (e.g. sky) for actions only. */
 @layer base {
   ::selection {
     @apply bg-sky-500/25 text-stone-100;
@@ -36,6 +39,29 @@ body {
 .blinking-cursor {
   @apply text-stone-500 font-light ml-0.5 inline-block;
   font-weight: 300;
+}
+
+@keyframes about-page-entrance {
+  from {
+    margin-left: -200vh;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+.about-page-entrance {
+  animation: about-page-entrance 1s ease forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page-entrance {
+    animation: none;
+    margin-left: 0;
+    opacity: 1;
+  }
 }
 
 @layer components {
@@ -60,7 +86,6 @@ body {
   }
 }
 
-/* Ring + center dot + hair cross: intersection and dot = true click (client) point. */
 .custom-cursor {
   --cursor-size: 40px;
   --cursor-dot: 6px;
@@ -87,7 +112,6 @@ body {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.45);
 }
 
-/* Exact hotspot: sky dot so it’s visible on both light and dark UI. */
 .custom-cursor__dot {
   position: relative;
   z-index: 2;
@@ -99,7 +123,6 @@ body {
   flex-shrink: 0;
 }
 
-/* Hair cross: center lines meet at the same point as the dot. */
 .custom-cursor__cross {
   position: absolute;
   z-index: 1;

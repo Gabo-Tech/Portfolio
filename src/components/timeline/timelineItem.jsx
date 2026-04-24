@@ -2,18 +2,6 @@
 
 import React, { useMemo } from "react";
 import { motion } from "framer-motion";
-
-/**
- * TimelineItem Component
- * Displays a timeline item with animations.
- *
- * @param {string} title - The title of the timeline item.
- * @param {string} description - The description of the timeline item.
- * @param {string} date - The date of the timeline item.
- * @param {string} company - The company associated with the timeline item.
- * @param {boolean} alternate - Flag to indicate if the item is on an alternate side.
- * @param {boolean} isInView - Flag to indicate if the timeline item is in view.
- */
 const TimelineItem = ({
   title,
   description,
@@ -24,9 +12,7 @@ const TimelineItem = ({
 }) => {
   const content = useMemo(
     () => (
-      <div
-        className="inline-block max-w-full rounded-b-lg rounded-s-lg p-3 font-display font-semibold ring-1 ring-stone-800/50 shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-[2px] lg:ring-0 lg:shadow-none lg:backdrop-blur-none bg-black/72 sm:bg-black/65 lg:bg-transparent"
-      >
+      <div className="inline-block max-w-full rounded-b-lg rounded-s-lg p-3 font-display font-semibold ring-1 ring-stone-800/50 shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-[2px] lg:ring-0 lg:shadow-none lg:backdrop-blur-none bg-black/72 sm:bg-black/65 lg:bg-transparent">
         <h3 className="rounded bg-slate-900/95 px-2 py-0.5 text-stone-100 lg:bg-slate-800/60 lg:px-1 lg:py-0">
           {title}
         </h3>
@@ -45,7 +31,6 @@ const TimelineItem = ({
     ),
     [title, description, date, company],
   );
-
   const initialPosition = useMemo(
     () => ({
       left: alternate ? "700px" : "-700px",
@@ -54,38 +39,43 @@ const TimelineItem = ({
     }),
     [alternate],
   );
-
   const animatePosition = useMemo(
     () => ({
       x: "0",
     }),
     [],
   );
-
   const transitionSettings = useMemo(
     () => ({
       delay: alternate ? 0.9 : 0.2,
     }),
     [alternate],
   );
-
   return (
     <div
       className="flex flex-col md:flex-row justify-between mb-8"
       role="listitem"
     >
       <motion.div
-        initial={{ x: initialPosition.left }}
+        initial={{
+          x: initialPosition.left,
+        }}
         animate={isInView ? animatePosition : {}}
-        transition={{ delay: 0.2 }}
+        transition={{
+          delay: 0.2,
+        }}
         className={`w-full md:w-1/3 ${alternate ? "order-3 md:order-1" : "order-1"}`}
       >
         {!alternate && content}
       </motion.div>
       <motion.div
-        initial={{ x: initialPosition.center }}
+        initial={{
+          x: initialPosition.center,
+        }}
         animate={isInView ? animatePosition : {}}
-        transition={{ delay: 0.6 }}
+        transition={{
+          delay: 0.6,
+        }}
         className="w-full md:w-1/6 flex justify-center order-2"
       >
         <div className="w-1 h-full bg-stone-600 rounded relative">
@@ -93,7 +83,9 @@ const TimelineItem = ({
         </div>
       </motion.div>
       <motion.div
-        initial={{ x: initialPosition.right }}
+        initial={{
+          x: initialPosition.right,
+        }}
         animate={isInView ? animatePosition : {}}
         transition={transitionSettings}
         className={`w-full md:w-1/3 ${alternate ? "order-1 md:order-3" : "order-3"}`}
@@ -103,5 +95,4 @@ const TimelineItem = ({
     </div>
   );
 };
-
 export default TimelineItem;

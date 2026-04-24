@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,15 +11,10 @@ module.exports = {
         "4xl": "2560px",
       },
       maxWidth: {
-        "screen-3xl": "100rem", // ~1600px content cap on 4K
+        "screen-3xl": "100rem",
       },
       fontFamily: {
-        sans: [
-          "var(--font-sans)",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-        ],
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
         display: [
           "var(--font-display)",
           "var(--font-sans)",
@@ -28,12 +22,7 @@ module.exports = {
           "system-ui",
           "sans-serif",
         ],
-        editorial: [
-          "var(--font-editorial)",
-          "Georgia",
-          "Cambria",
-          "serif",
-        ],
+        editorial: ["var(--font-editorial)", "Georgia", "Cambria", "serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -47,8 +36,12 @@ module.exports = {
       },
       keyframes: {
         marquee: {
-          "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-50%)" },
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            transform: "translateX(-50%)",
+          },
         },
       },
       animation: {
@@ -69,7 +62,6 @@ module.exports = {
           opacity: 0,
         },
       };
-
       addUtilities(newUtilities, ["responsive", "hover"]);
     },
   ],

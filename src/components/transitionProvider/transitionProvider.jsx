@@ -7,30 +7,20 @@ import { usePathname } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { AppScrollContainerRefContext } from "@/components/scrollContainerContext";
 import "./transitions.css";
-
-/**
- * TransitionProvider: page transitions and first-visit home treatment.
- *
- * @param {Object} props
- * @param {React.ReactNode} props.children
- */
 const TransitionProvider = ({ children }) => {
-  const mainScrollRef = useRef(/** @type {HTMLDivElement | null} */ (null));
-  const headerRef = useRef(/** @type {HTMLElement | null} */ (null));
+  const mainScrollRef = useRef(null);
+  const headerRef = useRef(null);
   const pathName = usePathname();
   const t = useTranslations("PageTitle");
   const [firstVisit, setFirstVisit] = useState(true);
-
   useEffect(() => {
     if (pathName === "/") {
       setFirstVisit(false);
     }
   }, [pathName]);
-
   useLayoutEffect(() => {
     const el = headerRef.current;
     if (typeof document === "undefined" || !el) return undefined;
-
     const setVar = () => {
       const h = el.getBoundingClientRect().height;
       if (h > 0) {
@@ -48,7 +38,6 @@ const TransitionProvider = ({ children }) => {
       document.documentElement.style.removeProperty("--app-navbar-height");
     };
   }, []);
-
   const displayName = useMemo(() => {
     if (pathName === "/") {
       return t("home");
@@ -59,7 +48,6 @@ const TransitionProvider = ({ children }) => {
       : "home";
     return t(key);
   }, [pathName, t]);
-
   return (
     <AnimatePresence mode="wait">
       <div
@@ -71,24 +59,47 @@ const TransitionProvider = ({ children }) => {
           <>
             <motion.div
               className="transition-overlay-left"
-              animate={{ width: "0vw" }}
-              exit={{ width: "100vw" }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
+              animate={{
+                width: "0vw",
+              }}
+              exit={{
+                width: "100vw",
+              }}
+              transition={{
+                duration: 0.5,
+                ease: "easeOut",
+              }}
             />
             <motion.div
               className="transition-text"
-              initial={{ opacity: 1 }}
-              animate={{ opacity: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              initial={{
+                opacity: 1,
+              }}
+              animate={{
+                opacity: 0,
+              }}
+              exit={{
+                opacity: 0,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: "easeOut",
+              }}
               aria-hidden="true"
             >
               {displayName}
             </motion.div>
             <motion.div
               className="transition-overlay-right"
-              initial={{ width: "100vw" }}
-              animate={{ width: "0vw", transition: { delay: 0.5 } }}
+              initial={{
+                width: "100vw",
+              }}
+              animate={{
+                width: "0vw",
+                transition: {
+                  delay: 0.5,
+                },
+              }}
             />
           </>
         )}
@@ -111,5 +122,4 @@ const TransitionProvider = ({ children }) => {
     </AnimatePresence>
   );
 };
-
 export default TransitionProvider;

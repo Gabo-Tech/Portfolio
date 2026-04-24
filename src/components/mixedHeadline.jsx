@@ -1,12 +1,3 @@
-/**
- * Splits a string on a single `|` to render two typographic roles:
- * display (Plus Jakarta) + editorial serif (Source Serif), with luminance contrast only.
- *
- * @param {Object} props
- * @param {string} props.line e.g. "ABOUT|ME"
- * @param {keyof import("react").JSX.IntrinsicElements} [props.as="h1"]
- * @param {string} [props.className]
- */
 export default function MixedHeadline({
   line,
   as: Comp = "h1",

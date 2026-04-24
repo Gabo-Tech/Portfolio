@@ -6,20 +6,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import HoverSkill from "@/components/hoverSkill";
 import { useTranslations } from "next-intl";
 import { useAppScrollContainerRef } from "@/components/scrollContainerContext";
-
 const PORTFOLIO_IMAGE_BLUR =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8+vxhHgAH2wJ/4fN7VQAAAABJRU5ErkJggg==";
-
-/**
- * PortfolioItem Component
- * Displays a portfolio item with title, image, description, and skills.
- *
- * @param {Object} item - The portfolio item details.
- * @param {boolean} isActiveTab - The active tab state.
- * @param {boolean} isReadMore - The read more state.
- * @param {Function} onTabClick - Handler for tab click.
- * @param {Function} onReadMoreClick - Handler for read more click.
- */
 const PortfolioItem = ({
   item,
   isActiveTab,
@@ -30,14 +18,11 @@ const PortfolioItem = ({
 }) => {
   const t = useTranslations("Portfolio");
   const isGif = item.img?.endsWith(".gif");
-  // Local /public files: same URL as `usePageImageLoader` (raw path). The default optimizer
-  // uses /_next/image?…, so the loader could hide while that second request is still in flight.
   const isUnoptimized =
     typeof item.img === "string" && item.img.startsWith("/");
   const mainScrollRef = useAppScrollContainerRef();
   const prefersReducedMotion = useReducedMotion();
   const [allowFloatAnimation, setAllowFloatAnimation] = useState(false);
-
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 768px)");
     const sync = () => setAllowFloatAnimation(mq.matches);
@@ -45,26 +30,18 @@ const PortfolioItem = ({
     mq.addEventListener("change", sync);
     return () => mq.removeEventListener("change", sync);
   }, []);
-
   const fromLeft = item.id % 2 === 0;
-  const enterX = useMemo(
-    () => (fromLeft ? "-11vw" : "11vw"),
-    [fromLeft],
-  );
-
+  const enterX = useMemo(() => (fromLeft ? "-11vw" : "11vw"), [fromLeft]);
   const isValidURL = useCallback((url) => {
     const urlRegex = /^(https?|chrome):\/\/[^\s$.?#].[^\s]*$/gm;
     return urlRegex.test(url);
   }, []);
-
   if (!item.title) {
     return (
       <div className="flex h-screen w-screen items-center justify-center bg-transparent" />
     );
   }
-
   const isStaticFirst = priority;
-
   return (
     <div
       data-id={`portfolio-item-${item.id}`}
@@ -73,16 +50,29 @@ const PortfolioItem = ({
       <motion.div
         initial={
           isStaticFirst
-            ? { opacity: 1, x: 0 }
+            ? {
+                opacity: 1,
+                x: 0,
+              }
             : prefersReducedMotion
-              ? { opacity: 0 }
-              : { opacity: 0, x: enterX }
+              ? {
+                  opacity: 0,
+                }
+              : {
+                  opacity: 0,
+                  x: enterX,
+                }
         }
         {...(!isStaticFirst
           ? {
               whileInView: prefersReducedMotion
-                ? { opacity: 1 }
-                : { opacity: 1, x: 0 },
+                ? {
+                    opacity: 1,
+                  }
+                : {
+                    opacity: 1,
+                    x: 0,
+                  },
               viewport: {
                 root: mainScrollRef ?? undefined,
                 once: true,
@@ -91,7 +81,10 @@ const PortfolioItem = ({
               },
             }
           : {})}
-        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        transition={{
+          duration: 0.65,
+          ease: [0.22, 1, 0.36, 1],
+        }}
         className="flex w-full max-w-4xl flex-col gap-8 text-white"
       >
         <motion.div
@@ -135,22 +128,14 @@ const PortfolioItem = ({
           <div className="flex gap-4 justify-center mb-4">
             <button
               onClick={() => onTabClick(item.id, "desc")}
-              className={`p-2 rounded ${
-                isActiveTab === "desc"
-                  ? "font-extrabold underline"
-                  : "font-light"
-              }`}
+              className={`p-2 rounded ${isActiveTab === "desc" ? "font-extrabold underline" : "font-light"}`}
               aria-pressed={isActiveTab === "desc"}
             >
               {t("aboutTheProject")}
             </button>
             <button
               onClick={() => onTabClick(item.id, "skills")}
-              className={`p-2 rounded ${
-                isActiveTab === "skills"
-                  ? "font-extrabold underline"
-                  : "font-light"
-              }`}
+              className={`p-2 rounded ${isActiveTab === "skills" ? "font-extrabold underline" : "font-light"}`}
               aria-pressed={isActiveTab === "skills"}
             >
               {t("skills")}
@@ -199,5 +184,4 @@ const PortfolioItem = ({
     </div>
   );
 };
-
 export default PortfolioItem;

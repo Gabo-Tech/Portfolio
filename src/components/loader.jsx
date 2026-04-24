@@ -1,20 +1,13 @@
 "use client";
+
 import { useEffect, useLayoutEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
-
-/**
- * Full-viewport blocking loader: opaque backdrop + bouncing dots.
- * Renders in a portal to document.body (above the nav / scroll root stacking so it is
- * always visible on client navigations) and blocks pointer events while up.
- */
 const Loader = () => {
   const [mountNode, setMountNode] = useState(null);
-
   useLayoutEffect(() => {
     setMountNode(document.body);
   }, []);
-
   useEffect(() => {
     const scrollRoot = document.getElementById("app-scroll-root");
     const prevBody = document.body.style.overflow;
@@ -26,14 +19,12 @@ const Loader = () => {
       if (scrollRoot) scrollRoot.style.overflowY = prevRoot;
     };
   }, []);
-
   const containerStyle = {
     width: "4rem",
     height: "4rem",
     display: "flex",
     justifyContent: "space-around",
   };
-
   const circleStyle = {
     display: "block",
     width: "1rem",
@@ -41,23 +32,31 @@ const Loader = () => {
     backgroundColor: "#38bdf8",
     borderRadius: "0.5rem",
   };
-
   const containerVariants = {
-    start: { transition: { staggerChildren: 0.2 } },
-    end: { transition: { staggerChildren: 0.2 } },
+    start: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+    end: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
   };
-
   const circleVariants = {
-    start: { y: "0%" },
-    end: { y: "60%" },
+    start: {
+      y: "0%",
+    },
+    end: {
+      y: "60%",
+    },
   };
-
   const circleTransition = {
     duration: 0.4,
     yoyo: Infinity,
     ease: "easeInOut",
   };
-
   const content = (
     <div
       className="fixed inset-0 z-[100] flex min-h-screen w-full items-center justify-center bg-stone-950"
@@ -82,12 +81,9 @@ const Loader = () => {
       </motion.div>
     </div>
   );
-
   if (mountNode) {
     return createPortal(content, mountNode);
   }
-
   return content;
 };
-
 export default Loader;

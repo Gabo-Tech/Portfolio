@@ -1,22 +1,10 @@
 import React, { useMemo } from "react";
 import Image from "next/image";
-
-/**
- * BrandCarousel Component
- * Displays a carousel of brand logos that scrolls horizontally.
- *
- * @param {Array} logos - Array of logo objects containing src, alt, width, and height attributes.
- * @param {string} [props.className] - Optional classes for the outer wrapper (e.g. compact padding).
- */
 const BrandCarousel = ({ logos, className = "" }) => {
-  // Two copies: the CSS `translateX(-50%)` loop must move exactly half the track width
-  // (one full set). Track width is therefore `2 × oneSetWidth`; `w-max` keeps the flex row
-  // that full width. Without `w-max`, the row can shrink to the viewport and the % breaks.
   const memoizedLogos = useMemo(
     () => (logos && logos.length ? [...logos, ...logos] : []),
     [logos],
   );
-
   return (
     <div
       className={`text-center text-white py-8 sm:py-10 lg:py-14 ${className}`.trim()}
@@ -49,5 +37,4 @@ const BrandCarousel = ({ logos, className = "" }) => {
     </div>
   );
 };
-
 export default BrandCarousel;

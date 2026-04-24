@@ -1,5 +1,3 @@
-// components/svg/ErrorSvg.js
-
 const ErrorSvg = () => (
   <svg
     className="h-6 w-6 text-red-900"
@@ -13,5 +11,4 @@ const ErrorSvg = () => (
     <line x1="6" y1="6" x2="18" y2="18"></line>
   </svg>
 );
-
 export default ErrorSvg;

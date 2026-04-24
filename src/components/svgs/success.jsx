@@ -1,5 +1,3 @@
-// components/svg/SuccessSvg.js
-
 const SuccessSvg = () => (
   <svg
     className="h-6 w-6 text-green-900"
@@ -12,5 +10,4 @@ const SuccessSvg = () => (
     <polyline points="20 6 9 17 4 12"></polyline>
   </svg>
 );
-
 export default SuccessSvg;

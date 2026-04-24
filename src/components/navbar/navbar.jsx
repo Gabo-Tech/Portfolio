@@ -1,4 +1,5 @@
 "use client";
+
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import Image from "next/image";
 import menuData from "../../../public/data/navbarData.json";
@@ -9,17 +10,24 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { useAppScrollContainerRef } from "@/components/scrollContainerContext";
-
 const NAV_LINKS = [
-  { url: "/", key: "home" },
-  { url: "/about", key: "about" },
-  { url: "/portfolio", key: "portfolio" },
-  { url: "/contact", key: "contact" },
+  {
+    url: "/",
+    key: "home",
+  },
+  {
+    url: "/about",
+    key: "about",
+  },
+  {
+    url: "/portfolio",
+    key: "portfolio",
+  },
+  {
+    url: "/contact",
+    key: "contact",
+  },
 ];
-
-/**
- * Navbar: main nav, logo, social links, mobile menu, language switcher.
- */
 const Navbar = () => {
   const t = useTranslations("nav");
   const tLang = useTranslations("langSwitcher");
@@ -29,11 +37,9 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [menuMounted, setMenuMounted] = useState(false);
   const mainScrollRef = useAppScrollContainerRef();
-
   useEffect(() => {
     setMenuMounted(true);
   }, []);
-
   useEffect(() => {
     if (!open) return;
     const onKey = (e) => {
@@ -42,7 +48,6 @@ const Navbar = () => {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
-
   useEffect(() => {
     if (typeof document === "undefined" || !open) return;
     const bodyPrev = document.body.style.overflow;
@@ -55,33 +60,42 @@ const Navbar = () => {
       if (main) main.style.overflow = mainPrev;
     };
   }, [open, mainScrollRef]);
-
   const menuLinks = useMemo(
     () =>
       NAV_LINKS.map((item) => ({
         url: item.url,
         title: t(item.key),
       })),
-    [t]
+    [t],
   );
-
   const topVariants = {
-    closed: { rotate: 0 },
-    opened: { rotate: 45 },
+    closed: {
+      rotate: 0,
+    },
+    opened: {
+      rotate: 45,
+    },
   };
-
   const centerVariants = {
-    closed: { opacity: 1 },
-    opened: { opacity: 0 },
+    closed: {
+      opacity: 1,
+    },
+    opened: {
+      opacity: 0,
+    },
   };
-
   const bottomVariants = {
-    closed: { rotate: 0 },
-    opened: { rotate: -45 },
+    closed: {
+      rotate: 0,
+    },
+    opened: {
+      rotate: -45,
+    },
   };
-
   const mobileOverlayVariants = {
-    hidden: { opacity: 0 },
+    hidden: {
+      opacity: 0,
+    },
     visible: {
       opacity: 1,
       transition: {
@@ -101,38 +115,41 @@ const Navbar = () => {
       },
     },
   };
-
   const mobileLinkVariants = {
-    hidden: { opacity: 0, y: 14 },
+    hidden: {
+      opacity: 0,
+      y: 14,
+    },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.28, ease: [0.22, 1, 0.36, 1] },
+      transition: {
+        duration: 0.28,
+        ease: [0.22, 1, 0.36, 1],
+      },
     },
     exit: {
       opacity: 0,
       y: 10,
-      transition: { duration: 0.16 },
+      transition: {
+        duration: 0.16,
+      },
     },
   };
-
   const handleLinkClick = useCallback(() => {
     setOpen(false);
   }, []);
-
   const switchLocale = useCallback(
     (next) => {
-      router.replace(pathname, { locale: next });
+      router.replace(pathname, {
+        locale: next,
+      });
     },
-    [router, pathname]
+    [router, pathname],
   );
-
   const memoizedMenuLinks = useMemo(() => {
-    return menuLinks.map((link) => (
-      <NavLink link={link} key={link.url} />
-    ));
+    return menuLinks.map((link) => <NavLink link={link} key={link.url} />);
   }, [menuLinks]);
-
   const memoizedSocialLinks = useMemo(() => {
     return menuData.socialLinks.map((link, index) => (
       <a
@@ -155,7 +172,6 @@ const Navbar = () => {
       </a>
     ));
   }, []);
-
   const langButtons = useMemo(
     () =>
       routing.locales.map((loc) => (
@@ -163,20 +179,15 @@ const Navbar = () => {
           key={loc}
           type="button"
           onClick={() => switchLocale(loc)}
-          className={`rounded-md px-2.5 py-0.5 text-sm font-display font-medium transition ${
-            locale === loc
-              ? "bg-sky-500/90 text-white"
-              : "bg-stone-800/80 text-stone-300 hover:bg-stone-700/80 hover:text-stone-100"
-          }`}
+          className={`rounded-md px-2.5 py-0.5 text-sm font-display font-medium transition ${locale === loc ? "bg-sky-500/90 text-white" : "bg-stone-800/80 text-stone-300 hover:bg-stone-700/80 hover:text-stone-100"}`}
           aria-pressed={locale === loc}
           aria-label={tLang("label") + ": " + loc}
         >
           {tLang(loc)}
         </button>
       )),
-    [locale, switchLocale, tLang]
+    [locale, switchLocale, tLang],
   );
-
   return (
     <div className="box-border flex h-full min-h-[inherit] w-full border-b border-white/5 bg-stone-950/50 text-sm backdrop-blur-sm sm:text-base md:text-[0.95rem] lg:text-base 3xl:text-lg">
       <div className="grid w-full max-w-screen-3xl grid-cols-[auto_1fr_auto] items-center gap-2 px-3 py-2 sm:gap-3 sm:px-4 md:px-5 md:py-2.5 lg:gap-4 lg:px-6 xl:px-8 2xl:px-10 3xl:px-12 4xl:px-16 min-[320px]:px-[max(0.75rem,env(safe-area-inset-left))]">
@@ -294,12 +305,11 @@ const Navbar = () => {
                   </motion.div>
                 )}
               </AnimatePresence>,
-              document.body
+              document.body,
             )}
         </div>
       </div>
     </div>
   );
 };
-
 export default Navbar;

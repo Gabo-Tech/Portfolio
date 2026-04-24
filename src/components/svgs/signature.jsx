@@ -1,4 +1,3 @@
-// components/svg/SignatureSvg.js
 const SignatureSvg = () => (
   <svg
     id="svg"
@@ -18,5 +17,4 @@ const SignatureSvg = () => (
     </g>
   </svg>
 );
-
 export default SignatureSvg;

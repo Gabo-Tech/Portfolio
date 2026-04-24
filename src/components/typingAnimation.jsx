@@ -2,11 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState, useMemo } from "react";
-
-/**
- * @param {string} line
- * @returns {{ full: string, hasAccent: boolean, main: string, accent: string | null }}
- */
 function parseLine(line) {
   if (typeof line !== "string" || !line.includes("|")) {
     return {
@@ -20,10 +15,20 @@ function parseLine(line) {
   const main = (m ?? "").trim();
   const accent = (a ?? "").trim();
   if (!accent) {
-    return { full: main, hasAccent: false, main, accent: null };
+    return {
+      full: main,
+      hasAccent: false,
+      main,
+      accent: null,
+    };
   }
   if (!main) {
-    return { full: accent, hasAccent: false, main: accent, accent: null };
+    return {
+      full: accent,
+      hasAccent: false,
+      main: accent,
+      accent: null,
+    };
   }
   return {
     full: `${main} ${accent}`,
@@ -32,28 +37,17 @@ function parseLine(line) {
     accent,
   };
 }
-
-/**
- * Splits the visible prefix for two typographic runs (no `|` shown).
- *
- * @param {string} displayedText
- * @param {string} main
- */
-/** Lines at or above this length (after `|` expansion) get a longer pause before delete. */
 const LONG_LINE_PAUSE_AFTER_CHARS = 80;
-
-/**
- * @param {string} full
- * @returns {number} ms to show the full line before untyping
- */
 function pauseBeforeDeleteMs(full) {
   return full.length >= LONG_LINE_PAUSE_AFTER_CHARS ? 5000 : 3000;
 }
-
 function splitForRender(displayedText, main) {
   const n = main.length;
   if (displayedText.length <= n) {
-    return { displayRun: displayedText, accent: "" };
+    return {
+      displayRun: displayedText,
+      accent: "",
+    };
   }
   const displayEnd = Math.min(displayedText.length, n + 1);
   return {
@@ -61,32 +55,20 @@ function splitForRender(displayedText, main) {
     accent: displayedText.length > n + 1 ? displayedText.slice(n + 1) : "",
   };
 }
-
-/**
- * Typing effect with optional `|` in source strings: text before the bar uses
- * the display family; after the bar uses editorial serif, both in neutral stone.
- *
- * @param {Object} props
- * @param {string[]} props.texts
- */
 const TypingAnimation = ({ texts }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-
   const lineRaw = useMemo(
     () => texts[currentTextIndex] ?? "",
     [texts, currentTextIndex],
   );
-
   const { full, hasAccent, main } = useMemo(
     () => parseLine(lineRaw),
     [lineRaw],
   );
-
   useEffect(() => {
     const typeSpeed = isDeleting ? 18 : 36;
-
     if (!isDeleting && displayedText === full) {
       setTimeout(() => setIsDeleting(true), pauseBeforeDeleteMs(full));
     } else if (isDeleting && displayedText === "") {
@@ -100,12 +82,16 @@ const TypingAnimation = ({ texts }) => {
       }, typeSpeed);
     }
   }, [displayedText, isDeleting, full, texts.length]);
-
   const { displayRun, accent: accentVisible } = useMemo(
-    () => (hasAccent ? splitForRender(displayedText, main) : { displayRun: displayedText, accent: "" }),
+    () =>
+      hasAccent
+        ? splitForRender(displayedText, main)
+        : {
+            displayRun: displayedText,
+            accent: "",
+          },
     [hasAccent, displayedText, main],
   );
-
   return (
     <h1
       className="w-full break-words font-semibold text-stone-100 leading-[1.12] sm:leading-[1.1] md:leading-[1.08] lg:leading-[1.06] [font-size:clamp(1.55rem,0.6rem+4.2vw,5.5rem)]"
@@ -128,8 +114,12 @@ const TypingAnimation = ({ texts }) => {
         )}
         <motion.span
           className="blinking-cursor"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 0 }}
+          initial={{
+            opacity: 1,
+          }}
+          animate={{
+            opacity: 0,
+          }}
           transition={{
             duration: 0.5,
             repeat: Infinity,
@@ -142,5 +132,4 @@ const TypingAnimation = ({ texts }) => {
     </h1>
   );
 };
-
 export default TypingAnimation;

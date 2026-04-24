@@ -1,5 +1,3 @@
-// components/svg/SendSvg.js
-
 const SendSvg = () => (
   <svg
     className="h-6 w-6 text-gray-600"
@@ -13,5 +11,4 @@ const SendSvg = () => (
     <polyline points="22,6 12,13 2,6"></polyline>
   </svg>
 );
-
 export default SendSvg;

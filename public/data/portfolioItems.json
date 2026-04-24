@@ -3,7 +3,7 @@
     "id": 1,
     "color": "from-amber-300 to-orange-300",
     "title": "ARTURO RODÉS",
-    "desc": "Client project for GABO in 2026 from Switzerland. arturorodes.com for a salary negotiation coach. Astro, Alpine, GSAP. I also published frontend-auto-cms on npm so they can edit copy in a small dashboard and push to the repo. Not a one off handoff.",
+    "desc": "Client project for GABO in 2026 from Switzerland. arturorodes.com for a salary negotiation coach. Astro, Alpine, GSAP. I also published frontend-auto-cms on npm so they can edit copy in a small dashboard and push to the repo. Not a one-off handoff.",
     "img": "/images/arturorodes.webp",
     "link": "https://arturorodes.com",
     "skills": [
@@ -123,7 +123,7 @@
     "id": 2,
     "color": "from-purple-300 to-pink-300",
     "title": "IRIUSRISK",
-    "desc": "Oct 2024 to Oct 2025, full time remote. React, Ant Design, TanStack Query, Zustand, SASS, Vitest for unit tests. Lots of async edge cases; we used Query for server state and tried to keep client state small. Code review, working with backend, prod bugs. 2nd in the company hackathon. In-app work is NDA; the link is their public company site.",
+    "desc": "Oct 2024 to Oct 2025, full-time remote. React, Ant Design, TanStack Query, Zustand, SASS, Vitest for unit tests. Lots of async edge cases; we used Query for server state and tried to keep client state small. Code review, working with backend, prod bugs. 2nd in the company hackathon. In-app work is NDA; the link is their public company site.",
     "img": "/images/iriusriskimg.webp",
     "link": "https://www.iriusrisk.com/",
     "skills": [
@@ -178,7 +178,7 @@
     "id": 3,
     "color": "from-blue-300 to-green-300",
     "title": "BEYONDBMI",
-    "desc": "Nov 2022 to Apr 2024, full time remote contractor. Two devs. I learned Angular on the job, first merge request in week one. Express, TypeORM, Postgres, React Native, AWS, Stripe, SendGrid, Twilio, Daily, and we were careful with health data. Senior was gone a month; I was in prod and on the DB. Job ended when cash was low and they didn't need as much engineering. Member app is not public; link is their marketing site.",
+    "desc": "Nov 2022 to Apr 2024, full-time remote contractor. Two devs. I learned Angular on the job, first merge request in week one. Express, TypeORM, Postgres, React Native, AWS, Stripe, SendGrid, Twilio, Daily, and we were careful with health data. Senior was gone a month; I was in prod and on the DB. Job ended when cash was low and they didn't need as much engineering. Member app is not public; link is their marketing site.",
     "img": "/images/beyondbmiimg.webp",
     "link": "https://beyondbmi.ie/",
     "skills": [
@@ -403,7 +403,7 @@
     "id": 19,
     "color": "from-sky-300 to-lime-300",
     "title": "REHUBIK (FUTURIA)",
-    "desc": "Contract with Futuria for Rehubik (IKEA renovation network in Spain). I mapped how data should move and then built it: web forms into SQL, hook to Odoo and Zapier with Gmail, Trello API from the web for project cards, Coefficient into Google Sheets and Excel for reporting, Nodemailer, Google Apps Script on Drive, plus custom PHP and Python where the off the shelf tools stopped. The screenshot is the architecture I used to align with their team. Live public page for the product line: IKEA lead form and copy.",
+    "desc": "Contract with Futuria for Rehubik (IKEA renovation network in Spain). I mapped how data should move and then built it: web forms into SQL, hook to Odoo and Zapier with Gmail, Trello API from the web for project cards, Coefficient into Google Sheets and Excel for reporting, Nodemailer, Google Apps Script on Drive, plus custom PHP and Python where the off-the-shelf tools stopped. The screenshot is the architecture I used to align with their team. Live public page for the product line: IKEA lead form and copy.",
     "img": "/images/rehubik-architecture.webp",
     "link": "https://rehubik.com/trabajamos-con-ikea/",
     "skills": [
@@ -453,7 +453,7 @@
     "id": 7,
     "color": "from-red-300 to-yellow-300",
     "title": "EXA MONSTER",
-    "desc": "Freelance contract. SaaS style storage product: Laravel, WordPress, PHP, Hetzner, React Native client, Stripe. Client work from my early contractor days, not a school exercise.",
+    "desc": "Freelance contract. SaaS-style storage product: Laravel, WordPress, PHP, Hetzner, React Native client, Stripe. Client work from my early contractor days, not a school exercise.",
     "img": "/images/examonsterimg.webp",
     "link": "",
     "skills": [
@@ -728,7 +728,7 @@
     "id": 10,
     "color": "from-indigo-300 to-green-300",
     "title": "FIGHT GAME",
-    "desc": "Side project, open on GitHub Pages. HTML, CSS, vanilla JS, two player toy game. For fun, not a client deliverable.",
+    "desc": "Side project, open on GitHub Pages. HTML, CSS, vanilla JS, two-player toy game. For fun, not a client deliverable.",
     "img": "/images/gameimg.webp",
     "link": "https://gabo-tech.github.io/StreetFighter-like-OSG",
     "skills": [
@@ -752,7 +752,7 @@
   {
     "id": 16,
     "color": "from-blue-300 to-black",
-    "title": "EasyApply-Linkedin",
+    "title": "EasyApply-LinkedIn",
     "desc": "Personal tool I wrote for my own job search: Python and Selenium to run LinkedIn Easy Apply with filters, logging, and a simple list of who I already hit. Solves a boring problem for me, not a paying customer.",
     "img": "/images/easyapplylinkedinimg.webp",
     "link": "https://github.com/Gabo-Tech/EasyApply-Linkedin",
@@ -818,7 +818,7 @@
     "id": 13,
     "color": "from-red-300 to-purple-300",
     "title": "DGABO Token",
-    "desc": "Decentralyized GABO Token is a personal cryptocurrency project developed using JavaScript and Motoko for smart contracts. Although not deployed due to high blockchain fees, this project demonstrates the process of creating and managing a token on the Internet Computer blockchain. The project includes a web mockup and emulator setup instructions for local development.",
+    "desc": "Decentralized GABO Token is a personal cryptocurrency project developed using JavaScript and Motoko for smart contracts. Although not deployed due to high blockchain fees, this project demonstrates the process of creating and managing a token on the Internet Computer blockchain. The project includes a web mockup and emulator setup instructions for local development.",
     "img": "/images/dtokenimg.webp",
     "link": "https://github.com/Gabo-Tech/Web3-Token-and-Faucet",
     "skills": [

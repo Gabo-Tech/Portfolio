@@ -1,12 +1,21 @@
 "use client";
-// components/svg/ScrollSvg.js
-import { motion } from "framer-motion";
 
+import { motion } from "framer-motion";
 const ScrollSvg = ({ size = 50 }) => (
   <motion.svg
-    initial={{ opacity: 0.2, y: 0 }}
-    animate={{ opacity: 1, y: "10px" }}
-    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+    initial={{
+      opacity: 0.2,
+      y: 0,
+    }}
+    animate={{
+      opacity: 1,
+      y: "10px",
+    }}
+    transition={{
+      repeat: Infinity,
+      duration: 3,
+      ease: "easeInOut",
+    }}
     viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -22,5 +31,4 @@ const ScrollSvg = ({ size = 50 }) => (
     <path d="M15 11L12 14L9 11" stroke="#fff" strokeWidth="1"></path>
   </motion.svg>
 );
-
 export default ScrollSvg;

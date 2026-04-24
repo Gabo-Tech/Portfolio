@@ -2,12 +2,11 @@
 
 import { useParams } from "next/navigation";
 import { useLayoutEffect } from "react";
-
-const LANG = { en: "en", de: "de", es: "es" };
-
-/**
- * Sets documentElement.lang for accessibility and SEO when locale changes.
- */
+const LANG = {
+  en: "en",
+  de: "de",
+  es: "es",
+};
 export default function HtmlLang() {
   const { locale } = useParams();
   const code = LANG[locale] ?? "en";

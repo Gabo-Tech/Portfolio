@@ -3,14 +3,9 @@
 import { useMemo } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { useTranslations } from "next-intl";
-
-/**
- * LinkedIn-style recommendations (copy is localized in messages).
- */
 export default function TestimonialsSection() {
   const t = useTranslations("About.testimonials");
   const prefersReducedMotion = useReducedMotion();
-
   const items = useMemo(
     () => [
       {
@@ -37,7 +32,6 @@ export default function TestimonialsSection() {
     ],
     [t],
   );
-
   return (
     <section
       className="mx-auto flex w-full max-w-6xl flex-col gap-10 xl:max-w-7xl"
@@ -53,9 +47,22 @@ export default function TestimonialsSection() {
         {items.map((item, index) => (
           <motion.li
             key={item.key}
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
+            initial={
+              prefersReducedMotion
+                ? false
+                : {
+                    opacity: 0,
+                    y: 16,
+                  }
+            }
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+              margin: "-40px",
+            }}
             transition={{
               duration: 0.45,
               delay: prefersReducedMotion ? 0 : index * 0.08,
